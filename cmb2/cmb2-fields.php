@@ -130,6 +130,16 @@ function mrweb_register_cmb2_metaboxes() {
         'id' => $prefix . 'url_bron',
         'type' => 'text_url',
     ));
+    // right column wysiwyg field for certain page templates.
+    $cmb_rc = new_cmb2_box( array(
+        'id'           => 'right_column_content',
+        'title'        => 'Extra content',
+        'object_types' => array( 'page' ), // post type
+        'show_on'      => array( 'key' => 'page-template', 'value' => 'page-expertise.php' ),
+        'context'      => 'normal', //  'normal', 'advanced', or 'side'
+        'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
+        'show_names'   => true, // Show field names on the left
+    ));    
 }
 /* ADD CORP THEME OPTIONS PAGE */
 add_action( 'cmb2_admin_init', 'mrweb_register_theme_options_metabox' );
