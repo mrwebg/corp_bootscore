@@ -82,7 +82,7 @@ $post_array = get_posts($post_args);
                 $right_column = wpautop(get_post_meta(get_the_ID(), _CMB . 'right_column', true));
                 echo $right_column;
                 ?>
-              </div>
+              </div><!-- .col -->
               <!-- .entry-content -->
             </div><!-- .row -->
           </main><!-- #main -->
