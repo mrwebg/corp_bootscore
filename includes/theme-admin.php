@@ -89,7 +89,7 @@ if (is_admin()) {
   function mrweb_remove_page_template( $pages_templates ) {
     //$temp = $pages_templates['page-test.php'];
     // add it back
-    //$page_templates[] = 'page-test.php';
+  //$page_templates[] = 'page-sidebar-left.php';
     // remove the template.
     //unset( $pages_templates['page-test.php'] );
     unset($pages_templates['page-sidebar-left.php']);
