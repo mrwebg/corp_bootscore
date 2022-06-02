@@ -133,17 +133,18 @@ function mrweb_register_cmb2_metaboxes() {
     // right column wysiwyg field for certain page templates.
     $cmb_rc = new_cmb2_box( array(
         'id'           => 'right_column_content',
-        'title'        => 'Extra content',
+        'title'        => 'Rechter kolom',
         'object_types' => array( 'page' ), // post type
         'show_on'      => array( 'key' => 'page-template', 'value' => 'page-expertise.php' ),
         'context'      => 'normal', //  'normal', 'advanced', or 'side'
         'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
-        'show_names'   => true, // Show field names on the left
+        'show_names'   => false, // Show field names on the left
     ));
     $cmb_rc->add_field(array(
-        'name' => 'test',
-        'id' => $prefix . 'test',
-        'type' => 'text',
+        'name' => 'rechter kolom content',
+        'id' => $prefix . 'right_column',
+        'type' => 'wysiwyg',
+        'default' => 'Vergeet niet content toe te voegen',
     ));
 }
 /* ADD CORP THEME OPTIONS PAGE */
