@@ -7,7 +7,7 @@
 get_header();?>
 <!-- EXPERTISE pagina's (cpt page) -->
 <?php
-// GET EXPERTISE TERM ID & TERM NAME
+// GET EXPERTISE TERM ID & TERM NAME testje
 $expertise = get_the_terms(get_the_ID(), "expertise");
 $expertise_name = (is_array($expertise) && count($expertise)>0)? $expertise[0]->name : "";
 $expertise_id = (is_array($expertise) && count($expertise)>0)? $expertise[0]->term_id : 0;
