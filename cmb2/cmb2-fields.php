@@ -139,7 +139,12 @@ function mrweb_register_cmb2_metaboxes() {
         'context'      => 'normal', //  'normal', 'advanced', or 'side'
         'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
         'show_names'   => true, // Show field names on the left
-    ));    
+    ));
+    $cmb_rc->add_field(array(
+        'name' => 'test',
+        'id' => $prefix . 'test',
+        'type' => 'text',
+    ));
 }
 /* ADD CORP THEME OPTIONS PAGE */
 add_action( 'cmb2_admin_init', 'mrweb_register_theme_options_metabox' );
