@@ -49,7 +49,7 @@
                 $featured_post   = get_post( intval($featured_post_id) );
                 setup_postdata($featured_post);
                 print '<h4>Featured:</h4>';
-                print '<h5><a href="' .get_the_permalink($fetaured_post_id). '">' . $featured_post->post_title  . '</a></h5>';
+                print '<h5><a href="' .get_the_permalink($featured_post_id). '">' . $featured_post->post_title  . '</a></h5>';
                 print '<div>' . apply_filters( 'the_content', $featured_post->post_content ) . '</div>';
                 wp_reset_postdata();
               }
