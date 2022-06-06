@@ -2,169 +2,170 @@
 add_action('cmb2_admin_init', 'mrweb_register_cmb2_metaboxes');
 add_action('cmb2_init', 'mrweb_register_cmb2_metaboxes');
 /**
- * Hook in and add a demo metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
- */
+* Hook in and add a demo metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
+*/
 function mrweb_register_cmb2_metaboxes() {
-    $prefix = '_cmb_';
-    // Add optional quote module to page or mensen.
-    $cmb_quotestr = new_cmb2_box(array(
-      'id' => $prefix . 'quotestr',
-      'title' => '[OPTIONEEL: toon een quote op deze pagina]',
-      'object_types' => array('page', 'mensen'), // Post type
-      'context' => 'normal',
-      'priority' => 'high',
-      'show_names' => false, // Show field names on the left
-      'cmb_styles' => true, // false to disable the CMB stylesheet
-      'closed' => true,
-      'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
-    ));
-    $cmb_quotestr->add_field(array(
-      'name' => 'Quote',
-      'id' => $prefix . 'select_quote',
-      'type' => 'select',
-      'show_option_none' => true,
-      'options' => mrweb_return_posts('quotes'),
-      'show_in_rest' => true,
-    ));
-    $cmb_homepage = new_cmb2_box(array(
-        'id' => $prefix . 'featured',
-        'title' => 'FEATURED [bericht of deal]',
-        'object_types' => array('page'), // Post type
-        'show_on_cb' => 'mrweb_show_on_front_page',
-        'context' => 'normal',
-        'priority' => 'high',
-        'show_names' => true, // Show field names on the left
-        'cmb_styles' => true, // false to disable the CMB stylesheet
-        'closed' => true,
-        'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
-    ));
-    // conditional select field (deals OR post).
-    $cmb_homepage->add_field(array(
-      'name' => 'Bericht of track record',
-      'id' => $prefix . 'featured_select',
-      'type' => 'radio',
-      'show_option_none' => true,
-      'default' => '',
-      'options' => array(
-        'post' => 'Bericht',
-        'deals' => 'Track record'
-      ),
-    ));
-    $cmb_homepage->add_field(array(
-        'name' => 'Bericht',
-        'id' => $prefix . 'select_post',
-        'type' => 'select',
-        'show_option_none' => true,
-        'options' => mrweb_return_posts('post'),
-        'attributes' => array(
-          'data-conditional-id' => $prefix . 'featured_select',
-          'data-conditional-value' => 'post',
-        ),
-    ));
-    $cmb_homepage->add_field(array(
-        'name' => 'Track record',
-        'desc' => 'Kies een track record',
-        'id' => $prefix . 'select_deals',
-        'type' => 'select',
-        'show_option_none' => true,
-        'options' => mrweb_return_posts('deals'),
-        'attributes' => array(
-          'data-conditional-id' => $prefix . 'featured_select',
-          'data-conditional-value' => 'deals',
-        ),
-    ));
-    // MENSEN.
-    $cmb_mensen = new_cmb2_box(array(
-        'id' => $prefix . 'mensen',
-        'title' => 'NAW GEGEVENS',
-        'object_types' => array('mensen'), // Post type
-        'context' => 'normal',
-        'priority' => 'high',
-        'show_names' => true, // Show field names on the left
-        'cmb_styles' => true, // false to disable the CMB stylesheet
-        'closed' => true,
-        'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
-    ));
-    $cmb_mensen->add_field(array(
-        'name' => 'Voornaam',
-        'id' => $prefix . 'text_voornaam',
-        'type' => 'text',
-		      'show_in_rest' => true,
-    ));
-    $cmb_mensen->add_field(array(
-        'name' => 'Tussenvoegsel',
-        'id' => $prefix . 'text_tussenvoegsel',
-        'type' => 'text',
-        		'show_in_rest' => true,
-    ));
-    $cmb_mensen->add_field(array(
-        'name' => 'Achternaam',
-        'id' => $prefix . 'text_achternaam',
-        'type' => 'text',
-    ));
-    $cmb_mensen->add_field(array(
-        'name' => 'E-mail',
-        'id' => $prefix . 'text_email',
-        'type' => 'text_email',
-    ));
-    $cmb_mensen->add_field(array(
-        'name' => 'Telefoon',
-        'id' => $prefix . 'text_telefoon',
-        'type' => 'text',
-    ));
-    $cmb_mensen->add_field(array(
-        'name' => 'Mobiel',
-        'id' => $prefix . 'text_mobiel',
-        'type' => 'text',
-    ));
-    $cmb_mensen->add_field(array(
-        'name' => 'V-card',
-        'id' => $prefix . 'file_vcard',
-        'type' => 'file',
-    ));
-    $cmb_mensen->add_field(array(
-        'name' => 'LinkedIn URL',
-        'id' => $prefix . 'text_url_linkedin',
-        'type' => 'text_url',
-    ));
-    // QUOTES.
-    $cmb_quotes = new_cmb2_box(array(
-        'id' => $prefix . 'quotes',
-        'title' => '&nbsp;',
-        'object_types' => array('quotes'),
-        'context' => 'normal',
-        'priority' => 'high',
-        'show_names' => true,
-        'cmb_styles' => true,
-        'closed' => false,
-        'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
-    ));
-    $cmb_quotes->add_field(array(
-        'name' => 'Bron',
-        'id' => $prefix . 'text_bron',
-        'type' => 'text',
-    ));
-    $cmb_quotes->add_field(array(
-        'name' => 'Bron URL',
-        'id' => $prefix . 'url_bron',
-        'type' => 'text_url',
-    ));
-    // right column wysiwyg field for certain page templates.
-    $cmb_rc = new_cmb2_box( array(
-        'id'           => 'right_column_content',
-        'title'        => 'RECHTER KOLOM CONTENT',
-        'object_types' => array( 'page' ), // post type
-        'show_on'      => array( 'key' => 'page-template', 'value' => 'page-expertise.php' ),
-        'context'      => 'normal', //  'normal', 'advanced', or 'side'
-        'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
-        'show_names'   => false, // Show field names on the left
-    ));
-    $cmb_rc->add_field(array(
-        'name' => 'rechter kolom content',
-        'id' => $prefix . 'right_column',
-        'type' => 'wysiwyg',
-        'default' => 'Vergeet niet content toe te voegen',
-    ));
+  $prefix = '_cmb_';
+  // Add optional quote module to page or mensen.
+  $cmb_quotestr = new_cmb2_box(array(
+    'id' => $prefix . 'quotestr',
+    'title' => 'Toon een quote [optioneel]',
+    'object_types' => array('page', 'mensen'), // Post type
+    'context' => 'side',
+    'priority' => 'low',
+    'show_names' => false, // Show field names on the left
+    'cmb_styles' => true, // false to disable the CMB stylesheet
+    'closed' => true,
+    'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
+  ));
+  $cmb_quotestr->add_field(array(
+    'name' => 'Quote',
+    'id' => $prefix . 'select_quote',
+    'type' => 'select',
+    'show_option_none' => true,
+    'options' => mrweb_return_posts('quotes'),
+    'show_in_rest' => true,
+  ));
+  $cmb_homepage = new_cmb2_box(array(
+    'id' => $prefix . 'featured',
+    'title' => 'FEATURED [bericht of deal]',
+    'object_types' => array('page'), // Post type
+    'show_on_cb' => 'mrweb_show_on_front_page',
+    'context' => 'normal',
+    'priority' => 'high',
+    'show_names' => true, // Show field names on the left
+    'cmb_styles' => true, // false to disable the CMB stylesheet
+    'closed' => true,
+    'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
+  ));
+  // conditional select field (deals OR post).
+  $cmb_homepage->add_field(array(
+    'name' => 'Bericht of track record',
+    'id' => $prefix . 'featured_select',
+    'type' => 'radio',
+    'show_option_none' => true,
+    'default' => '',
+    'options' => array(
+      'post' => 'Bericht',
+      'deals' => 'Track record'
+    ),
+  ));
+  $cmb_homepage->add_field(array(
+    'name' => 'Bericht',
+    'id' => $prefix . 'select_post',
+    'type' => 'select',
+    'show_option_none' => true,
+    'options' => mrweb_return_posts('post'),
+    'attributes' => array(
+      'data-conditional-id' => $prefix . 'featured_select',
+      'data-conditional-value' => 'post',
+    ),
+  ));
+  $cmb_homepage->add_field(array(
+    'name' => 'Track record',
+    'desc' => 'Kies een track record',
+    'id' => $prefix . 'select_deals',
+    'type' => 'select',
+    'show_option_none' => true,
+    'options' => mrweb_return_posts('deals'),
+    'attributes' => array(
+      'data-conditional-id' => $prefix . 'featured_select',
+      'data-conditional-value' => 'deals',
+    ),
+  ));
+  // MENSEN.
+  $cmb_mensen = new_cmb2_box(array(
+    'id' => $prefix . 'mensen',
+    'title' => 'NAW GEGEVENS',
+    'object_types' => array('mensen'), // Post type
+    'context' => 'normal',
+    'priority' => 'high',
+    'show_names' => true, // Show field names on the left
+    'cmb_styles' => true, // false to disable the CMB stylesheet
+    'closed' => true,
+    'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
+  ));
+  $cmb_mensen->add_field(array(
+    'name' => 'Voornaam',
+    'id' => $prefix . 'text_voornaam',
+    'type' => 'text',
+    'show_in_rest' => true,
+  ));
+  $cmb_mensen->add_field(array(
+    'name' => 'Tussenvoegsel',
+    'id' => $prefix . 'text_tussenvoegsel',
+    'type' => 'text',
+    'show_in_rest' => true,
+  ));
+  $cmb_mensen->add_field(array(
+    'name' => 'Achternaam',
+    'id' => $prefix . 'text_achternaam',
+    'type' => 'text',
+  ));
+  $cmb_mensen->add_field(array(
+    'name' => 'E-mail',
+    'id' => $prefix . 'text_email',
+    'type' => 'text_email',
+  ));
+  $cmb_mensen->add_field(array(
+    'name' => 'Telefoon',
+    'id' => $prefix . 'text_telefoon',
+    'type' => 'text',
+  ));
+  $cmb_mensen->add_field(array(
+    'name' => 'Mobiel',
+    'id' => $prefix . 'text_mobiel',
+    'type' => 'text',
+  ));
+  $cmb_mensen->add_field(array(
+    'name' => 'V-card',
+    'id' => $prefix . 'file_vcard',
+    'type' => 'file',
+  ));
+  $cmb_mensen->add_field(array(
+    'name' => 'LinkedIn URL',
+    'id' => $prefix . 'text_url_linkedin',
+    'type' => 'text_url',
+  ));
+  // QUOTES.
+  $cmb_quotes = new_cmb2_box(array(
+    'id' => $prefix . 'quotes',
+    'title' => '&nbsp;',
+    'object_types' => array('quotes'),
+    'context' => 'normal',
+    'priority' => 'high',
+    'show_names' => true,
+    'cmb_styles' => true,
+    'closed' => false,
+    'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
+  ));
+  $cmb_quotes->add_field(array(
+    'name' => 'Bron',
+    'id' => $prefix . 'text_bron',
+    'type' => 'text',
+  ));
+  $cmb_quotes->add_field(array(
+    'name' => 'Bron URL',
+    'id' => $prefix . 'url_bron',
+    'type' => 'text_url',
+  ));
+  // right column wysiwyg field for certain page templates.
+  $cmb_rc = new_cmb2_box( array(
+    'id'           => 'right_column_content',
+    'title'        => 'RECHTER KOLOM CONTENT',
+    'object_types' => array( 'page' ), // post type
+    'show_on'      => array( 'key' => 'page-template', 'value' => 'page-expertise.php' ),
+    'context'      => 'normal', //  'normal', 'advanced', or 'side'
+    'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
+    'show_names'   => false, // Show field names on the left
+    'closed' => true,
+  ));
+  $cmb_rc->add_field(array(
+    'name' => 'rechter kolom content',
+    'id' => $prefix . 'right_column',
+    'type' => 'wysiwyg',
+    'default' => 'Vergeet niet content toe te voegen',
+  ));
 }
 /* ADD CORP THEME OPTIONS PAGE */
 add_action( 'cmb2_admin_init', 'mrweb_register_theme_options_metabox' );
