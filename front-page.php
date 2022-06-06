@@ -1,28 +1,28 @@
 <?php
 /**
- * Template Name: Homepage
- * front-page.php
- * @package WordPress
- * @subpackage grasland
- */
+* Template Name: Homepage
+* front-page.php
+* @package WordPress
+* @subpackage grasland
+*/
 ?>
 <?php get_header();?>
 
 
 <!--div class="container-fluid mt-5 site-content">
-  <div class="row">
-    <div class="col bg-secondary"></div>
-    <div class="col col-container col-12 bg-info">
-      <div class="row">
-        <div class="col-2">logo</div>
-        <div class="col-6 text-center">
-          menu
-        </div>
-        <div class="col-2"><div style="position:absolute;right:calc(var(--bs-gutter-x) * .5);">EN/NL</div></div>
-      </div>
-    </div>
-    <div class="col bg-secondary text-end"></div>
-  </div>
+<div class="row">
+<div class="col bg-secondary"></div>
+<div class="col col-container col-12 bg-info">
+<div class="row">
+<div class="col-2">logo</div>
+<div class="col-6 text-center">
+menu
+</div>
+<div class="col-2"><div style="position:absolute;right:calc(var(--bs-gutter-x) * .5);">EN/NL</div></div>
+</div>
+</div>
+<div class="col bg-secondary text-end"></div>
+</div>
 </div-->
 
 
@@ -45,7 +45,7 @@
             $featured_post_type_selected = get_post_meta(get_the_ID(),  _CMB .'featured_select', true);//  '', post, deals
             if('' !== $featured_post_type_selected){
               $featured_post_id = get_post_meta(get_the_ID(), _CMB .'select_' . $featured_post_type_selected, true);
-              if('' !== $featured_post_id){
+              if('' !== $featured_post_id && $featured_post_id > 0 ){
                 $featured_post   = get_post( intval($featured_post_id) );
                 setup_postdata($featured_post);
                 print '<h4>Featured:</h4>';
@@ -53,6 +53,26 @@
                 print '<div>' . apply_filters( 'the_content', $featured_post->post_content ) . '</div>';
                 wp_reset_postdata();
               }
+            }else{
+              print '<div class="alert alert-warning" role="alert">geen featured geselecteerd</div>';
+            }
+            ?>
+            <?php
+            // QUOTE.
+            $selected_quote_id = get_post_meta(get_the_ID(),  _CMB .'select_quote', true);
+            if('' !== $selected_quote_id && $selected_quote_id > 0 ){
+              $selected_quote   = get_post( intval($selected_quote_id) );
+              setup_postdata($selected_quote);
+              print '<h4>Quote:</h4>';
+              print '<h5>' . ucfirst($selected_quote->post_title)  . '</h5>';
+              $quote_bron = get_post_meta($selected_quote_id, _CMB . 'text_bron', true);
+              $quote_url = get_post_meta($selected_quote_id, _CMB . 'url_bron', true);
+              if('' !== $quote_bron && '' !== $quote_url){
+                print '<p>Bron: <a href="' .get_post_meta($selected_quote_id, _CMB . 'url_bron', true). '" target="_blank">' . get_post_meta($selected_quote_id, _CMB .'text_bron', true)  . '</a></p>';
+              }
+              wp_reset_postdata();
+            }else{
+              print '<div class="alert alert-warning" role="alert">geen quote geselecteerd</div>';
             }
             ?>
             <!-- .entry-content -->
@@ -80,13 +100,13 @@
 
 <div class="container-fluid mt-5 px-0">
   <div class="container-left-md" style="height:100px;border-top:dotted #000 2px;">
-<div style="padding:1rem;"><h2>Container left</h2><p>Nullam a lacinia felis. Morbi vitae varius ligula, sed gravida ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis interdum congue dui, eu pretium eros ullamcorper vel. </p></div>
+    <div style="padding:1rem;"><h2>Container left</h2><p>Nullam a lacinia felis. Morbi vitae varius ligula, sed gravida ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis interdum congue dui, eu pretium eros ullamcorper vel. </p></div>
   </div>
 </div>
 
 <div class="container-fluid mt-5 px-0">
   <div class="container-right-md" style="background-color:rgba(0,0,0,0.25);color:#fff;height:100px;border:dotted #fff 2px;">
-container right
+    container right
   </div>
 </div>
 
