@@ -25,16 +25,6 @@ function mrweb_register_cmb2_metaboxes() {
         'show_option_none' => true,
         'options' => mrweb_return_posts('quotes'),
     ));
-
-
-
-
-
-
-
-
-
-
     $cmb_homepage = new_cmb2_box(array(
         'id' => $prefix . 'featured',
         'title' => 'Featured',
@@ -47,7 +37,7 @@ function mrweb_register_cmb2_metaboxes() {
         'closed' => false,
         'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
     ));
-    // conditional select field.
+    // conditional select field (deals OR post).
     $cmb_homepage->add_field(array(
       'name' => 'Bericht of track record',
       'id' => $prefix . 'featured_select',
