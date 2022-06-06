@@ -6,7 +6,35 @@ add_action('cmb2_init', 'mrweb_register_cmb2_metaboxes');
  */
 function mrweb_register_cmb2_metaboxes() {
     $prefix = '_cmb_';
-    // // BACKGROUND-IMAGE for PAGE.
+    // Add optional quote module to page or mensen.
+    $cmb_quote = new_cmb2_box(array(
+        'id' => $prefix . 'quote',
+        'title' => 'Toon [optioneel] een quote',
+        'object_types' => array('page, mensen'), // Post type
+        'context' => 'normal',
+        'priority' => 'high',
+        'show_names' => true, // Show field names on the left
+        'cmb_styles' => true, // false to disable the CMB stylesheet
+        'closed' => false,
+        'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
+    ));
+    $cmb_quote->add_field(array(
+        'name' => 'Bericht',
+        'id' => $prefix . 'select_quote',
+        'type' => 'select',
+        'show_option_none' => true,
+        'options' => mrweb_return_posts('quotes'),
+    ));
+
+
+
+
+
+
+
+
+
+
     $cmb_homepage = new_cmb2_box(array(
         'id' => $prefix . 'featured',
         'title' => 'Featured',

@@ -1,3 +1,4 @@
+/*
 .cmb-tabs-wrap {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -56,8 +57,6 @@
 .cmb-tabs-wrap .cmb2-wrap .cmb-row:not(.cmb-tab-active-item) {
   display: none;
 }
-
-/* Vertical tabs */
 .cmb-tabs-wrap.cmb-tabs-vertical {
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
@@ -78,13 +77,10 @@
   border-bottom: 1px solid #eee;
 }
 
-/* Widget area */
 .widget-content .cmb-tabs-wrap {
   margin: -1px -15px 0px -15px;
 }
 
-/* Extra's by WB */
-/* Oswald */
 @font-face {
   font-family: 'Oswald';
   src: url("../../fonts/Oswald/Regular/Oswald-Regular.woff2") format("woff2"), url("../../fonts/Oswald/Regular/Oswald-Regular.woff") format("woff"), url("../../fonts/Oswald/Regular/Oswald-Regular.ttf") format("truetype"), url("../../fonts/Oswald/Regular/Oswald-Regular.eot") format("embedded-opentype"), url("../../fonts/Oswald/Regular/Oswald-Regular.svg#Oswald") format("svg");
@@ -262,3 +258,4 @@
 .post-type-page .cmb2-postbox input:focus {
   background: #fff;
 }
+*/
