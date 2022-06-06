@@ -151,7 +151,7 @@ function mrweb_register_cmb2_metaboxes() {
     // right column wysiwyg field for certain page templates.
     $cmb_rc = new_cmb2_box( array(
         'id'           => 'right_column_content',
-        'title'        => 'Rechter kolom',
+        'title'        => 'Rechter kolom content',
         'object_types' => array( 'page' ), // post type
         'show_on'      => array( 'key' => 'page-template', 'value' => 'page-expertise.php' ),
         'context'      => 'normal', //  'normal', 'advanced', or 'side'
