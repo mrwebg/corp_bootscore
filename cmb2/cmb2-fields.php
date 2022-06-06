@@ -7,8 +7,8 @@ add_action('cmb2_init', 'mrweb_register_cmb2_metaboxes');
 function mrweb_register_cmb2_metaboxes() {
     $prefix = '_cmb_';
     // Add optional quote module to page or mensen.
-    $cmb_quote = new_cmb2_box(array(
-        'id' => $prefix . 'quote',
+    $cmb_quotestr = new_cmb2_box(array(
+        'id' => $prefix . 'quotestr',
         'title' => 'Toon [optioneel] een quote',
         'object_types' => array('page, mensen'), // Post type
         'context' => 'normal',
@@ -18,8 +18,8 @@ function mrweb_register_cmb2_metaboxes() {
         'closed' => false,
         'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
     ));
-    $cmb_quote->add_field(array(
-        'name' => 'Bericht',
+    $cmb_quotestr->add_field(array(
+        'name' => 'Quote',
         'id' => $prefix . 'select_quote',
         'type' => 'select',
         'show_option_none' => true,
