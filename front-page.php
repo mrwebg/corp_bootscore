@@ -44,7 +44,7 @@
             // FEATURED
             $featured_post_type_selected = get_post_meta(get_the_ID(),  _CMB .'featured_select', true);//  '', post, deals
             if('' !== $featured_post_type_selected){
-              $featured_post_id = get_post_meta(get_the_ID(), _CMB .'select_' . $featured_post_type, true);
+              $featured_post_id = get_post_meta(get_the_ID(), _CMB .'select_' . $featured_post_type_selected, true);
               if('' !== $featured_post_id){
                 $featured_post   = get_post( intval($featured_post_id) );
                 setup_postdata($featured_post);
