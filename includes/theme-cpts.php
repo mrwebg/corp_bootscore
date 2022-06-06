@@ -50,7 +50,7 @@ function add_theme_cpts() {
     array('deals','mensen','page'),
     array(
       'hierarchical' => true,
-      'label' => 'Expertise',
+      'label' => 'Expertise [categorie]',
       'query_var' => true,
       'rewrite' => true,
       'show_ui' => true,

@@ -9,7 +9,7 @@ function mrweb_register_cmb2_metaboxes() {
   // Add optional quote module to page or mensen.
   $cmb_quotestr = new_cmb2_box(array(
     'id' => $prefix . 'quotestr',
-    'title' => 'Toon een quote [optioneel]',
+    'title' => 'Quote [optioneel]',
     'object_types' => array('page', 'mensen'), // Post type
     'context' => 'side',
     'priority' => 'low',
