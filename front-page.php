@@ -42,16 +42,14 @@
             <?php the_content(); ?>
             <?php
             // FEATURED
-            $featured_post_type = get_post_meta(get_the_ID(),  _CMB .'featured_select', true);//  '', post, deals
-            //print 'featured_post_type = '.$featured_post_type. '<br>';
-            if('' !== $featured_post_type){
-              $featured_post = get_post_meta(get_the_ID(), _CMB .'select_' . $featured_post_type, true);
-              if('' !== $featured_post){
-                //print 'featured_post = '.$featured_post. '<br>';
-                $post   = get_post( intval($featured_post) );
-                setup_postdata($post);
-                $featured_title =  $post->post_title;
-                $featured_content =  apply_filters( 'the_content', $post->post_content );
+            $featured_post_type_selected = get_post_meta(get_the_ID(),  _CMB .'featured_select', true);//  '', post, deals
+            if('' !== $featured_post_type_selected){
+              $featured_post_id = get_post_meta(get_the_ID(), _CMB .'select_' . $featured_post_type, true);
+              if('' !== $featured_post_id){
+                $featured_post   = get_post( intval($featured_post_id) );
+                setup_postdata($featured_post);
+                $featured_title =  $featured_post->post_title;
+                $featured_content =  apply_filters( 'the_content', $featured_post->post_content );
                 print '<h4>Featured:</h4>';
                 print '<h5>'.$featured_title. '</h5>';
                 print '<div>'.$featured_content. '</div>';
