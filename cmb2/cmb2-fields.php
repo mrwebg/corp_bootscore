@@ -1,5 +1,5 @@
 <?php
-add_action('cmb2_admin_init', 'mrweb_register_cmb2_metaboxes');
+remove_action('cmb2_admin_init', 'mrweb_register_cmb2_metaboxes');
 add_action('cmb2_init', 'mrweb_register_cmb2_metaboxes');
 /**
  * Hook in and add a demo metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
@@ -8,22 +8,23 @@ function mrweb_register_cmb2_metaboxes() {
     $prefix = '_cmb_';
     // Add optional quote module to page or mensen.
     $cmb_quotestr = new_cmb2_box(array(
-        'id' => $prefix . 'quotestr',
-        'title' => 'Toon [optioneel] een quote',
-        'object_types' => array('page, mensen'), // Post type
-        'context' => 'normal',
-        'priority' => 'high',
-        'show_names' => true, // Show field names on the left
-        'cmb_styles' => true, // false to disable the CMB stylesheet
-        'closed' => false,
-        'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
+      'id' => $prefix . 'quotestr',
+      'title' => 'Toon [optioneel] een quote',
+      'object_types' => array('page, mensen'), // Post type
+      'context' => 'normal',
+      'priority' => 'high',
+      'show_names' => true, // Show field names on the left
+      'cmb_styles' => true, // false to disable the CMB stylesheet
+      'closed' => false,
+      'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
     ));
     $cmb_quotestr->add_field(array(
-        'name' => 'Quote',
-        'id' => $prefix . 'select_quote',
-        'type' => 'select',
-        'show_option_none' => true,
-        'options' => mrweb_return_posts('quotes'),
+      'name' => 'Quote',
+      'id' => $prefix . 'select_quote',
+      'type' => 'select',
+      'show_option_none' => true,
+      'options' => mrweb_return_posts('quotes'),
+      'show_in_rest' => true,
     ));
     $cmb_homepage = new_cmb2_box(array(
         'id' => $prefix . 'featured',
@@ -88,7 +89,7 @@ function mrweb_register_cmb2_metaboxes() {
         'name' => 'Voornaam',
         'id' => $prefix . 'text_voornaam',
         'type' => 'text',
-		'show_in_rest' => true,
+		      'show_in_rest' => true,
     ));
     $cmb_mensen->add_field(array(
         'name' => 'Tussenvoegsel',
