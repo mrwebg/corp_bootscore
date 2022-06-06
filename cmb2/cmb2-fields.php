@@ -1,5 +1,5 @@
 <?php
-remove_action('cmb2_admin_init', 'mrweb_register_cmb2_metaboxes');
+add_action('cmb2_admin_init', 'mrweb_register_cmb2_metaboxes');
 add_action('cmb2_init', 'mrweb_register_cmb2_metaboxes');
 /**
  * Hook in and add a demo metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
@@ -9,13 +9,13 @@ function mrweb_register_cmb2_metaboxes() {
     // Add optional quote module to page or mensen.
     $cmb_quotestr = new_cmb2_box(array(
       'id' => $prefix . 'quotestr',
-      'title' => 'Toon [optioneel] een quote',
-      'object_types' => array('page, mensen'), // Post type
+      'title' => '[OPTIONEEL: toon een quote op deze pagina]',
+      'object_types' => array('page', 'mensen'), // Post type
       'context' => 'normal',
       'priority' => 'high',
-      'show_names' => true, // Show field names on the left
+      'show_names' => false, // Show field names on the left
       'cmb_styles' => true, // false to disable the CMB stylesheet
-      'closed' => false,
+      'closed' => true,
       'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
     ));
     $cmb_quotestr->add_field(array(
@@ -28,14 +28,14 @@ function mrweb_register_cmb2_metaboxes() {
     ));
     $cmb_homepage = new_cmb2_box(array(
         'id' => $prefix . 'featured',
-        'title' => 'Featured',
+        'title' => 'FEATURED [bericht of deal]',
         'object_types' => array('page'), // Post type
         'show_on_cb' => 'mrweb_show_on_front_page',
         'context' => 'normal',
         'priority' => 'high',
         'show_names' => true, // Show field names on the left
         'cmb_styles' => true, // false to disable the CMB stylesheet
-        'closed' => false,
+        'closed' => true,
         'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
     ));
     // conditional select field (deals OR post).
@@ -76,13 +76,13 @@ function mrweb_register_cmb2_metaboxes() {
     // MENSEN.
     $cmb_mensen = new_cmb2_box(array(
         'id' => $prefix . 'mensen',
-        'title' => 'Naw gegevens',
+        'title' => 'NAW GEGEVENS',
         'object_types' => array('mensen'), // Post type
         'context' => 'normal',
         'priority' => 'high',
         'show_names' => true, // Show field names on the left
         'cmb_styles' => true, // false to disable the CMB stylesheet
-        'closed' => false,
+        'closed' => true,
         'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
     ));
     $cmb_mensen->add_field(array(
@@ -152,7 +152,7 @@ function mrweb_register_cmb2_metaboxes() {
     // right column wysiwyg field for certain page templates.
     $cmb_rc = new_cmb2_box( array(
         'id'           => 'right_column_content',
-        'title'        => 'Rechter kolom content',
+        'title'        => 'RECHTER KOLOM CONTENT',
         'object_types' => array( 'page' ), // post type
         'show_on'      => array( 'key' => 'page-template', 'value' => 'page-expertise.php' ),
         'context'      => 'normal', //  'normal', 'advanced', or 'side'
