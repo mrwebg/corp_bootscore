@@ -53,11 +53,11 @@
       <div class="container-fluid mt-5">
         <div class="container-left-md text-white" style="border-top:dotted #fff 2px;">
           <div class="row bg-transparent">
-            <div class="col-md pt-3 pb-5" style="padding-left:7rem;">
+            <div class="col-md pt-3 pb-5 px-3">
               <h3 style="min-height:70px;"><?php echo get_post_meta(get_the_ID(),  _CMB .'positioning_title', true); ?></h3>
               <div class="small"><?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'positioning_content', true));?></div>
             </div>
-            <div class="col-md pt-3 pb-5" style="padding-right:7rem;">
+            <div class="col-md pt-3 pb-5 px-3">
               <h3 style="min-height:70px;"><?php echo get_post_meta(get_the_ID(),  _CMB .'trackrecord_title', true); ?></h3>
               <div class="small"><?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'trackrecord_content', true));?></div>
             </div>
