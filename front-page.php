@@ -36,7 +36,7 @@
           setup_postdata($featured_post);?>
           <div class="container-fluid my-5">
             <div class="row">
-              <div class="col-lg-6 col-xxl-4 ms-auto px-5 py-4 my-3 bg-light">
+              <div class="col-lg-6 col-xxl-4 ms-auto px-5 py-4 my-3 bg-white bg-opacity-80">
                 <div class="h6">Featured: (<?php echo $featured_post_type_selected; ?>)</div>
                 <div class="h5"><a href="<?php echo get_the_permalink($featured_post_id);?>"><?php echo $featured_post->post_title;?></a></div>
                 <div><?php echo apply_filters( 'the_content', $featured_post->post_content ); ?></div>
