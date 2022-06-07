@@ -11,8 +11,8 @@ function mrweb_register_cmb2_metaboxes() {
     'id' => $prefix . 'quotestr',
     'title' => 'Quote [optioneel]',
     'object_types' => array('page', 'mensen'), // Post type
-    'context' => 'side',
-    'priority' => 'low',
+    'context' => 'normal',
+    'priority' => 'high',
     'show_names' => false, // Show field names on the left
     'cmb_styles' => true, // false to disable the CMB stylesheet
     'closed' => true,
@@ -73,6 +73,50 @@ function mrweb_register_cmb2_metaboxes() {
       'data-conditional-value' => 'deals',
     ),
   ));
+  $cmb_homepage2 = new_cmb2_box(array(
+    'id' => $prefix . 'positionering',
+    'title' => 'POSITIONERING [teaser]',
+    'object_types' => array('page'), // Post type
+    'show_on_cb' => 'mrweb_show_on_front_page',
+    'context' => 'normal',
+    'priority' => 'high',
+    'show_names' => true, // Show field names on the left
+    'cmb_styles' => true, // false to disable the CMB stylesheet
+    'closed' => true,
+    'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
+  ));
+  $cmb_homepage2->add_field(array(
+    'name' => 'titel',
+    'id' => $prefix . 'positioning_title',
+    'type' => 'text',
+  ));
+  $cmb_homepage2->add_field(array(
+      'name' => 'content',
+      'id' => $prefix . 'positioning_content',
+      'type' => 'wysiwyg',
+    ));
+    $cmb_homepage3 = new_cmb2_box(array(
+      'id' => $prefix . 'trackrecord',
+      'title' => 'TRACKRECORD [teaser]',
+      'object_types' => array('page'), // Post type
+      'show_on_cb' => 'mrweb_show_on_front_page',
+      'context' => 'normal',
+      'priority' => 'high',
+      'show_names' => true, // Show field names on the left
+      'cmb_styles' => true, // false to disable the CMB stylesheet
+      'closed' => true,
+      'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
+    ));
+    $cmb_homepage3->add_field(array(
+      'name' => 'titel',
+      'id' => $prefix . 'trackrecord_title',
+      'type' => 'text',
+    ));
+    $cmb_homepage3->add_field(array(
+        'name' => 'content',
+        'id' => $prefix . 'trackrecord_content',
+        'type' => 'wysiwyg',
+      ));
   // MENSEN.
   $cmb_mensen = new_cmb2_box(array(
     'id' => $prefix . 'mensen',

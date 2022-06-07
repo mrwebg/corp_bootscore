@@ -7,7 +7,7 @@
 */
 ?>
 <?php get_header();?>
-<div id="content" class="site-content mt-5 py-5" style="background-color:rgba(0,0,0,0.8);">
+<div id="content" class="site-content mt-5 py-5" style="background-color:rgba(0,0,0,0.5);">
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
       <!-- TITLE & DESCRIPTION. -->
@@ -19,7 +19,7 @@
               <!-- Title -->
               <?php the_title('<h1 class="display-1 text-white py-3">', '</h1>'); ?>
               <!-- .entry-header -->
-              <h2 class="h3 blog-description text-white"><?php bloginfo('description'); ?></h2>
+              <h2 class="blog-description text-white"><?php bloginfo('description'); ?></h2>
               <!-- .blog-description -->
             </header>
           </div>
@@ -49,16 +49,22 @@
       }
       ?>
       <!-- END FEATURED. -->
-      <!-- CONTENT. -->
+      <!-- TEASERS. -->
       <div class="container-fluid mt-5">
         <div class="container-left-md text-white" style="border-top:dotted #fff 2px;">
           <div class="row bg-transparent">
-            <div class="col-md pt-3 pb-5"><h3>Container right</h3><p>Nullam a lacinia felis. Morbi vitae varius ligula, sed gravida ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis interdum congue dui, eu pretium eros ullamcorper vel. </p></div>
-            <div class="col-md pt-3 pb-5"><h4>Vestibulum ante ipsum </h4><p>Nullam a lacinia felis. Morbi vitae varius ligula, sed gravida ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis interdum congue dui, eu pretium eros ullamcorper vel. </p></div>
+            <div class="col-md pt-3 pb-5" style="padding-left:7rem;">
+              <h3 style="min-height:70px;"><?php echo get_post_meta(get_the_ID(),  _CMB .'positioning_title', true); ?></h3>
+              <div class="small"><?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'positioning_content', true));?></div>
+            </div>
+            <div class="col-md pt-3 pb-5" style="padding-right:7rem;">
+              <h3 style="min-height:70px;"><?php echo get_post_meta(get_the_ID(),  _CMB .'trackrecord_title', true); ?></h3>
+              <div class="small"><?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'trackrecord_content', true));?></div>
+            </div>
           </div>
         </div>
       </div>
-      <!-- END CONTENT. -->
+      <!-- END TEASERS. -->
       <!-- QUOTE. -->
       <?php
       $selected_quote_id = get_post_meta(get_the_ID(),  _CMB .'select_quote', true);

@@ -9,7 +9,7 @@ require_once 'cmb2/cmb2-tabs.php';
 require_once 'cmb2/cmb2-config.php';
 require_once 'cmb2/cmb2-fields.php';
 
-remove_filter('body_class', 'mrweb_featured_background_class');
+add_filter('body_class', 'mrweb_featured_background_class');
 /**
  * If the current page has a template, apply it's name to the list of classes. This is
  * necessary if there are multiple pages with the same template and you want to apply the
@@ -29,12 +29,16 @@ function hook_css() {
         <style>
             .home.featured-background-image {
               <?php $featured_background_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
-                background: url('<?php echo $featured_background_image[0]; ?>') no-repeat;
+                background: url('<?php echo $featured_background_image[0]; ?>') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
             }
         </style>
     <?php
 }
-remove_action('wp_head', 'hook_css');
+add_action('wp_head', 'hook_css');
 
 function cc_mime_types($mimes) {
   $mimes['svg'] = 'image/svg+xml';

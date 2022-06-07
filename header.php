@@ -39,31 +39,8 @@
 
     <header id="masthead" class="site-header">
       <div class="fixed-top bg-light">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col bg-secondary"></div>
-            <div class="col col-container col-12 bg-info">
-              <div class="row">
-                <div class="col-2">
-                  <!-- Navbar Brand -->
-                  <a class="navbar-brand xs d-md-none" href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/logo-sm.svg" alt="logo" class="logo xs"></a>
-                  <a class="navbar-brand md d-none d-md-block" href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/logo.svg" alt="logo" class="logo md"></a>
-                </div>
-                <div class="col-8 text-center bg-warning">
-                  menu
-                </div><!-- col-8 -->
-                <div class="col-2 py-auto"><div style="position:absolute;right:calc(var(--bs-gutter-x) * .5);">EN/NL</div></div>
-              </div><!-- row -->
-            </div><!-- col-container -->
-            <div class="col bg-secondary text-end"></div>
-          </div><!-- row -->
-        </div><!-- container-fluid -->
-
-
         <nav id="nav-main" class="navbar navbar-expand-lg navbar-light">
-
           <div class="container">
-
             <!-- Navbar Brand -->
             <a class="navbar-brand xs d-md-none" href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/logo-sm.svg" alt="logo" class="logo xs"></a>
             <a class="navbar-brand md d-none d-md-block" href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/logo.svg" alt="logo" class="logo md"></a>
@@ -82,7 +59,7 @@
                   'container' => false,
                   'menu_class' => '',
                   'fallback_cb' => '__return_false',
-                  'items_wrap' => '<ul id="bootscore-navbar" class="navbar-nav ms-auto %2$s">%3$s</ul>',
+                  'items_wrap' => '<ul id="bootscore-navbar" class="navbar-nav mx-auto %2$s">%3$s</ul>',
                   'depth' => 2,
                   'walker' => new bootstrap_5_wp_nav_menu_walker()
                 ));
