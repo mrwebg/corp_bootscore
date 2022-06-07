@@ -39,7 +39,7 @@
 
     <header id="masthead" class="site-header">
       <div class="fixed-top bg-light">
-        <nav id="nav-main" class="navbar navbar-expand-lg navbar-light">
+        <nav id="nav-main" class="navbar navbar-expand-lg navbar-dark bg-dark">
           <div class="container">
             <!-- Navbar Brand -->
             <a class="navbar-brand xs d-md-none" href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/logo-sm.svg" alt="logo" class="logo xs"></a>
