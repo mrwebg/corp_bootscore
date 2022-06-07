@@ -7,88 +7,112 @@
 */
 ?>
 <?php get_header();?>
-
-
-<!--div class="container-fluid mt-5 site-content">
-<div class="row">
-<div class="col bg-secondary"></div>
-<div class="col col-container col-12 bg-info">
-<div class="row">
-<div class="col-2">logo</div>
-<div class="col-6 text-center">
-menu
-</div>
-<div class="col-2"><div style="position:absolute;right:calc(var(--bs-gutter-x) * .5);">EN/NL</div></div>
-</div>
-</div>
-<div class="col bg-secondary text-end"></div>
-</div>
-</div-->
-
-
-<div id="content" class="site-content container-md py-5 mt-5">
+<div id="content" class="site-content mt-5 py-5" style="background-color:rgba(0,0,0,0.8);">
   <div id="primary" class="content-area">
-    <div class="row">
-      <div class="col">
-        <main id="main" class="site-main">
-          <header class="entry-header">
-            <?php the_post(); ?>
-            <!-- Title -->
-            <?php the_title('<h1>', '</h1>'); ?>
-            <!-- .entry-header -->
-          </header>
-          <div class="entry-content">
-            <!-- Content -->
-            <?php the_content(); ?>
-            <?php
-            // FEATURED
-            $featured_post_type_selected = get_post_meta(get_the_ID(),  _CMB .'featured_select', true);//  '', post, deals
-            if('' !== $featured_post_type_selected){
-              $featured_post_id = get_post_meta(get_the_ID(), _CMB .'select_' . $featured_post_type_selected, true);
-              if('' !== $featured_post_id && $featured_post_id > 0 ){
-                $featured_post   = get_post( intval($featured_post_id) );
-                setup_postdata($featured_post);
-                print '<h4>Featured:</h4>';
-                print '<h5><a href="' .get_the_permalink($featured_post_id). '">' . $featured_post->post_title  . '</a></h5>';
-                print '<div>' . apply_filters( 'the_content', $featured_post->post_content ) . '</div>';
-                wp_reset_postdata();
-              }
-            }else{
-              print '<div class="alert alert-warning" role="alert">geen featured geselecteerd</div>';
-            }
-            ?>
-            <?php
-            // QUOTE.
-            $selected_quote_id = get_post_meta(get_the_ID(),  _CMB .'select_quote', true);
-            if('' !== $selected_quote_id && $selected_quote_id > 0 ){
-              $selected_quote   = get_post( intval($selected_quote_id) );
-              setup_postdata($selected_quote);
-              print '<h4>Quote:</h4>';
-              print '<h5>' . ucfirst($selected_quote->post_title)  . '</h5>';
-              $quote_bron = get_post_meta($selected_quote_id, _CMB . 'text_bron', true);
-              $quote_url = get_post_meta($selected_quote_id, _CMB . 'url_bron', true);
-              if('' !== $quote_bron && '' !== $quote_url){
-                print '<p>Bron: <a href="' .get_post_meta($selected_quote_id, _CMB . 'url_bron', true). '" target="_blank">' . get_post_meta($selected_quote_id, _CMB .'text_bron', true)  . '</a></p>';
-              }
-              wp_reset_postdata();
-            }else{
-              print '<div class="alert alert-warning" role="alert">geen quote geselecteerd</div>';
-            }
-            ?>
-            <!-- .entry-content -->
+    <main id="main" class="site-main">
+      <!-- TITLE & DESCRIPTION. -->
+      <div class="container py-5">
+        <div class="row">
+          <div class="col bg-transparent">
+            <header class="entry-header py-3">
+              <?php the_post(); ?>
+              <!-- Title -->
+              <?php the_title('<h1 class="display-1 text-white py-3">', '</h1>'); ?>
+              <!-- .entry-header -->
+              <h2 class="h3 blog-description text-white"><?php bloginfo('description'); ?></h2>
+              <!-- .blog-description -->
+            </header>
           </div>
-        </main><!-- #main -->
-      </div><!-- col -->
-    </div><!-- row -->
+        </div>
+      </div>
+      <!-- END TITLE & DESCRIPTION. -->
+      <!-- FEATURED. -->
+      <?php
+      $featured_post_type_selected = get_post_meta(get_the_ID(),  _CMB .'featured_select', true);//  '', post, deals
+      if('' !== $featured_post_type_selected){
+        $featured_post_id = get_post_meta(get_the_ID(), _CMB .'select_' . $featured_post_type_selected, true);
+        if('' !== $featured_post_id && $featured_post_id > 0 ){
+          $featured_post   = get_post( intval($featured_post_id) );
+          setup_postdata($featured_post);?>
+          <div class="container-fluid py-5 pe-3">
+            <div class="row">
+              <div class="col-lg-6 col-xxl-4 ms-auto px-5 py-3 bg-light">
+                <div class="h6">Featured: (<?php echo $featured_post_type_selected; ?>)</div>
+                <div class="h5"><a href="<?php echo get_the_permalink($featured_post_id);?>"><?php echo $featured_post->post_title;?></a></div>
+                <div><?php echo apply_filters( 'the_content', $featured_post->post_content ); ?></div>
+              </div>
+            </div>
+          </div>
+          <?php
+          wp_reset_postdata();
+        }
+      }
+      ?>
+      <!-- END FEATURED. -->
+      <!-- CONTENT. -->
+      <div class="container-fluid mt-5">
+        <div class="container-left-md text-white" style="border-top:dotted #fff 2px;">
+          <div class="row bg-transparent">
+            <div class="col-md pt-3 pb-5"><h3>Container right</h3><p>Nullam a lacinia felis. Morbi vitae varius ligula, sed gravida ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis interdum congue dui, eu pretium eros ullamcorper vel. </p></div>
+            <div class="col-md pt-3 pb-5"><h4>Vestibulum ante ipsum </h4><p>Nullam a lacinia felis. Morbi vitae varius ligula, sed gravida ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis interdum congue dui, eu pretium eros ullamcorper vel. </p></div>
+          </div>
+        </div>
+      </div>
+      <!-- END CONTENT. -->
+      <!-- QUOTE. -->
+      <?php
+      $selected_quote_id = get_post_meta(get_the_ID(),  _CMB .'select_quote', true);
+      if('' !== $selected_quote_id && $selected_quote_id > 0 ){
+        $selected_quote   = get_post( intval($selected_quote_id) );
+        setup_postdata($selected_quote);
+        $quote_bron = get_post_meta($selected_quote_id, _CMB . 'text_bron', true);
+        $quote_url = get_post_meta($selected_quote_id, _CMB . 'url_bron', true);
+        ?>
+        <div class="container-fluid mb-5">
+          <div class="container-right-md bg-dark text-white bg-opacity-75">
+            <div class="row justify-content-md-center my-5">
+              <div class="col"></div>
+              <div class="col-md-auto py-3 text-center">
+                <img src="https://corp.nl/_WPCA22/wp-content/uploads/2022/06/chambers-150-100.png">
+              </div>
+              <div class="col px-1 d-flex align-items-center">
+                <figure style="margin:0;">
+                  <blockquote class="blockquote">
+                    <p><?php echo ucfirst($selected_quote->post_title); ?></p>
+                  </blockquote>
+                  <?php
+                  if('' !== $quote_bron && '' !== $quote_url){?>
+                  <figcaption class="blockquote-footer">
+                    <a href="<?php echo get_post_meta($selected_quote_id, _CMB . 'url_bron', true);?>" target="_blank"><cite title="<?php echo get_post_meta($selected_quote_id, _CMB .'text_bron', true); ?>"><?php echo strtoupper(get_post_meta($selected_quote_id, _CMB .'text_bron', true)); ?></cite></a>
+                  </figcaption>
+                  <?php
+                }
+                ?>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div><!-- container-fluid mt-5 px-0 -->
+        <?php
+        wp_reset_postdata();
+      }
+      ?>
+      <!-- END QUOTE. -->
+    </main><!-- #main -->
   </div><!-- #primary -->
 </div><!-- #content -->
-<!-- container tests -->
 
 
-
-
-
-<div class="container-fluid mt-5 px-0">
+<!--div class="container-fluid mt-5 px-0">
+  <div class="container-right-md" style="height:100px;border-top:dotted #000 2px;">
+    <div class="row" style="background-color:rgba(125,90, 255, .5)">
+      <div class="col-md"><h2>Container right</h2><p>Nullam a lacinia felis. Morbi vitae varius ligula, sed gravida ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis interdum congue dui, eu pretium eros ullamcorper vel. </p></div>
+      <div class="col-md"><h2>Vestibulum ante ipsum </h2><p>Nullam a lacinia felis. Morbi vitae varius ligula, sed gravida ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis interdum congue dui, eu pretium eros ullamcorper vel. </p></div>
+      <div class="col-md"><h2>Vestibulum ante ipsum </h2><p>Nullam a lacinia felis. Morbi vitae varius ligula, sed gravida ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis interdum congue dui, eu pretium eros ullamcorper vel. </p></div>
+    </div>
+  </div>
+</div-->
+<!--div class="container-fluid mt-5 px-0">
   <div class="container-left-md" style="background-color:rgba(0,0,0,0.85);color:#fff;height:100px;border:dotted #fff 2px;">
     <div class="row">
       <div class="col">
@@ -96,27 +120,16 @@ menu
       </div>
     </div>
   </div>
-</div>
+</div-->
 
-<div class="container-fluid mt-5 px-0">
+<!--div class="container-fluid mt-5 px-0">
   <div class="container-left-md" style="height:100px;border-top:dotted #000 2px;">
     <div style="padding:1rem;"><h2>Container left</h2><p>Nullam a lacinia felis. Morbi vitae varius ligula, sed gravida ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis interdum congue dui, eu pretium eros ullamcorper vel. </p></div>
   </div>
-</div>
+</div-->
 
-<div class="container-fluid mt-5 px-0">
-  <div class="container-right-md" style="background-color:rgba(0,0,0,0.25);color:#fff;height:100px;border:dotted #fff 2px;">
-    container right
-  </div>
-</div>
 
-<div class="container-fluid mt-5 px-0">
-  <div class="container-right-md" style="height:100px;border-top:dotted #000 2px;">
-    <div class="row">
-      <div class="col-md"><h2>Container right</h2><p>Nullam a lacinia felis. Morbi vitae varius ligula, sed gravida ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis interdum congue dui, eu pretium eros ullamcorper vel. </p></div>
-      <div class="col-md"><h2>Vestibulum ante ipsum </h2><p>Nullam a lacinia felis. Morbi vitae varius ligula, sed gravida ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis interdum congue dui, eu pretium eros ullamcorper vel. </p></div>
-    </div>
-  </div>
-</div>
+
+
 <?php
 get_footer();

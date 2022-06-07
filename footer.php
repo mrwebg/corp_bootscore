@@ -12,7 +12,7 @@
 
 ?>
 <footer>
-  <div class="container-fluid bootscore-footer p-3 mt-5 bg-dark">
+  <div class="container-fluid bootscore-footer p-3 bg-dark">
     <div class="row">
       <div class="col-md-6 my-auto text-white">
         <?php
