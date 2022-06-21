@@ -1,5 +1,5 @@
-@import "bscore_variables";
-@import "bootstrap/bootstrap";
+@import "bootstrap/bootstrap"; // full copy of Bootstrap with variables in /bootstrap/_variables.scss 
+@import "bscore_variables"; // extra theme variables
 @import "bscore_style";
 @import "bscore_custom";
-@import "fontawesome";
+// @import "fontawesome"; // not used?

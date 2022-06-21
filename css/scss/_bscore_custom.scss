@@ -1,6 +1,108 @@
 // Add your own code here!
 // Because this file is compiled after Bootstrap, you're also able to use Bootstrap mixins for better code.
 // Some examples can be found here: https://bootscore.me/documentation/bootstrap-css-sass
+
+// Type
+
+.lead{
+  font-family: $font-family-sans-serif;
+}
+
+
+// Pages
+
+// Home
+body.home{
+  h1{ 
+    @include media-breakpoint-up(xl){
+      font-size: $font-size-base * 4.5;
+    }
+  }
+  .lead{
+    @include media-breakpoint-up(xl){
+      font-size: $font-size-base * 1.9;
+    }
+  }
+}
+
+.corp-home-featured-wrapper{
+
+}
+.corp-home-teasers-wrapper{
+
+  .container{
+    position: relative;
+    padding-top: $spacer;
+
+    &:before{
+      content: "";
+      display: block;
+      position: absolute;
+      right: $grid-gutter-width * .5;
+      top: 0;
+      width: 100vw;
+      border-top: $corp-dotted-border;
+      @media (min-width: $corp-desktop-gutter-width-beakpoint){
+        right: $corp-grid-gutter-width-desktop * .5;
+      }
+    }
+  }
+}
+
+.corp-footer-quote-wrapper{
+  .container{
+    position: relative;
+    padding-top: $spacer;
+
+    &:before{
+      content: "";
+      display: block;
+      position: absolute;
+      left: $grid-gutter-width * .5;
+      top: 0;
+      bottom: 0;
+      width: 100vw;
+      background: rgba($black, 5%);
+      @media (min-width: $corp-desktop-gutter-width-beakpoint){
+        left: $corp-grid-gutter-width-desktop * .5;
+      }
+    }
+  }
+}
+body.home .corp-footer-quote-wrapper .container:before{
+  background: rgba($black, 30%);
+}
+
+
+// Navs
+
+.nav, .navbar-nav{
+  font-family: $font-family-sans-serif;
+  text-transform: uppercase;
+}
+
+
+// Grid 
+
+// larger gutter-width desktop
+@media (min-width: $corp-desktop-gutter-width-beakpoint){
+  .container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl{
+    padding-left: $corp-grid-gutter-width-desktop * .5;
+    padding-right: $corp-grid-gutter-width-desktop * .5;
+  }
+  .row{
+    --corpbs-gutter-x: #{$corp-grid-gutter-width-desktop};
+    margin-right: calc(-.5 * var(--corpbs-gutter-x));
+    margin-left: calc(-.5 * var(--corpbs-gutter-x));
+
+    > *{
+      padding-right: calc(var(--corpbs-gutter-x) * .5);
+      padding-left: calc(var(--corpbs-gutter-x) * .5);
+      margin-top: var(--corpbs-gutter-y);
+    }
+  }
+}
+
 .col-container,
 .col-container-sm,
 .col-container-md,

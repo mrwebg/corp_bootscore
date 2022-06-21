@@ -18,6 +18,8 @@
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="https://gmpg.org/xfn/11">
+  <!-- Adobe Fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/dpc3fiz.css">
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon/favicon-32x32.png">
@@ -39,7 +41,7 @@
 
     <header id="masthead" class="site-header">
       <div class="fixed-top bg-light">
-        <nav id="nav-main" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav id="nav-main" class="navbar navbar-expand-lg navbar-light bg-white">
           <div class="container">
             <!-- Navbar Brand -->
             <a class="navbar-brand xs d-md-none" href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/logo-sm.svg" alt="logo" class="logo xs"></a>

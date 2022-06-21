@@ -1,2 +1,11 @@
 // In this file you can override the default variables of Bootstrap
 // Do you want primary to be green? Just add "$primary: #00FF00;" to this file and the theme will automatically compile the scss for you.
+
+// CORP: Extra variables 
+
+// grid
+$corp-desktop-gutter-width-beakpoint: 1200px; // = xl
+$corp-grid-gutter-width-desktop: 7.5rem;
+
+// elements
+$corp-dotted-border: 2px dotted $white;

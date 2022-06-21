@@ -11,13 +11,13 @@
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
       <!-- TITLE & DESCRIPTION. -->
-      <div class="container py-5">
+      <div class="container">
         <div class="row">
-          <div class="col bg-transparent">
-            <header class="entry-header py-3">
+          <div class="col">
+            <header class="entry-header">
               <?php the_post(); ?>
               <!-- Title -->
-              <?php the_title('<h1 class="display-1 text-white py-3">', '</h1>'); ?>
+              <?php the_title('<h1 class="display-1 text-white">', '</h1>'); ?>
               <!-- .entry-header -->
               <h2 class="blog-description text-white"><?php bloginfo('description'); ?></h2>
               <!-- .blog-description -->
@@ -34,12 +34,13 @@
         if('' !== $featured_post_id && $featured_post_id > 0 ){
           $featured_post   = get_post( intval($featured_post_id) );
           setup_postdata($featured_post);?>
-          <div class="container-fluid my-5">
-            <div class="row">
-              <div class="col-lg-6 col-xxl-4 ms-auto px-5 py-4 my-3 bg-white bg-opacity-80">
-                <div class="h6">Featured: (<?php echo $featured_post_type_selected; ?>)</div>
-                <div class="h5"><a href="<?php echo get_the_permalink($featured_post_id);?>"><?php echo $featured_post->post_title;?></a></div>
-                <div><?php echo apply_filters( 'the_content', $featured_post->post_content ); ?></div>
+          <div class="container-fluid corp-home-featured-wrapper">
+            <div class="row justify-content-end">
+              <div class="col-lg-6 col-xxl-4">
+                <div class="card card-body corp-featured-post-<?php echo $featured_post_type_selected; ?>">
+                  <h3 class=""><a href="<?php echo get_the_permalink($featured_post_id);?>"><?php echo $featured_post->post_title;?></a></h3>
+                  <div class="content"><?php echo apply_filters( 'the_content', $featured_post->post_content ); ?></div>
+                </div>  
               </div>
             </div>
           </div>
@@ -50,16 +51,16 @@
       ?>
       <!-- END FEATURED. -->
       <!-- TEASERS. -->
-      <div class="container-fluid mt-5">
-        <div class="container-left-md text-white" style="border-top:dotted #fff 2px;">
+      <div class="container-fluid corp-home-teasers-wrapper">
+        <div class="container text-white">
           <div class="row bg-transparent">
-            <div class="col-md pt-3 pb-5 px-3">
-              <h3 style="min-height:70px;"><?php echo get_post_meta(get_the_ID(),  _CMB .'positioning_title', true); ?></h3>
-              <div class="small"><?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'positioning_content', true));?></div>
+            <div class="col-md">
+              <h3 class="h4"><?php echo get_post_meta(get_the_ID(),  _CMB .'positioning_title', true); ?></h3>
+              <div><?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'positioning_content', true));?></div>
             </div>
-            <div class="col-md pt-3 pb-5 px-3">
-              <h3 style="min-height:70px;"><?php echo get_post_meta(get_the_ID(),  _CMB .'trackrecord_title', true); ?></h3>
-              <div class="small"><?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'trackrecord_content', true));?></div>
+            <div class="col-md">
+              <h3 class="h4"><?php echo get_post_meta(get_the_ID(),  _CMB .'trackrecord_title', true); ?></h3>
+              <div><?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'trackrecord_content', true));?></div>
             </div>
           </div>
         </div>
@@ -74,14 +75,11 @@
         $quote_bron = get_post_meta($selected_quote_id, _CMB . 'text_bron', true);
         $quote_url = get_post_meta($selected_quote_id, _CMB . 'url_bron', true);
         ?>
-        <div class="container-fluid mb-5">
-          <div class="container-right-md bg-dark text-white bg-opacity-75">
-            <div class="row justify-content-md-center my-5">
-              <div class="col"></div>
-              <div class="col-md-auto py-3 text-center">
-                <img src="https://corp.nl/_WPCA22/wp-content/uploads/2022/06/chambers-150-100.png">
-              </div>
-              <div class="col px-1 d-flex align-items-center">
+        <div class="container-fluid corp-footer-quote-wrapper">
+          <div class="container">
+            <div class="row justify-content-end">
+              <div class="col-lg-6">
+                <img class="" src="https://corp.nl/_WPCA22/wp-content/uploads/2022/06/chambers-150-100.png">
                 <figure style="margin:0;">
                   <blockquote class="blockquote">
                     <p><?php echo ucfirst($selected_quote->post_title); ?></p>
@@ -98,7 +96,7 @@
               </div>
             </div>
           </div>
-        </div><!-- container-fluid mt-5 px-0 -->
+        </div>
         <?php
         wp_reset_postdata();
       }
