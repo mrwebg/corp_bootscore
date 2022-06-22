@@ -1,8 +1,8 @@
 <?php
-function corp_page_contact_sidebar() {
+function corp_widget_contact_sidebar() {
   if ( is_page()){
     global $post;
-    $html = '<!-- page-contact-sidebar -->';
+    $html = '<!-- widget-contact-sidebar -->';
     // $featured_image_alt = $post->post_title;
     // $featured_thumbail_id = get_post_thumbnail_id($post->ID);
     // if(!empty($featured_thumbail_id) && $featured_thumbail_id > 0){
@@ -25,4 +25,4 @@ function corp_page_contact_sidebar() {
     echo $html;
   }
 }
-add_action( 'wp_footer', 'corp_page_contact_sidebar' );
+add_action( 'wp_footer', 'corp_widget_contact_sidebar' );

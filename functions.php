@@ -8,7 +8,7 @@ require_once 'includes/theme-cpts.php';
 // Page background image
 require_once 'includes/featured-image-background.php';
 // Contact off canvas module
-require_once 'includes\page-contact-sidebar.php';
+require_once 'includes\widget-contact-sidebar.php';
 // CMB2
 require_once 'cmb2/cmb2-tabs.php';
 require_once 'cmb2/cmb2-config.php';
