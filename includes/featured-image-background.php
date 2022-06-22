@@ -9,7 +9,7 @@ function corp_featured_image_background() {
       $featured_image_source = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), "full")[0];
       if(!empty($featured_image_source) && '' !== $featured_image_source){
         $html .='
-        <figure class="featured-image-background" style="display:none;">
+        <figure class="featured-image-background">
         <picture>
         <img src="'.$featured_image_source.'" alt="'.$featured_image_alt.'">
         </picture>
@@ -21,8 +21,8 @@ function corp_featured_image_background() {
         </figure>
         ';
       }
-      echo $html;
     }
+    echo $html;
   }
 }
 add_action( 'wp_footer', 'corp_featured_image_background' );
