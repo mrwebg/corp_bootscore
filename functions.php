@@ -5,10 +5,12 @@ require_once 'includes/helper-functions.php';
 require_once 'includes/theme-admin.php';
 require_once 'includes/theme-lockout-public.php';
 require_once 'includes/theme-cpts.php';
+// Page background image
+require_once 'includes/featured-image-background.php';
+// CMB2
 require_once 'cmb2/cmb2-tabs.php';
 require_once 'cmb2/cmb2-config.php';
 require_once 'cmb2/cmb2-fields.php';
-
 add_filter('body_class', 'mrweb_featured_background_class');
 /**
  * If the current page has a template, apply it's name to the list of classes. This is
