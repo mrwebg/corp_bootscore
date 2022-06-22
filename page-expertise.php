@@ -43,52 +43,49 @@ $post_array = get_posts($post_args);
 ?>
 <div id="content" class="site-content container py-5 mt-5">
   <div id="primary" class="content-area">
-    <div class="row">
-      <div class="">
-        <main id="main" class="site-main">
-          <header class="entry-header">
-            <?php the_post(); ?>
-            <!-- Title -->
-            <?php the_title('<h1>', '</h1>'); ?>
-            <!-- .entry-header -->
-          </header>
-          <div class="entry-content">
+    <main id="main" class="site-main">
+      <div class="entry-content">
+        <div class="row">
+          <div class="col-lg-6">
+            <header class="entry-header">
+              <?php the_post(); ?>
+              <!-- Title -->
+              <?php the_title('<h1>', '</h1>'); ?>
+              <!-- .entry-header -->
+            </header>
             <!-- Content -->
             <?php the_content(); ?>
-            <div class="row">
-              <div class="col-6">
-                <?php if (is_array($post_array) && count($post_array) > 0): ?>
-                  <h2>Team <?php echo ucfirst($expertise_name);?></h2>
-                  <?php
-                  foreach ($post_array as $post):
-                    setup_postdata($post);
-                    $title = ucfirst(get_the_title());
-                    $text_email = get_post_meta(get_the_ID(), _CMB . 'text_email', true);
-                    $text_telefoon = get_post_meta(get_the_ID(), _CMB . 'text_telefoon', true);
-                    $text_mobiel = get_post_meta(get_the_ID(), _CMB . 'text_mobiel', true);
-                    ?>
-                    <p>
-                      <?php if (!empty($title)) { ?><?php echo $title;?></br><?php } ?>
-                      <?php if (!empty($text_email)) { ?><?php echo $text_email;?></br><?php } ?>
-                      <?php if (!empty($text_telefoon)) { ?><?php echo $text_telefoon;?></br><?php } ?>
-                      <?php if (!empty($text_mobiel)) { ?><?php echo $text_mobiel;?></br><?php } ?>
-                    </p>
-                  <?php endforeach;?>
-                  <?php wp_reset_postdata(); ?>
-                <?php endif; ?>
-              </div><!-- .col -->
-              <div class="col-6">
-                <?php
-                $right_column = wpautop(get_post_meta(get_the_ID(), _CMB . 'right_column', true));
-                echo $right_column;
+                
+            <!-- People -->
+            <?php if (is_array($post_array) && count($post_array) > 0): ?>
+              <h2>Team <?php echo ucfirst($expertise_name);?></h2>
+              <?php
+              foreach ($post_array as $post):
+                setup_postdata($post);
+                $title = ucfirst(get_the_title());
+                $text_email = get_post_meta(get_the_ID(), _CMB . 'text_email', true);
+                $text_telefoon = get_post_meta(get_the_ID(), _CMB . 'text_telefoon', true);
+                $text_mobiel = get_post_meta(get_the_ID(), _CMB . 'text_mobiel', true);
                 ?>
-              </div><!-- .col -->
-              <!-- .entry-content -->
-            </div><!-- .row -->
-          </main><!-- #main -->
-        </div><!-- col -->
-
-      </div><!-- row -->
+                <p>
+                  <?php if (!empty($title)) { ?><?php echo $title;?></br><?php } ?>
+                  <?php if (!empty($text_email)) { ?><?php echo $text_email;?></br><?php } ?>
+                  <?php if (!empty($text_telefoon)) { ?><?php echo $text_telefoon;?></br><?php } ?>
+                  <?php if (!empty($text_mobiel)) { ?><?php echo $text_mobiel;?></br><?php } ?>
+                </p>
+              <?php endforeach;?>
+              <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
+          </div><!-- /.col- -->
+          <div class="col-6">
+            <?php
+            $right_column = wpautop(get_post_meta(get_the_ID(), _CMB . 'right_column', true));
+            echo $right_column;
+            ?>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.entry-content -->
+      </main><!-- #main -->
     </div><!-- #primary -->
   </div><!-- #content -->
   <?php

@@ -26,7 +26,10 @@ body.home{
 }
 
 .corp-home-featured-wrapper{
-
+  &.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 .corp-home-teasers-wrapper{
 
@@ -82,6 +85,34 @@ body.home .corp-footer-quote-wrapper .container:before{
 }
 
 
+// Footer
+
+.bootscore-footer{
+  padding-top: 6rem;
+  padding-bottom: 2.5rem;
+  display: flex;
+  gap: $grid-gutter-width;
+  flex-direction: column;
+  @include media-breakpoint-up(xxl){
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+
+  .corp-bedrijfsgegevens{
+    padding: ($nav-link-padding-y + $navbar-padding-y) 0;
+    font-family: $font-family-sans-serif;
+
+    span{
+      white-space: nowrap;
+    }
+  }
+
+  #footer-menu li:last-child a{
+    padding-right: 0;
+  }
+}
+
 // Grid 
 
 // larger gutter-width desktop
@@ -100,6 +131,9 @@ body.home .corp-footer-quote-wrapper .container:before{
       padding-left: calc(var(--corpbs-gutter-x) * .5);
       margin-top: var(--corpbs-gutter-y);
     }
+  }
+  .card-body{
+    padding: $corp-grid-gutter-width-desktop * .5;
   }
 }
 

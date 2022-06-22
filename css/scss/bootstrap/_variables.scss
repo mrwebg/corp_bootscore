@@ -1,3 +1,7 @@
+// CORP. Bootstrap variables 
+// (see org renamed to _variables_org.scss)
+// Default values in comments after new values
+
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -1251,10 +1255,10 @@ $placeholder-opacity-min:           .2 !default;
 // Cards
 
 // scss-docs-start card-variables
-$card-spacer-y:                     $spacer !default;
-$card-spacer-x:                     $spacer !default;
+$card-spacer-y:                     $grid-gutter-width * .5 !default; // $spacer
+$card-spacer-x:                     $grid-gutter-width * .5 !default; // $spacer
 $card-title-spacer-y:               $spacer * .5 !default;
-$card-border-width:                 $border-width !default;
+$card-border-width:                 0 !default; // $border-width
 $card-border-color:                 rgba($black, .125) !default;
 $card-border-radius:                $border-radius !default;
 $card-box-shadow:                   null !default;
