@@ -28,7 +28,7 @@
       <!-- END TITLE & DESCRIPTION. -->
       <!-- FEATURED. -->
       <?php
-      $featured_post_type_selected = get_post_meta(get_the_ID(),  _CMB .'featured_select', true);//  '', post, deals
+      $featured_post_type_selected = get_post_meta(get_the_ID(),  _CMB .'featured_select', true);
       if('' !== $featured_post_type_selected){
         $featured_post_id = get_post_meta(get_the_ID(), _CMB .'select_' . $featured_post_type_selected, true);
         if('' !== $featured_post_id && $featured_post_id > 0 ){
@@ -40,7 +40,7 @@
                 <div class="card card-body corp-featured-post-<?php echo $featured_post_type_selected; ?>">
                   <h3 class=""><a href="<?php echo get_the_permalink($featured_post_id);?>"><?php echo $featured_post->post_title;?></a></h3>
                   <div class="content"><?php echo apply_filters( 'the_content', $featured_post->post_content ); ?></div>
-                </div>  
+                </div>
               </div>
             </div>
           </div>
@@ -105,35 +105,5 @@
     </main><!-- #main -->
   </div><!-- #primary -->
 </div><!-- #content -->
-
-
-<!--div class="container-fluid mt-5 px-0">
-  <div class="container-right-md" style="height:100px;border-top:dotted #000 2px;">
-    <div class="row" style="background-color:rgba(125,90, 255, .5)">
-      <div class="col-md"><h2>Container right</h2><p>Nullam a lacinia felis. Morbi vitae varius ligula, sed gravida ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis interdum congue dui, eu pretium eros ullamcorper vel. </p></div>
-      <div class="col-md"><h2>Vestibulum ante ipsum </h2><p>Nullam a lacinia felis. Morbi vitae varius ligula, sed gravida ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis interdum congue dui, eu pretium eros ullamcorper vel. </p></div>
-      <div class="col-md"><h2>Vestibulum ante ipsum </h2><p>Nullam a lacinia felis. Morbi vitae varius ligula, sed gravida ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis interdum congue dui, eu pretium eros ullamcorper vel. </p></div>
-    </div>
-  </div>
-</div-->
-<!--div class="container-fluid mt-5 px-0">
-  <div class="container-left-md" style="background-color:rgba(0,0,0,0.85);color:#fff;height:100px;border:dotted #fff 2px;">
-    <div class="row">
-      <div class="col">
-        container left
-      </div>
-    </div>
-  </div>
-</div-->
-
-<!--div class="container-fluid mt-5 px-0">
-  <div class="container-left-md" style="height:100px;border-top:dotted #000 2px;">
-    <div style="padding:1rem;"><h2>Container left</h2><p>Nullam a lacinia felis. Morbi vitae varius ligula, sed gravida ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis interdum congue dui, eu pretium eros ullamcorper vel. </p></div>
-  </div>
-</div-->
-
-
-
-
 <?php
 get_footer();
