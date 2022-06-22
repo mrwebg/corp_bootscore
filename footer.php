@@ -19,8 +19,8 @@
       if(is_array($bedrijfsgegevens) && count($bedrijfsgegevens) > 0 ):
         $adres_naam = (array_key_exists('adres_naam', $bedrijfsgegevens))? $bedrijfsgegevens['adres_naam'] . ' ' : '';
         $adres_straat = (array_key_exists('adres_straat', $bedrijfsgegevens))? $bedrijfsgegevens['adres_straat'] . ' ' : '';
-        $adres_huisnummer = (array_key_exists('adres_huisnummer', $bedrijfsgegevens))? $bedrijfsgegevens['adres_huisnummer'] : '';
-        $adres_postcode = (array_key_exists('adres_postcode', $bedrijfsgegevens))? ', ' . $bedrijfsgegevens['adres_postcode'] . ' ' : '';
+        $adres_huisnummer = (array_key_exists('adres_huisnummer', $bedrijfsgegevens))? $bedrijfsgegevens['adres_huisnummer'].', ' : '';
+        $adres_postcode = (array_key_exists('adres_postcode', $bedrijfsgegevens))? $bedrijfsgegevens['adres_postcode'] . ' ' : '';
         $adres_woonplaats = (array_key_exists('adres_woonplaats', $bedrijfsgegevens))? $bedrijfsgegevens['adres_woonplaats'] : '';
         print '<div class="corp-bedrijfsgegevens"><span class="fw-bold">'.$adres_naam.'</span><span>'.$adres_straat.'</span><span>'.$adres_huisnummer.'</span><span>'.$adres_postcode.$adres_woonplaats.'</span></div>';
       endif;
