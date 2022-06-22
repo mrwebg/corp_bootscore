@@ -40,16 +40,18 @@
   <div id="page" class="site">
 
     <header id="masthead" class="site-header">
-      <div class="fixed-top bg-light">
-        <nav id="nav-main" class="navbar navbar-expand-lg navbar-light bg-white">
-          <div class="container">
-            <!-- Navbar Brand -->
+      <div class="fixed-top">
+        <nav id="nav-main" class="navbar navbar-expand-lg navbar-light">
+          <!-- Navbar Brand -->
+          <div class="container corp-navbar-brand-wrapper">
             <a class="navbar-brand xs d-md-none" href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/logo-sm.svg" alt="logo" class="logo xs"></a>
             <a class="navbar-brand md d-none d-md-block" href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/logo.svg" alt="logo" class="logo md"></a>
+          </div>
 
+          <div class="container-fluid">
             <!-- Offcanvas Navbar -->
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-navbar">
-              <div class="offcanvas-header bg-light">
+              <div class="offcanvas-header d-none">
                 <span class="h5 mb-0"><?php esc_html_e('Menu', 'bootscore'); ?></span>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               </div>
@@ -103,7 +105,7 @@
 
             </div><!-- .header-actions -->
 
-          </div><!-- .container -->
+          </div><!-- .container-fluid -->
 
         </nav><!-- .navbar -->
 

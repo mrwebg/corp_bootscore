@@ -4,8 +4,20 @@
 // CORP: Extra variables 
 
 // grid
-$corp-desktop-gutter-width-beakpoint: 1200px; // = xl
+$corp-desktop-gutter-width-beakpoint: 1200px; // larger paddings large screens = xl 
 $corp-grid-gutter-width-desktop: 7.5rem;
 
+// navbar
+$corp-expanded-navbar-breakpoint: 992px; // = navbar-expand-lg
+$corp-nav-main-sticky-transition: all .2s ease-in-out; 
+
+$corp-navbar-height-xs: 4rem;
+$corp-navbar-height-md: 6rem;
+$corp-navbar-height-xl: 10rem;
+
+
+
 // elements
-$corp-dotted-border: 2px dotted $white;
+$corp-dotted-border: 2px dotted $white; // dotted lines
+
+$corp-contact-bar-width: 3rem; // width black bar on right (desktop)

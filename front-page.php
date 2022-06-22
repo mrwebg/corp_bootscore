@@ -75,7 +75,7 @@
         $quote_bron = get_post_meta($selected_quote_id, _CMB . 'text_bron', true);
         $quote_url = get_post_meta($selected_quote_id, _CMB . 'url_bron', true);
         ?>
-        <div class="container-fluid corp-footer-quote-wrapper">
+        <div class="corp-footer-quote-wrapper">
           <div class="container">
             <div class="row justify-content-end">
               <div class="col-lg-6">
