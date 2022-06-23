@@ -79,7 +79,7 @@
           <div class="container">
             <div class="row justify-content-end">
               <div class="col-lg-6">
-                <img class="" src="https://corp.nl/_WPCA22/wp-content/uploads/2022/06/chambers-150-100.png">
+                <img class="" src="https://corp.nl/_WPCA22/wp-content/uploads/2022/06/Chambers-award.png">
                 <figure style="margin:0;">
                   <blockquote class="blockquote">
                     <p><?php echo ucfirst($selected_quote->post_title); ?></p>
