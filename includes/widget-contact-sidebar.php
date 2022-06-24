@@ -11,15 +11,15 @@ function corp_widget_contact_sidebar() {
       $adres_email = (array_key_exists('adres_email', $bedrijfsgegevens))? $bedrijfsgegevens['adres_email'] : '';
       $maps_url = (array_key_exists('maps_url', $bedrijfsgegevens))? $bedrijfsgegevens['maps_url'] : '';
       if(!empty($adres_telefoon) && '' !== $adres_telefoon && !empty($adres_email) && '' !== $adres_email && !empty($maps_url) && '' !== $maps_url){
-        ?>
+        ?>       
         <div class="widget-contact-sidebar-wrapper">
           <ul class="widget-contact-sidebar">
             <li>
               <div class="d-flex flex-row mb-0">
-                <div class="p-2"><i class="fa-solid fa-phone"></i></div>
+                <div class="p-2"><i class="icon fa-solid fa-phone"></i></div>
                 <div class="p-2"><?php echo $adres_telefoon;?></div>       
               </div>
-              <li>
+            <li>
               <div class="d-flex flex-row mb-0">
                 <div class="p-2"><i class="fa-solid fa-envelope"></i></div>
                 <div class="p-2"><?php echo $adres_email;?></div>       
@@ -30,7 +30,6 @@ function corp_widget_contact_sidebar() {
                 <div class="p-2"><i class="fa-solid fa-location-dot"></i></div>
                 <div class="p-2"><?php echo $maps_url;?></div>       
               </div>
-            </li>                          
             </li>
           </ul>
         </div>
