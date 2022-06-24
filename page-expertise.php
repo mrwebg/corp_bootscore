@@ -41,10 +41,10 @@ $post_args = array(
 // }
 $post_array = get_posts($post_args);
 ?>
-<div id="content" class="site-content container py-5 mt-5">
+<div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
-      <div class="entry-content">
+      <div class="entry-content container">
         <div class="row">
           <div class="col-lg-6">
             <header class="entry-header">

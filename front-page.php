@@ -7,19 +7,19 @@
 */
 ?>
 <?php get_header();?>
-<div id="content" class="site-content mt-5 py-5" style="background-color:rgba(0,0,0,0.5);">
+<div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
       <!-- TITLE & DESCRIPTION. -->
       <div class="container">
         <div class="row">
           <div class="col">
-            <header class="entry-header">
+            <header class="entry-header text-white">
               <?php the_post(); ?>
               <!-- Title -->
-              <?php the_title('<h1 class="display-1 text-white">', '</h1>'); ?>
+              <?php the_title('<h1 class="display-1">', '</h1>'); ?>
               <!-- .entry-header -->
-              <h2 class="blog-description text-white"><?php bloginfo('description'); ?></h2>
+              <h2 class="blog-description"><?php bloginfo('description'); ?></h2>
               <!-- .blog-description -->
             </header>
           </div>

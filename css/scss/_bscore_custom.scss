@@ -22,6 +22,38 @@ h5, .h5{
 
 // Pages
 
+.featured-image-background{
+  position: fixed;
+  z-index: -1;
+  right: 0;
+  width: 100%;
+  height: 50vh;
+  top: $corp-navbar-height-xs;
+  @include media-breakpoint-up(md){
+    top: $corp-navbar-height-md;
+  }
+  @include media-breakpoint-up(lg){
+    width: 50%;
+  }
+  @include media-breakpoint-up(xl){
+    top: $corp-navbar-height-xl;
+  }
+
+  img, video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+body.home .featured-image-background{
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
 // Home
 body.home{
   h1{ 
@@ -76,7 +108,7 @@ body.home{
       top: 0;
       bottom: 0;
       width: 100vw;
-      background: rgba($black, 5%);
+      background: $corp-transparent-background;
       @media (min-width: $corp-desktop-gutter-width-beakpoint){
         left: $corp-grid-gutter-width-desktop * .5;
       }
@@ -116,8 +148,25 @@ body.home .corp-footer-quote-wrapper .container:before{
     padding-right: 0;
   }
 }
+body.home .bootscore-footer{
+  color: $white;
+
+  .navbar-light .navbar-nav .nav-link:not(:hover):not(focus){
+    color: $white;
+  }
+}
 
 // Grid 
+
+.site-content{
+  padding-top: $corp-navbar-height-xs;
+  @include media-breakpoint-up(md){
+    padding-top: $corp-navbar-height-md;
+  }
+  @include media-breakpoint-up(xl){
+    padding-top: $corp-navbar-height-xl;
+  }
+}
 
 // larger gutter-width desktop
 @media (min-width: $corp-desktop-gutter-width-beakpoint){
