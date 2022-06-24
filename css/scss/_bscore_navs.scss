@@ -1,0 +1,233 @@
+// Navs
+
+.nav, .navbar-nav{
+  font-family: $font-family-sans-serif;
+  text-transform: uppercase;
+}
+
+#nav-main{
+  position: relative;
+  background: transparent;
+  height: $corp-navbar-height-xs;
+  transition: $corp-nav-main-sticky-transition;
+  @include media-breakpoint-up(md){
+    height: $corp-navbar-height-md; 
+  }
+  @include media-breakpoint-up(xl){
+    height: $corp-navbar-height-xl; 
+  }
+
+  &.nav-main-sticky{
+    background-color: rgba($gray-200, .9);
+    @include media-breakpoint-up(md){
+      height: $corp-navbar-height-md * .75; 
+    }
+    @include media-breakpoint-up(xl){
+      height: $corp-navbar-height-xl * .6; 
+    }
+
+    .navbar-brand{
+      @include media-breakpoint-up(md){
+        transform: scale(75%) translate(-25%, -25%)
+      }
+    }
+  }
+
+  // logo positioning
+  .container.corp-navbar-brand-wrapper{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    height: 0;
+    z-index: $zindex-offcanvas + 1;
+
+    .navbar-brand{
+      padding: 0;
+      transition: $corp-nav-main-sticky-transition;
+
+      img{
+        position: absolute;
+        max-width: none;
+        transform: translateY(-50%);
+
+        &.xs{
+          height: 3.5rem;
+          max-width: 3.5rem;
+        }
+        &.md{
+          height: 5rem;
+          max-width: 5rem;
+          @include media-breakpoint-up(xl){
+            height: 6.5rem;
+            max-width: 6.5rem;
+          }
+        }
+      }
+    }
+  }
+  
+  // positioning navbar
+  > .container-fluid{
+    justify-content: flex-end;
+    @media (min-width: $corp-expanded-navbar-breakpoint){
+      // positioning language menu
+      margin-right: $grid-gutter-width + $corp-contact-bar-width - ($navbar-nav-link-padding-x * .5);
+      margin-left: $grid-gutter-width + $corp-contact-bar-width - ($navbar-nav-link-padding-x * .5);
+    }
+    
+    .navbar-nav{
+      display: block; // for language positioning
+      @media (min-width: $corp-expanded-navbar-breakpoint){
+        display: flex;
+      }
+
+      > li.lang-item{
+          float: left;
+          margin-top: $grid-gutter-width;
+         @media (min-width: $corp-expanded-navbar-breakpoint){
+          margin-top: 0;
+          float: none;
+          position: absolute;
+        }
+
+        > a{
+          padding-right: $navbar-nav-link-padding-x * .5;
+          @media (min-width: $corp-expanded-navbar-breakpoint){
+            padding-left: $navbar-nav-link-padding-x * .5;
+            padding-right: $navbar-nav-link-padding-x * .5;
+          }
+        }
+        &.current_page_item, &.current-lang{
+          > a{
+            pointer-events: none;
+            color: $nav-link-disabled-color;
+          }
+        }
+
+        &:last-child{
+          @media (min-width: $corp-expanded-navbar-breakpoint){
+            right: $grid-gutter-width + $corp-contact-bar-width;
+          }
+        }
+        &:nth-last-child(2){
+          @media (min-width: $corp-expanded-navbar-breakpoint){
+            right: $grid-gutter-width + $corp-contact-bar-width + $navbar-nav-link-padding-x + 1.7rem;
+          }
+
+          &:after{
+            content: "/";
+            display: inline-block;
+            padding: $nav-link-padding-y 0;
+            position: absolute;
+            left: 100%;
+            top:0;
+            color: $nav-link-disabled-color;
+          }
+        }  
+      }
+    }
+  }
+
+  // mobile nav toggle button
+  button[data-bs-target="#offcanvas-navbar"]{
+    position: relative;
+    z-index: $zindex-offcanvas + 1;
+    border: none;
+    background: transparent;
+    padding: $navbar-toggler-padding-y $navbar-toggler-padding-x;
+    height: ($navbar-toggler-padding-y * 2) + 2rem; // padding + inner-size
+    width: ($navbar-toggler-padding-x * 2) + 2rem; // padding + inner-size
+    border-radius: $navbar-toggler-border-radius;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: transform .3s ease-in-out;
+    @media (min-width: $corp-expanded-navbar-breakpoint){
+      display: none;
+    }
+
+    .bar{
+      height: $border-width;
+      background: $body-color;
+      width: 100%;
+      transition: transform .3s ease-in-out;
+    }
+    &:hover, &:focus{
+      .bar{
+        background: $primary;
+      }
+    }
+  }
+  // open
+  .offcanvas.show + .header-actions .corp-offcanvas-toggle{
+    transform: scale(1.1);
+
+    .bar:first-child{
+      transform: rotate(45deg) translate(.35rem, .35rem);
+    }
+    .bar:last-child{
+      transform: rotate(-45deg) translate(.35rem, -.35rem);
+    }
+  }
+
+  .offcanvas{
+    .offcanvas-body{
+      @media (max-width: $corp-expanded-navbar-breakpoint - 1px){
+        padding: ($grid-gutter-width);
+        padding-top: 7rem; // no offcanvas-header 
+      }
+      @include media-breakpoint-down(sm){
+        padding-top: 5rem; 
+      }
+    }
+  }
+
+  .dropdown-menu{
+    opacity: 0;
+    transition: opacity .2s ease;
+    @media (min-width: $corp-expanded-navbar-breakpoint){
+      margin-left: -($dropdown-item-padding-x - $navbar-nav-link-padding-x);
+    }
+
+    // mobile styling
+    @media (max-width: $corp-expanded-navbar-breakpoint - 1px){
+      background: transparent;
+      padding-top: 0;
+
+      .dropdown-item{
+        color: $body-color;
+        background: transparent;
+
+        &:hover, &:focus{
+          color: $primary;
+          background: transparent;
+        }
+
+        &:active, &.active{
+          color: $primary;
+          background: transparent;
+        }
+      }
+    }
+
+    // animation 
+    &.show{
+      opacity: 1;
+      // transition: opacity .35s ease !important; // doesn't work?
+    }
+  }
+  // open if child page is active
+  // close twice if you want to close dropdown (first click will open)
+  .current-menu-parent > .dropdown-menu{
+    @media (max-width: $corp-expanded-navbar-breakpoint - 1px){
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
+

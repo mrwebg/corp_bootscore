@@ -99,8 +99,9 @@
               </button>
 
               <!-- Navbar Toggler -->
-              <button class="btn btn-outline-secondary d-lg-none ms-1 ms-md-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="offcanvas-navbar">
-                <i class="fas fa-bars"></i>
+              <button class="corp-offcanvas-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="offcanvas-navbar">
+                <span class="bar"></span>
+                <span class="bar"></span>
               </button>
 
             </div><!-- .header-actions -->
