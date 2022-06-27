@@ -1,7 +1,7 @@
 <?php
 function corp_featured_image_background() {
   //if ( is_page()){
-  if (is_front_page()) {
+  if (! is_page_template( 'page-team.php' ) || ! is_page_template( 'single-mensen.php' )) {
     global $post;
     $html = '<!-- featured-image-background -->';
     $featured_image_alt = $post->post_title;

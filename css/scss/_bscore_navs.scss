@@ -7,7 +7,7 @@
 
 #nav-main{
   position: relative;
-  background: transparent;
+  background: $white;
   height: $corp-navbar-height-xs;
   transition: $corp-nav-main-sticky-transition;
   @include media-breakpoint-up(md){
@@ -20,10 +20,10 @@
   &.nav-main-sticky{
     background-color: rgba($gray-200, 1);
     @include media-breakpoint-up(md){
-      height: $corp-navbar-height-md * .75; 
+      height: $corp-navbar-height-md-sticky; 
     }
     @include media-breakpoint-up(xl){
-      height: $corp-navbar-height-xl * .6; 
+      height: $corp-navbar-height-xl-sticky; 
     }
 
     .navbar-brand{
@@ -232,11 +232,15 @@
 }
 body.home #nav-main{
   @media (min-width: $corp-expanded-navbar-breakpoint){
-    &.navbar-light .navbar-nav .nav-link{
-      color: $white;
+    &.navbar-light{
+      background: transparent;
+      
+      .navbar-nav .nav-link{
+        color: $white;
 
-      &:focus, &:hover{
-        color: $primary;
+        &:focus, &:hover{
+          color: $primary;
+        }
       }
     }
   }
@@ -249,7 +253,7 @@ body.home #nav-main{
   }
 
   &.nav-main-sticky{
-    background: $gray-800;
+    background: $body-color;
     @media (min-width: $corp-expanded-navbar-breakpoint){
       background: $corp-transparent-background;
     }

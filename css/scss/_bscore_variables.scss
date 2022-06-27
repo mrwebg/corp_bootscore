@@ -16,7 +16,9 @@ $corp-nav-main-sticky-transition: all .2s ease-in-out;
 
 $corp-navbar-height-xs: 4rem;
 $corp-navbar-height-md: 6rem;
+$corp-navbar-height-md-sticky: $corp-navbar-height-md * .75;
 $corp-navbar-height-xl: 10rem;
+$corp-navbar-height-xl-sticky: $corp-navbar-height-xl * .6; 
 
 
 
