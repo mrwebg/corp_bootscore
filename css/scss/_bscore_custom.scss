@@ -159,6 +159,7 @@ body.home .bootscore-footer{
 // Grid 
 
 .site-content{
+  // padding height fixed navbar 
   padding-top: $corp-navbar-height-xs;
   @include media-breakpoint-up(md){
     padding-top: $corp-navbar-height-md;
@@ -167,6 +168,25 @@ body.home .bootscore-footer{
     padding-top: $corp-navbar-height-xl;
   }
 }
+
+.content-area{
+  // page padding
+  padding-top: 2rem;
+  transition: $transition-base;
+  @include media-breakpoint-up(md){
+    padding-top: 3rem;
+  }
+  @include media-breakpoint-up(xl){
+    padding-top: 4rem;
+  }
+  @include media-breakpoint-up(xxl){
+    padding-top: 5rem;
+  }
+  @include media-breakpoint-up(xxxl){
+    padding-top: 6rem;
+  }
+}
+
 
 // larger gutter-width desktop
 @media (min-width: $corp-desktop-gutter-width-beakpoint){

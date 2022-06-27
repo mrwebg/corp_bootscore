@@ -58,9 +58,13 @@
         &.md{
           height: 5rem;
           max-width: 5rem;
+          transition: $corp-nav-main-sticky-transition;
           @include media-breakpoint-up(xl){
             height: 6.5rem;
             max-width: 6.5rem;
+          }
+          @include media-breakpoint-up(xxxl){
+            transform: translate(calc(-100% - #{$grid-gutter-width * .5}) , -50%); // outside container
           }
         }
       }
