@@ -16,23 +16,24 @@ function corp_widget_contact_sidebar() {
           <ul class="widget-contact-sidebar" style="list-style:none;margin:0;">
             <li>
               <div class="d-flex flex-row mb-0">
-                <div class="p-2">icon</div>
+                <div class="p-2"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></div>
                 <div class="p-2"><?php echo $adres_telefoon;?></div>       
               </div>
             <li>
               <div class="d-flex flex-row mb-0">
-                <div class="p-2">icon</div>
+                <div class="p-2"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg></div>
                 <div class="p-2"><?php echo $adres_email;?></div>       
               </div>
             </li>
             <li>
               <div class="d-flex flex-row mb-0">
-                <div class="p-2">icon</div>
+                <div class="p-2"><svg class="icon icon-location"><use xlink:href="#icon-location"></use></svg></div>
                 <div class="p-2"><?php echo $maps_url;?></div>       
               </div>
             </li>
           </ul>
         </div>
+        
 <?php
       }
     }
