@@ -35,6 +35,8 @@
 
   <?php wp_body_open(); ?>
 
+  <?php get_template_part('includes/svg', 'icons'); ?>
+
   <div id="to-top"></div>
 
   <div id="page" class="site">
