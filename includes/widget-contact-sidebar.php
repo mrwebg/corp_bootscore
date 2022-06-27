@@ -19,13 +19,13 @@ function corp_widget_contact_sidebar() {
               <svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg><span><?php echo $adres_telefoon;?></span>  
             </li>     
             <li>
-              <svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg><span class="p-2"><?php echo $adres_email;?></span>       
+              <svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg><span class="p-2"><a href="mailto:<?php echo $adres_email;?>" target="_blank"><?php echo $adres_email;?></a></span>       
             </li>
             <li>
-              <svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg><span class="p-2"><?php echo $social_linkedin;?></span>       
+              <svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg><span class="p-2"><a href="<?php echo $social_linkedin;?>" target="_blank"><?php esc_html_e('Volg ons op Linkedin', 'corp'); ?></a></span>       
             </li>            
             <li>
-              <svg class="icon icon-location"><use xlink:href="#icon-location"></use></svg><span class="p-2"><?php echo $maps_url;?></span>       
+              <svg class="icon icon-location"><use xlink:href="#icon-location"></use></svg><span class="p-2"><a href="<?php echo $maps_url;?>" target="_blank"><?php esc_html_e('Lokatie op Google Maps', 'corp'); ?></a></span>       
             </li>
           </ul>
         </div>
