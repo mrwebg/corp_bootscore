@@ -214,3 +214,10 @@ function mrweb_first_paragraph_class_lead($content){
   }
 }
 add_filter('the_content', 'mrweb_first_paragraph_class_lead');
+// Allow svg upload
+
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
