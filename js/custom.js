@@ -1,7 +1,7 @@
 jQuery(function ($) {
 
   function consolelog(str){
-    let development = true;
+    let development = false;
     if(development && typeof str === 'string' && '' !== str){
       console.log(str);
     }
@@ -33,40 +33,19 @@ jQuery(function ($) {
   /* ==============================
   Parallax scrolling col
   ============================== */
-  // var parallaxcols = $('.parallax-col'),
-  //     $window = $(window);
-  // $window.scroll(function(){
-  //   //var scrollTop = $window.scrollTop();
-  //   parallaxcols.each(function(){
-  //     var $this = $(this),
-  //       scrollspeed = parseInt($this.data('scroll-speed')),
-  //       val = - $window.scrollTop() / scrollspeed;    
-  //     $this.css('transform', 'translateY(' + val + 'px)');
-  //     $this.css('background-color', '#ccc');
-  //   });
-  // });  
-
-
-  //parallax scroll
-  // $(window).on("load scroll", function() {
-  //   var parallaxElement = $(".parallax-col"),
-  //     parallaxQuantity = 941;  //parallaxElement.length;
-  //   consolelog('parallaxQuantity = ' + String(parallaxQuantity) ) ;
-  //   window.requestAnimationFrame(function() {
-  //     for (var i = 0; i < parallaxQuantity; i++) {
-  //       var currentElement = parallaxElement.eq(i),
-  //         windowTop = $(window).scrollTop(),
-  //       elementOffset = $(currentElement).offset(),
-  //       elementTop = elementOffset.top,
-  //       elementHeight = currentElement.height(),
-  //       viewPortHeight = window.innerHeight * 0.5 - elementHeight * 0.5,
-  //       scrolled = windowTop - elementTop + viewPortHeight;
-  //       currentElement.css({transform: "translate3d(0," + scrolled * -0.15 + "px, 0)"});
-  //     }
-  //   });
-  // });
-
-  
-  
+  var parallaxcols = $('.parallax-col'),
+      $window = $(window);
+  $window.scroll(function () {
+    var winWidth = $(window).width();
+    if (winWidth >= 992) {
+      parallaxcols.each(function () {
+        var $this = $(this),
+          scrollspeed = parseInt($this.data('scroll-speed')),
+          val = - $window.scrollTop() / scrollspeed;
+        $this.css('transform', 'translateY(' + val + 'px)');
+        $this.css('margin-bottom', val + 'px');
+      });
+    }
+  });  
 
 }); // jQuery End

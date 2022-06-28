@@ -28,25 +28,14 @@ $post_args = array(
   'meta_key' => '_cmb_text_achternaam',
   'orderby' => array('meta_value' => 'ASC'),
 );
-// if (!is_admin()) {
-//   if (function_exists('pll_is_translated_post_type') && false !== pll_is_translated_post_type($post_type)) {
-//     $current_post_id = (isset($_GET['post'])) ? $_GET['post'] : '';
-//     if (!empty($current_post_id) && function_exists('pll_get_post_language')) {
-//       $current_post_language = pll_get_post_language($current_post_id);
-//       if (false !== $current_post_language) {
-//         $post_args['lang'] = $current_post_language;
-//       }
-//     }
-//   }
-// }
 $post_array = get_posts($post_args);
 ?>
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
       <div class="entry-content container">
-        <div class="row" style="overflow:hidden;">
-          <div class="col-lg-6">
+        <div class="row">
+          <div class="col-lg-6 parallax-col" data-scroll-speed="12">
             <header class="entry-header">
               <?php the_post(); ?>
               <!-- Title -->
@@ -55,7 +44,6 @@ $post_array = get_posts($post_args);
             </header>
             <!-- Content -->
             <?php the_content(); ?>
-                
             <!-- People -->
             <?php if (is_array($post_array) && count($post_array) > 0): ?>
               <h2>Team <?php echo ucfirst($expertise_name);?></h2>
@@ -77,11 +65,8 @@ $post_array = get_posts($post_args);
               <?php wp_reset_postdata(); ?>
             <?php endif; ?>
           </div><!-- /.col- -->
-          <div class="col-6 parallax-col" data-scroll-speed="9">
-            <?php
-            $right_column = wpautop(get_post_meta(get_the_ID(), _CMB . 'right_column', true));
-            echo $right_column;
-            ?>
+          <div class="col-6 parallax-col" data-scroll-speed="1">
+            <?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'right_column', true));?>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.entry-content -->

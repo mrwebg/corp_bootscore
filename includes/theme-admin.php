@@ -10,7 +10,7 @@ $modified_bootscoreChildCss = date('YmdHi', filemtime(get_stylesheet_directory()
 wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/css/lib/bootstrap.min.css', array('parent-style'), $modified_bootscoreChildCss);
 // custom.js
 $modified_bootscoreChildJs = date('YmdHi', filemtime(get_stylesheet_directory() . '/js/custom.js'));
-wp_enqueue_script('corp-bootscore', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery-core'), true, $modified_bootscoreChildJs);
+wp_enqueue_script('corp-bootscore', get_stylesheet_directory_uri() . '/js/custom.js', array('bootstrap', 'bootscore-script'), $modified_bootscoreChildJs, true);
 }
 /* TEXTDOMAIN CORP
 ================================================== */

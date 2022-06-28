@@ -5,9 +5,8 @@ require_once 'includes/helper-functions.php';
 require_once 'includes/theme-admin.php';
 require_once 'includes/theme-lockout-public.php';
 require_once 'includes/theme-cpts.php';
-// Page background image
+// Modules
 require_once 'includes/featured-image-background.php';
-// Contact off canvas module
 require_once 'includes/widget-contact-sidebar.php';
 // CMB2
 require_once 'cmb2/cmb2-tabs.php';
