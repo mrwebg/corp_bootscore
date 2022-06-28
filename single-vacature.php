@@ -19,8 +19,7 @@
               </header><!-- .entry-header -->
               <div class="entry-content">
                 <?php the_content(); ?>
-
-                        </div><!-- .entry-content -->
+              </div><!-- .entry-content -->
             <?php endwhile;?>
           <?php endif; ?>                        
         </main><!-- #main -->

@@ -13,4 +13,3 @@ require_once 'includes/widget-contact-sidebar.php';
 require_once 'cmb2/cmb2-tabs.php';
 require_once 'cmb2/cmb2-config.php';
 require_once 'cmb2/cmb2-fields.php';
-

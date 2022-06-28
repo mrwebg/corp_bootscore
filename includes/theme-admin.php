@@ -9,7 +9,8 @@ wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 $modified_bootscoreChildCss = date('YmdHi', filemtime(get_stylesheet_directory() . '/css/lib/bootstrap.min.css'));
 wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/css/lib/bootstrap.min.css', array('parent-style'), $modified_bootscoreChildCss);
 // custom.js
-wp_enqueue_script('custom-js', get_stylesheet_directory_uri() . '/js/custom.js', false, '', true);
+$modified_bootscoreChildJs = date('YmdHi', filemtime(get_stylesheet_directory() . '/js/custom.js'));
+wp_enqueue_script('corp-bootscore', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery-core'), true, $modified_bootscoreChildJs);
 }
 /* TEXTDOMAIN CORP
 ================================================== */
@@ -20,8 +21,8 @@ add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 /* ADMIN SCRIPTS HOOKED
   ================================================== */
 if (is_admin()) {
-    add_action('admin_init', 'mrweb_add_column_templatename');
-      add_action('admin_init', 'gtwc_remove_column_date');
+  add_action('admin_init', 'mrweb_add_column_templatename');
+  add_action('admin_init', 'gtwc_remove_column_date');
 }
 /* MIME TYPES.
   ================================================== */

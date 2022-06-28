@@ -45,7 +45,7 @@ $post_array = get_posts($post_args);
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
       <div class="entry-content container">
-        <div class="row">
+        <div class="row" style="overflow:hidden;">
           <div class="col-lg-6">
             <header class="entry-header">
               <?php the_post(); ?>
@@ -77,7 +77,7 @@ $post_array = get_posts($post_args);
               <?php wp_reset_postdata(); ?>
             <?php endif; ?>
           </div><!-- /.col- -->
-          <div class="col-6">
+          <div class="col-6 parallax-col" data-scroll-speed="9">
             <?php
             $right_column = wpautop(get_post_meta(get_the_ID(), _CMB . 'right_column', true));
             echo $right_column;
