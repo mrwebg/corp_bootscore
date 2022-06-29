@@ -31,28 +31,63 @@ jQuery(function ($) {
   /* ==============================
   Parallax scrolling col
   ============================== */
-  var parallaxcols = $('.parallax-col');
-  var isObj = typeof(parallaxcols);
-  var isFull = (parallaxcols.length > 0) ? true : false;
-  var $window = $(window);
-  if (isObj && isFull) {
-    $window.scroll(function () {
-      var win_sctop = Math.round($(window).scrollTop());
-      var win_width = $(window).width();
-      var win_height = $(window).height();
-      var doc_height = $(document).height();
-      var breakpoint = 992;
-      if (win_width >= breakpoint && (win_sctop + win_height + 1 < doc_height)) {
-        parallaxcols.each(function () {
-          var $this = $(this),
-            scrollspeed = parseInt($this.data('scroll-speed')),
-            val = - win_sctop / scrollspeed;
-          $this.css('transform', 'translateY(' + val + 'px)');
-          $this.css('margin-bottom', val + 'px');
-        });
-      }
-    });
-  }  
+  // var parallaxcols = $('.parallax-col');
+  // var isObj = typeof(parallaxcols);
+  // var isFull = (parallaxcols.length > 0) ? true : false;
+  // var $window = $(window);
+  // if (isObj && isFull) {
+  //   $window.scroll(function () {
+  //     var win_sctop = Math.round($(window).scrollTop());
+  //     var win_width = $(window).width();
+  //     var win_height = $(window).height();
+  //     var doc_height = $(document).height();
+  //     var breakpoint = 992;
+  //     if (win_width >= breakpoint && (win_sctop + win_height + 1 < doc_height)) {
+  //       parallaxcols.each(function () {
+  //         var $this = $(this),
+  //           scrollspeed = parseInt($this.data('scroll-speed')),
+  //           val = - win_sctop / scrollspeed;
+  //         $this.css('transform', 'translateY(' + val + 'px)');
+  //         $this.css('margin-bottom', val + 'px');
+  //       });
+  //     }
+  //   });
+  // }  
 
+   /* ==============================
+  On window.scroll use requestAnimationFrame (example)
+  ============================== */
+  let movingContainers = true;
+  function moveContainers() {
+
+    var parallaxcols = $('.parallax-col');
+    var isObj = typeof(parallaxcols);
+    var isFull = (parallaxcols.length > 0) ? true : false;
+    var $window = $(window);
+    var win_sctop = Math.round($(window).scrollTop());
+    var win_width = $(window).width();
+    var win_height = $(window).height();
+    var doc_height = $(document).height();
+    var breakpoint = 992;
+    
+    if (isObj && isFull && win_width >= breakpoint && (win_sctop + win_height + 1 < doc_height)) {
+      parallaxcols.each(function () {
+        var $this = $(this),
+        scrollspeed = parseInt($this.data('scroll-speed')),
+        val = - win_sctop / scrollspeed;
+        $this.css('transform', 'translateY(' + val + 'px)');
+        $this.css('margin-bottom', val + 'px');
+      });
+    }
+    console.log('Invoked at ' + Date.now());
+  }
+
+  window.addEventListener('scroll', function () {
+    if (movingContainers) {
+      movingContainers = false;
+      window.requestAnimationFrame(moveContainers);
+      window.setTimeout(() => movingContainers = true, 50);
+    }
+  })
 
 }); // jQuery End
