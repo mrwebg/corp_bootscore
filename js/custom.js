@@ -41,7 +41,7 @@ jQuery(function ($) {
     var win_height = $(window).height();
     var doc_height = $(document).height();
     var breakpoint = 992;
-    if (isObj  && isFull && win_width >= breakpoint && (win_sctop + win_height + 1 < doc_height)) {
+    if (isObj && isFull && win_width >= breakpoint && (win_sctop + win_height + 1 < doc_height)) {
       parallaxcols.each(function () {
         var $this = $(this),
           scrollspeed = parseInt($this.data('scroll-speed')),
