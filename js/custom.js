@@ -2,8 +2,8 @@ jQuery(function ($) {
 
   function consolelog(str){
     let development = false;
-    if(development && typeof str === 'string' && '' !== str){
-      console.log(str);
+    if(development && '' !== str){
+      console.log(String(str));
     }
   }
 
@@ -19,12 +19,10 @@ jQuery(function ($) {
       if (document.body.scrollTop > sticky_offset || document.documentElement.scrollTop > sticky_offset) {
         if(!navbar.classList.contains(sticky_class)){ // do it ounce only
           navbar.classList.add(sticky_class);
-          consolelog('ADDED class ' + sticky_class + ' to #nav-main');
         }
       } else {
         if(navbar.classList.contains(sticky_class)){ // do it ounce only
           navbar.classList.remove(sticky_class);
-          consolelog('REMOVED class ' + sticky_class + ' from #nav-main');
         }
       }
     }
@@ -33,19 +31,24 @@ jQuery(function ($) {
   /* ==============================
   Parallax scrolling col
   ============================== */
-  var parallaxcols = $('.parallax-col'),
-      $window = $(window);
+  var parallaxcols = $('.parallax-col');
+  var $window = $(window);
   $window.scroll(function () {
-    var winWidth = $(window).width();
-    if (winWidth >= 992) {
+    var win_sctop = Math.round($(window).scrollTop());
+    var win_width = $(window).width();
+    var win_height = $(window).height();
+    var doc_height = $(document).height();
+    var breakpoint = 992;
+    if (win_width >= breakpoint && (win_sctop + win_height + 1 < doc_height)) {
       parallaxcols.each(function () {
         var $this = $(this),
           scrollspeed = parseInt($this.data('scroll-speed')),
-          val = - $window.scrollTop() / scrollspeed;
+          val = - win_sctop / scrollspeed;
         $this.css('transform', 'translateY(' + val + 'px)');
         $this.css('margin-bottom', val + 'px');
-      });
+      });    
     }
   });  
+
 
 }); // jQuery End
