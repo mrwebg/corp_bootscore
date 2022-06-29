@@ -85,7 +85,7 @@ jQuery(function ($) {
     if (movingContainers) {
       movingContainers = false;
       window.requestAnimationFrame(moveContainers);
-      //window.setTimeout(() => movingContainers = true, 50);
+      window.setTimeout(() => movingContainers = true, 15);
     }
   })
 
