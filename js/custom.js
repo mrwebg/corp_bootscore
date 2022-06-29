@@ -55,7 +55,7 @@ jQuery(function ($) {
   // }  
 
    /* ==============================
-  On window.scroll use requestAnimationFrame (example)
+  On window.scroll use requestAnimationFrame to move cols
   ============================== */
   let movingContainers = true;
   function moveContainers() {
@@ -64,12 +64,12 @@ jQuery(function ($) {
     var isObj = typeof(parallaxcols);
     var isFull = (parallaxcols.length > 0) ? true : false;
     var $window = $(window);
-    var win_sctop = Math.round($(window).scrollTop());
-    var win_width = $(window).width();
-    var win_height = $(window).height();
+    var win_sctop = Math.round($window.scrollTop());
+    var win_width = $window.width();
+    var win_height = $window.height();
     var doc_height = $(document).height();
     var breakpoint = 992;
-    
+
     if (isObj && isFull && win_width >= breakpoint && (win_sctop + win_height + 1 < doc_height)) {
       parallaxcols.each(function () {
         var $this = $(this),
@@ -79,14 +79,13 @@ jQuery(function ($) {
         $this.css('margin-bottom', val + 'px');
       });
     }
-    console.log('Invoked at ' + Date.now());
   }
 
   window.addEventListener('scroll', function () {
     if (movingContainers) {
       movingContainers = false;
       window.requestAnimationFrame(moveContainers);
-      window.setTimeout(() => movingContainers = true, 50);
+      //window.setTimeout(() => movingContainers = true, 50);
     }
   })
 
