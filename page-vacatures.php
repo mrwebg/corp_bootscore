@@ -19,9 +19,8 @@ get_header();?>
             </header>
             <!-- Content -->
             <?php the_content(); ?>
-
-            </div><!-- #col -->
-            <div class="col-6 parallax-col" data-scroll-speed="1">
+          </div><!-- #col -->
+          <div class="col-6 parallax-col" data-scroll-speed="1">
             <!-- VACATURES -->
             <?php
             $post_type = 'vacature';
@@ -110,7 +109,7 @@ get_header();?>
               <!-- #RIGHT COLUMN CONTACT PERSON. -->                       
             </div><!-- #col -->
           </div><!-- #row -->
-        </div><!-- #container -->      
+        </div><!-- #container -->               
       </main><!-- #main -->      
     </div><!-- #primary -->
   </div><!-- #content -->

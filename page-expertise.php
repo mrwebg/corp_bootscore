@@ -8,7 +8,7 @@ get_header();?>
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
-      <div class="entry-content container">
+      <div class="container entry-content">    
         <div class="row">
           <div class="col-lg-6 parallax-col" data-scroll-speed="12">
             <header class="entry-header">
