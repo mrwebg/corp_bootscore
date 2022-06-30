@@ -196,20 +196,26 @@ function mrweb_register_cmb2_metaboxes() {
   // right column wysiwyg field for certain page templates.
   $cmb_rc = new_cmb2_box( array(
     'id'           => 'right_column_content',
-    'title'        => 'RECHTER KOLOM CONTENT',
+    'title'        => 'EXTRA CONTENT',
     'object_types' => array( 'page' ), // post type
     'show_on'      => array( 'key' => 'page-template', 'value' => 'page-expertise.php' ),
     'context'      => 'normal', //  'normal', 'advanced', or 'side'
     'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
-    'show_names'   => false, // Show field names on the left
-    'closed' => true,
+    'show_names'   => true, // Show field names on the left
+    'closed'       => false,
+  ));
+  $cmb_rc->add_field(array(
+    'name' => 'linker kolom content',
+    'id' => $prefix . 'left_column',
+    'type' => 'wysiwyg',
+    'default' => 'Optioneel: voeg extra content toe',
   ));
   $cmb_rc->add_field(array(
     'name' => 'rechter kolom content',
     'id' => $prefix . 'right_column',
     'type' => 'wysiwyg',
-    'default' => 'Vergeet niet content toe te voegen',
-  ));
+    'default' => 'Optioneel: voeg extra content toe',
+  ));   
 }
 /* ADD CORP THEME OPTIONS PAGE */
 add_action( 'cmb2_admin_init', 'mrweb_register_theme_options_metabox' );

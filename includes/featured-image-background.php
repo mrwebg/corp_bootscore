@@ -1,9 +1,9 @@
 <?php
 function corp_featured_image_background() {
   //if ( is_page()){
-  if (! is_page_template( 'page-team.php' ) || ! is_page_template( 'single-mensen.php' )) {
+  if (! is_page_template( 'page-team.php' ) || ! is_page_template( 'single-mensen.php' ) || ! is_page_template( 'page-contact.php' )) {
     global $post;
-    $html = '<!-- featured-image-background -->';
+    $html = '<!-- FEATURED IMAGE BACKGROUND. -->';
     $featured_image_alt = $post->post_title;
     $featured_thumbail_id = get_post_thumbnail_id($post->ID);
     if(!empty($featured_thumbail_id) && $featured_thumbail_id > 0){
@@ -20,6 +20,7 @@ function corp_featured_image_background() {
         </picture>
         </noscript>
         </figure>
+        <!-- #FEATURED IMAGE BACKGROUND. -->
         ';
       }
     }
