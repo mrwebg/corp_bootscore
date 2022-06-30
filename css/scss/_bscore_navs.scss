@@ -234,7 +234,7 @@ body.home #nav-main{
   @media (min-width: $corp-expanded-navbar-breakpoint){
     &.navbar-light{
       background: transparent;
-      
+
       .navbar-nav .nav-link{
         color: $white;
 
@@ -261,5 +261,63 @@ body.home #nav-main{
 }
 
 
+// Contact buttons 
+.widget-contact-sidebar-wrapper{
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: $corp-contact-bar-width;
+  background: $black;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  padding: 24vh 0 1rem;
+  z-index: $zindex-fixed;
+  @media (max-width: ($corp-contact-bar-breakpoint - 1px)){
+    top: auto;
+    left: 0;
+    height: auto;
+    padding-bottom: 1rem;
+    bottom: 0;
+    width: auto;
+    padding-top: 0;
+    flex-direction: row;
+    justify-content: center;
+  }
 
+  ul.widget-contact-sidebar{
+    list-style: none;
+    padding: .5rem;
+    margin:0;
+    @media (max-width: ($corp-contact-bar-breakpoint - 1px)){
+      display: flex;
+    }
+
+    > li{
+      text-align: center;
+      margin: 1rem 0;
+      @media (max-width: ($corp-contact-bar-breakpoint - 1px)){
+        margin: 0 1px;
+      }
+
+      a{
+        color: $white;
+
+        &:hover, &:focus{
+          color: $primary;
+        }
+
+        svg{
+          width: $contact-sidebar-icon-size;
+          height: $contact-sidebar-icon-size;
+        }
+
+        span{
+          display: none;
+        }
+      }
+    }
+  }
+}
 

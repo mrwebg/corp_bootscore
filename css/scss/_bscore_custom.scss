@@ -167,6 +167,14 @@ body.home .bootscore-footer{
   @include media-breakpoint-up(xl){
     padding-top: $corp-navbar-height-xl;
   }
+
+  // space for contact-sidebar
+  @media (max-width: ($corp-contact-bar-breakpoint - 1px)){
+    padding-bottom: $contact-sidebar-icon-size + 1rem + $contact-sidebar-mobile-padding-bottom; // $contact-sidebar-icon-size + ul padding + extra bottom padding
+  }
+  @media (min-width: $corp-contact-bar-breakpoint) and (max-width: $corp-expanded-navbar-breakpoint){
+    padding-right: $corp-contact-bar-width;
+  }
 }
 
 .content-area{
