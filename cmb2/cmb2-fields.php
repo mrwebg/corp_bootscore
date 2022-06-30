@@ -193,7 +193,7 @@ function mrweb_register_cmb2_metaboxes() {
     'id' => $prefix . 'url_bron',
     'type' => 'text_url',
   ));
-  // right column wysiwyg field for certain page templates.
+  // PAGE EXPERTISE.
   $cmb_rc = new_cmb2_box( array(
     'id'           => 'right_column_content',
     'title'        => 'EXTRA CONTENT',
@@ -215,7 +215,32 @@ function mrweb_register_cmb2_metaboxes() {
     'id' => $prefix . 'right_column',
     'type' => 'wysiwyg',
     'default' => 'Optioneel: voeg extra content toe',
-  ));   
+  ));  
+  // PAGEVACATURES.
+  $cmb_pv = new_cmb2_box( array(
+    'id'           => 'pv_extra_content',
+    'title'        => 'EXTRA CONTENT',
+    'object_types' => array( 'page' ), // post type
+    'show_on'      => array( 'key' => 'page-template', 'value' => 'page-vacatures.php' ),
+    'context'      => 'normal', //  'normal', 'advanced', or 'side'
+    'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
+    'show_names'   => true, // Show field names on the left
+    'closed'       => false,
+  ));
+  $cmb_pv->add_field(array(
+    'name' => 'rechter kolom content',
+    'id' => $prefix . 'right_column',
+    'type' => 'wysiwyg',
+    'default' => 'Optioneel: voeg extra content toe',
+  )); 
+  $cmb_pv->add_field(array(
+    'name' => 'contact_persoon',
+    'id' => $prefix . 'vacature_contact',
+    'type' => 'select',
+    'show_option_none' => true,
+    'options' => mrweb_return_posts('mensen'),
+    'show_in_rest' => true,
+  ));        
 }
 /* ADD CORP THEME OPTIONS PAGE */
 add_action( 'cmb2_admin_init', 'mrweb_register_theme_options_metabox' );

@@ -64,7 +64,50 @@ get_header();?>
                 <?php wp_reset_postdata(); ?>
               </div>
               <?php } ?>
-              <!-- #VACATURES -->          
+              <!-- #VACATURES --> 
+              <!-- RIGHT COLUMN EXTRA CONTENT. -->
+              <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'right_column', true))) { ?>
+                <div class="wrapper-vacatures-rechter-kolom-extra">                           
+                  <?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'right_column', true));?>
+                </div>
+              <?php } ?>
+              <!-- #RIGHT COLUMN EXTRA CONTENT. -->
+              <!-- RIGHT COLUMN CONTACT PERSON. -->                         
+              <?php
+              $mensenID = intval(get_post_meta(get_the_ID(), _CMB . 'vacature_contact', true));
+              if(!empty($mensenID) && is_int($mensenID)){
+                $postMensen = get_post($mensenID);
+                $post_title = $postMensen->post_title;
+                $text_email = get_post_meta($mensenID, _CMB . 'text_email', true);
+                $text_telefoon = get_post_meta($mensenID, _CMB . 'text_telefoon', true);
+                $text_telefoon_formatted = str_replace(array(' ', '(', ')'), "", $text_telefoon);                
+                $text_mobiel = get_post_meta($mensenID, _CMB . 'text_mobiel', true);
+                $text_mobiel_formatted = str_replace(array(' ', '(', ')'), "", $text_mobiel);                   
+                $permalink = get_the_permalink($mensenID); 
+              } 
+              if(!empty($post_title) && !empty($text_email) && !empty($permalink)){?>
+                <div class="wrapper-vacatures-rechter-kolom-contactpersoon"> 
+                  <h5><a href="<?php echo $permalink;?>"><?php echo $post_title; ?></a></h5>                          
+                  <ul class="contactperson-icons">
+                    <?php if(!empty($text_telefoon_formatted)) { ?>
+                      <li>
+                        <a href="tel:<?php echo $text_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a> 
+                      </li>
+                    <?php } ?>
+                    <?php if(!empty($text_mobiel_formatted)) { ?>
+                      <li>
+                        <a href="tel:<?php echo $text_mobiel_formatted;?>" target="_blank"><svg class="icon icon-mobile"><use xlink:href="#icon-mobile"></use></svg></a> 
+                      </li>
+                    <?php } ?>                      
+                    <?php if(!empty($text_email)) { ?>                        
+                      <li>
+                        <a href="mailto:<?php echo $text_email;?>" target="_blank"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg></a>      
+                      </li>
+                    <?php } ?>                     
+                  </ul>                  
+                </div>                                
+              <?php } ?>             
+              <!-- #RIGHT COLUMN CONTACT PERSON. -->                       
             </div><!-- #col -->
           </div><!-- #row -->
         </div><!-- #container -->      
