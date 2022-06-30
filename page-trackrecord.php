@@ -2,7 +2,7 @@
 /**
 * Template Name: Trackrecord pagina
 * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
-* @package corp
+* @package corp_bootscore
 */
 get_header();?>
 <!-- TRACK RECORDS (cpt deals) -->

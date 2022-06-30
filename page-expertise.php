@@ -2,7 +2,7 @@
 /**
 * Template Name: Expertise pagina
 * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
-* @package corp
+* @package corp_bootscore
 */
 get_header();?>
 <div id="content" class="site-content">
