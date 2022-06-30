@@ -51,7 +51,7 @@ function corp_widget_contact_sidebar() {
               <svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg><span><a href="mailto:<?php echo $adres_email;?>" target="_blank"><?php echo $adres_email;?></a></span>       
             </li>
             <li>
-              <svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg><span><a href="<?php echo $social_linkedin;?>" target="_blank"><?php esc_html_e('Volg ons op Linkedin', 'corp'); ?></a></span>       
+              <svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg><span><a href="<?php echo $social_linkedin;?>" target="_blank"><?php _e('Volg ons op Linkedin', 'corp'); ?></a></span>       
             </li>            
             <li>
               <svg class="icon icon-location"><use xlink:href="#icon-location"></use></svg><span><a href="<?php echo $maps_url;?>" target="_blank"><?php esc_html_e('Lokatie op Google Maps', 'corp'); ?></a></span>       

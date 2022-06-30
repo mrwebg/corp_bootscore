@@ -15,7 +15,7 @@ wp_enqueue_script('corp-bootscore', get_stylesheet_directory_uri() . '/js/custom
 /* TEXTDOMAIN CORP
 ================================================== */
 function add_child_theme_textdomain() {
-  load_child_theme_textdomain( 'corp', get_stylesheet_directory() . '/languages' );
+  load_child_theme_textdomain( 'corp_bootscore', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 /* ADMIN SCRIPTS HOOKED
