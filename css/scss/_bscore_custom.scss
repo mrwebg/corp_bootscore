@@ -36,10 +36,15 @@ body.home{
   }
 }
 
-.corp-home-featured-wrapper{
+.corp-home-featured-wrapper,
+.corp-full-width-grid-posts-wrapper{
   &.container-fluid{
     padding-left: 0;
     padding-right: 0;
+    @media (min-width: $corp-contact-bar-breakpoint){
+      padding-left: $corp-contact-bar-width;
+      padding-right: $corp-contact-bar-width;
+    }
   }
 }
 .corp-home-teasers-wrapper{
@@ -133,6 +138,9 @@ body.page-template-page-expertise{
     flex-direction: row;
     justify-content: space-between;
   }
+  @media (max-width: ($corp-contact-bar-breakpoint - 1px)){
+    margin-bottom: $contact-sidebar-icon-size + 1rem + $contact-sidebar-mobile-padding-bottom; // $contact-sidebar-icon-size + ul padding + extra bottom padding
+  }
   
 
   .corp-bedrijfsgegevens{
@@ -169,10 +177,7 @@ body.home .bootscore-footer{
   }
 
   // space for contact-sidebar
-  @media (max-width: ($corp-contact-bar-breakpoint - 1px)){
-    padding-bottom: $contact-sidebar-icon-size + 1rem + $contact-sidebar-mobile-padding-bottom; // $contact-sidebar-icon-size + ul padding + extra bottom padding
-  }
-  @media (min-width: $corp-contact-bar-breakpoint) and (max-width: $corp-expanded-navbar-breakpoint){
+  @media (min-width: $corp-contact-bar-breakpoint) and (max-width: $corp-expanded-navbar-breakpoint){ // when contact-sidebar is right on small screens
     padding-right: $corp-contact-bar-width;
   }
 }

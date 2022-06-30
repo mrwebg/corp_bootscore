@@ -10,6 +10,10 @@
   background: $white;
   height: $corp-navbar-height-xs;
   transition: $corp-nav-main-sticky-transition;
+  @media (min-width: $corp-contact-bar-breakpoint) and (max-width: $corp-expanded-navbar-breakpoint){ // when contact-sidebar is right on small screens
+    margin-right: $corp-contact-bar-width;
+    position: relative;
+  }
   @include media-breakpoint-up(md){
     height: $corp-navbar-height-md; 
   }
