@@ -22,7 +22,7 @@
             <?php the_content(); ?>         
           </div><!-- /.col- -->
           <div class="col-6 parallax-col" data-scroll-speed="1"> 
-            <div class="wrapper-contact-cf7-intro" style="padding:2rem;background-color:#fff;"> 
+            <div class="wrapper-contact-cf7-intro" style="background-color:#fff;"> 
               <!-- RIGHT COLUMN CF7 INTRO. -->
               <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'cf7_intro_title', true))) { ?>
                 <h2 class="h5 cf7_intro_title"><?php echo get_post_meta(get_the_ID(), _CMB . 'cf7_intro_title', true) ;?></h2><!-- /.cf7_intro_title -->  
@@ -35,7 +35,7 @@
             <div class="wrapper-contact-cf7-featured-image"> 
             <!-- CONTACT FORM 7. -->             
             <?php if ( shortcode_exists( 'contact-form-7' ) ) {?>
-              <div class="wrapper-vacature-cf7" style="padding:2rem;background-color:#fff;"> 
+              <div class="wrapper-vacature-cf7" style="background-color:#fff;"> 
                 <?php $cf7_shortcode = '[contact-form-7 id="1585" title="vacature-formulier-nl"]';?>
                 <?php echo apply_shortcodes($cf7_shortcode);?>
               </div><!-- /.wrapper-vacature-cf7 -->  
