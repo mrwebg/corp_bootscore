@@ -1,8 +1,8 @@
 <?php
 function corp_featured_image_background() {
-  //if ( is_page()){
-  if (! is_page_template( 'page-team.php' ) || ! is_singular( 'mensen' )  || ! is_singular( 'vacature' ) || ! is_page_template( 'page-contact.php' )) {
-    global $post;
+  global $post;
+  if (! is_page_template( 'page-team.php' ) || 'mensen' !=== $post->post_type  ||  'vacature' !=== $post->post_type || ! is_page_template( 'page-contact.php' )) {
+
     $html = '<!-- FEATURED IMAGE BACKGROUND. -->';
     $featured_image_alt = $post->post_title;
     $featured_thumbail_id = get_post_thumbnail_id($post->ID);
