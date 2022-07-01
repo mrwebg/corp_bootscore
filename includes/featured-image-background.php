@@ -28,4 +28,3 @@ function corp_featured_image_background() {
   }
 }
 add_action( 'wp_footer', 'corp_featured_image_background' );
-
