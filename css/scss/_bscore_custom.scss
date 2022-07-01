@@ -208,7 +208,7 @@ body.home .bootscore-footer{
   }
 
   // space for contact-sidebar
-  @media (min-width: $corp-contact-bar-breakpoint) and (max-width: $corp-expanded-navbar-breakpoint){ // when contact-sidebar is right on small screens
+  @media (min-width: $corp-contact-bar-breakpoint) and (max-width: $corp-contact-bar-fixed-breakpoint - 1px){ // when contact-sidebar is right on small screens
     padding-right: $corp-contact-bar-width;
   }
 }
@@ -272,6 +272,11 @@ body.home .bootscore-footer{
   @include media-breakpoint-up(xl){
     top: $corp-navbar-height-xl-sticky;
   }
+  // space for contact-sidebar
+  @media (min-width: $corp-contact-bar-breakpoint) and (max-width: $corp-contact-bar-fixed-breakpoint - 1px){ // when contact-sidebar is right on small screens
+    right: $corp-contact-bar-width;
+    width: calc(50% - (#{$corp-contact-bar-width} * .5));
+  }
 
   img, video{
     position: absolute;
@@ -285,6 +290,7 @@ body.home .bootscore-footer{
 // full-screen background
 body.home .featured-image-background{
   top: 0 !important;
+  right: 0 !important;
   width: 100% !important;
   height: 100% !important;
 }
