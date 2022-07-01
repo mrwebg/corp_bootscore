@@ -36,7 +36,7 @@ $post_array = get_posts($post_args);
           <?php the_post(); ?>
           <!-- Title -->
           <?php the_title('<h1>', '</h1>'); ?>
-          <!-- .entry-header -->
+          <!-- /.entry-header -->
         </header>
         <div class="entry-content">
           <!-- Content -->
@@ -59,25 +59,25 @@ $post_array = get_posts($post_args);
                 <div class="col">
                   <div class="card h-100">
                     <div class="card-body">
-                      <h5 class="card-title"><a href="<?php echo $url;?>"><?php the_title(); ?></a></h5>
+                      <h5 class="card-title"><a href="<?php echo $url;?>"><?php the_title(); ?></a></h5><!-- /.card-title -->
                       <?php if (!empty($expertise_name))  { ?>  <h6 class="card-subtitle mb-2 text-muted"><?php echo $expertise_name;?></h6><?php } ?>
-                      <ul>
+                      <ul class="card-list-team-icons">
                         <?php if (!empty($text_email)) { ?><li>text_email: <?php echo $text_email;?></li><?php } ?>
                         <?php if (!empty($text_telefoon)) { ?><li>text_telefoon: <?php echo $text_telefoon;?></li><?php } ?>
                         <?php if (!empty($text_mobiel)) { ?><li>text_mobiel: <?php echo $text_mobiel;?></li><?php } ?>
                         <?php if (!empty($file_vcard)) { ?><li>file_vcard: <?php echo $file_vcard;?></li><?php } ?>
-                      </ul>
-                    </div>
-                  </div><!-- .card -->
-                </div><!-- .col -->
+                      </ul><!-- /.card-list-team-icons -->
+                    </div><!-- /.card-body -->
+                  </div><!-- /.card -->
+                </div><!-- /.col -->
               <?php endforeach;?>
               <?php wp_reset_postdata(); ?>
             <?php endif; ?>
           </div><!-- /.row -->          
-        </div><!-- .entry-content -->
-      </div>
-    </main><!-- #main -->
-  </div><!-- #primary -->
-</div><!-- #content -->
+        </div><!-- /.entry-content -->
+      </div><!-- /.container -->
+    </main><!-- /main -->
+  </div><!-- /.primary -->
+</div><!-- /.content -->
 <?php
 get_footer();
