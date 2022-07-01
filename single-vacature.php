@@ -7,12 +7,6 @@
 ?>
 <?php get_header();?>
 
-<?php
-$vacature_id = get_query_var( 'p' );
-if(isset($vacature_id)){
-  echo $vacature_id;
-}
-?>
 
 
 <div id="content" class="site-content">
@@ -30,6 +24,10 @@ if(isset($vacature_id)){
               </header><!-- .entry-header -->
               <div class="entry-content">
                 <?php the_content(); ?>
+                <?php if ( shortcode_exists( 'contact-form-7' ) ) {
+                  $cf7_shortcode = '[contact-form-7 id="1585" title="vacature-formulier-nl" vacature_id="'.get_the_ID() .'" vacature_name="'.get_the_title().'"]';
+                  echo apply_shortcodes($cf7_shortcode); 
+                }?>
               </div><!-- .entry-content-->
             <?php endwhile;?>
           <?php endif; ?>                        
