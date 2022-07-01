@@ -2,13 +2,13 @@
 /**
 * Template Name: Expertise pagina
 * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
-* @package corp
+* @package corp_bootscore
 */
 get_header();?>
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
-      <div class="entry-content container">
+      <div class="container entry-content">    
         <div class="row">
           <div class="col-lg-6 parallax-col" data-scroll-speed="12">
             <header class="entry-header">
@@ -46,7 +46,6 @@ get_header();?>
             ?>            
             <?php if (is_array($post_array) && count($post_array) > 0): ?>
               <div class="wrapper-expertise-team">
-                <!-- h2>Team <?php //echo ucfirst($expertise_name);?></h2 -->
                 <?php
                 foreach ($post_array as $post):
                   setup_postdata($post);
@@ -76,8 +75,10 @@ get_header();?>
           </div><!-- /.col- -->
           <div class="col-6 parallax-col" data-scroll-speed="1">
             <!-- RIGHT COLUMN EXTRA CONTENT. -->
-            <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'right_column', true))) { ?>                           
-              <?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'right_column', true));?>
+            <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'right_column', true))) { ?>
+              <div class="wrapper-expertise-rechter-kolom-extra">                           
+                <?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'right_column', true));?>
+              </div>
             <?php } ?>
             <!-- #RIGHT COLUMN EXTRA CONTENT. -->                        
           </div><!-- /.col -->
