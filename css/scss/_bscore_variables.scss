@@ -10,6 +10,7 @@ $corp-transparent-background: rgba($gray-800, 20%);
 $corp-desktop-gutter-width-beakpoint: 1200px; // larger paddings large screens = xl 
 $corp-grid-gutter-width-desktop: 7.5rem;
 
+
 // navbar
 $corp-expanded-navbar-breakpoint: 992px; // = navbar-expand-lg
 $corp-nav-main-sticky-transition: all .2s ease-in-out; 
@@ -20,9 +21,32 @@ $corp-navbar-height-md-sticky: $corp-navbar-height-md * .75;
 $corp-navbar-height-xl: 10rem;
 $corp-navbar-height-xl-sticky: $corp-navbar-height-xl * .6; 
 
-
-
-// elements
-$corp-dotted-border: 2px dotted $white; // dotted lines
-
+// contact bar
 $corp-contact-bar-width: 3rem; // width black bar on right (desktop)
+$corp-contact-bar-breakpoint: 768px; // right position
+$contact-sidebar-icon-size: 1.5rem; 
+$contact-sidebar-mobile-padding-bottom: 1rem;
+
+
+// borders
+$corp-dotted-border: 2px dotted $body-color; // dotted lines
+
+@mixin corp-dotted-border-top{
+	border-top: $corp-dotted-border;
+	padding-top: $spacer;
+}
+
+@mixin corp-dotted-border-top-off-page{
+	position: relative;
+	padding-top: $spacer;
+
+	&:before{
+		@include corp-dotted-border-top;
+		position: absolute;
+		display: block;
+		content: '';
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+}

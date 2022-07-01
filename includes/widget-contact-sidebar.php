@@ -14,35 +14,7 @@ function corp_widget_contact_sidebar() {
       $maps_url = (array_key_exists('maps_url', $bedrijfsgegevens))? $bedrijfsgegevens['maps_url'] : '';
       if(!empty($adres_telefoon) && '' !== $adres_telefoon && !empty($adres_email) && '' !== $adres_email && !empty($maps_url) && '' !== $maps_url){
         ?>  
-        <style>
-          .widget-contact-sidebar-wrapper {
-            position:absolute;
-            top: 0;
-            right:0px;
-            width:48px;
-            height:100%;
-            background-color:#000;
-            z-index: 5000;
-          }
-          .widget-contact-sidebar {
-            list-style:none;
-            position:absolute;
-            left:10px;
-            top:50vh;
-            margin:0;
-            padding:0;
-          }
-          .widget-contact-sidebar > li{
-            white-space: nowrap;
-            padding-left:.5rem;            
-          } 
-          .widget-contact-sidebar span{
-            padding-left:.1rem;
-          }          
-          .widget-contact-sidebar svg, .widget-contact-sidebar span, .widget-contact-sidebar a{
-            color:#fff;
-          }                               
-        </style>     
+
         <div class="widget-contact-sidebar-wrapper">
           <ul class="widget-contact-sidebar">
             <li>
