@@ -82,7 +82,7 @@ get_header();?>
               } 
               if(!empty($post_title) && !empty($text_email) && !empty($permalink)){?>
                 <div class="wrapper-vacatures-rechter-kolom-contactpersoon"> 
-                  <h5><a href="<?php echo $permalink;?>"><?php echo $post_title; ?></a></h5>                          
+                  <h2><a href="<?php echo $permalink;?>"><?php echo $post_title; ?></a></h2>                          
                   <ul class="contactperson-icons">
                     <?php if(!empty($text_telefoon_formatted)) { ?>
                       <li>
