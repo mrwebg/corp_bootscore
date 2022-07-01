@@ -15,7 +15,7 @@ get_header();?>
               <?php the_post(); ?>
               <!-- TITLE -->
               <?php the_title('<h1>', '</h1>'); ?>
-              <!-- .entry-header -->
+              <!-- /.entry-header -->
             </header>
             <!-- CONTENT -->
             <?php the_content(); ?>
@@ -62,30 +62,30 @@ get_header();?>
                   </p>
                 <?php endforeach;?>
                 <?php wp_reset_postdata(); ?>
-              </div>
+              </div><!-- /.wrapper-expertise-team -->  
             <?php endif; ?>
-            <!-- #TEAM. -->
+            <!-- /TEAM. -->
             <!-- LEFT COLUMN EXTRA CONTENT. -->          
             <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'left_column', true))) { ?>              
               <div class="wrapper-expertise-linker-kolom-extra">
                 <?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'left_column', true));?>           
-              </div>              
+              </div><!-- /.wrapper-expertise-linker-kolom-extra -->              
             <?php } ?>
-            <!-- #LEFT COLUMN EXTRA CONTENT. -->             
-          </div><!-- #col- -->
+            <!-- /LEFT COLUMN EXTRA CONTENT. -->             
+          </div><!-- /.col- -->
           <div class="col-6 parallax-col" data-scroll-speed="1">
             <!-- RIGHT COLUMN EXTRA CONTENT. -->
             <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'right_column', true))) { ?>
               <div class="wrapper-expertise-rechter-kolom-extra">                           
                 <?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'right_column', true));?>
-              </div>
+              </div><!-- /.wrapper-expertise-rechter-kolom-extra -->   
             <?php } ?>
-            <!-- #RIGHT COLUMN EXTRA CONTENT. -->                        
-          </div><!-- #col -->
-        </div><!-- #row -->
-      </div><!-- #container -->
+            <!-- /RIGHT COLUMN EXTRA CONTENT. -->                        
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
       <?php get_template_part('includes/footer', 'quote', array('postID' => get_the_ID())); ?>           
-    </main><!-- #main -->
-  </div><!-- #primary -->
-</div><!-- #content -->
+    </main><!-- /main -->
+  </div><!-- /.primary -->
+</div><!-- /.content -->
 <?php get_footer();
