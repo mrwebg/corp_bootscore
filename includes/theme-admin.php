@@ -79,19 +79,16 @@ if (is_admin()) {
   }
   add_filter( 'custom_menu_order', 'reorder_admin_menu' );
   add_filter( 'menu_order', 'reorder_admin_menu' );
+
   // MENSEN PORTRAIT IMAGE SIZE;
   add_image_size( 'team-portrait', 600, 600, false );
-  // show all registered image sizes.
-  // print '<pre>';
-  // print_r( wp_get_registered_image_subsizes() );
-  // print '</pre>';
 
   // UNSET PAGE TEMPLATE FROM PAGE ATTRIBUTES METABOX TEMPLATE DROPDOWN.
   add_filter( 'theme_page_templates', 'mrweb_remove_page_template' );
   function mrweb_remove_page_template( $pages_templates ) {
     //$temp = $pages_templates['page-test.php'];
     // add it back
-  //$page_templates[] = 'page-sidebar-left.php';
+    //$page_templates[] = 'page-sidebar-left.php';
     // remove the template.
     //unset( $pages_templates['page-test.php'] );
     unset($pages_templates['page-sidebar-left.php']);
@@ -140,7 +137,6 @@ function mrweb_page_column_populate_template($column, $post_id) {
   ================================================== */
 
 function gtwc_remove_column_date() {
-    //$posttypes = array("page", "banner", "quotes", "mensen", "divider", "deals");
     $posttypes = array("page", "mensen", "quotes");
     if (is_array($posttypes) && count($posttypes) > 0) {
         foreach ($posttypes as $posttype) {
@@ -216,27 +212,3 @@ function mrweb_first_paragraph_class_lead($content){
   }
 }
 add_filter('the_content', 'mrweb_first_paragraph_class_lead');
-
-
-// ADD QUERY VAR FOR PID ($post->ID).
-function add_post_id_query_var( $vars ){
-  $vars[] = "p";
-  return $vars;
-}
-remove_filter( 'query_vars', 'add_post_id_query_var' );
-
-
-add_filter( 'shortcode_atts_wpcf7', 'custom_shortcode_atts_wpcf7_filter', 10, 3 );
- 
-function custom_shortcode_atts_wpcf7_filter( $out, $pairs, $atts ) {
-  $vacature_id = 'vacature_id';
-  $vacature_name = 'vacature_name';
- 
-  if ( isset( $atts[$vacature_id] ) ) {
-    $out[$vacature_id] = $atts[$vacature_id];
-  }
-  if ( isset( $atts[$vacature_name] ) ) {
-    $out[$vacature_name] = $atts[$vacature_name];
-  } 
-  return $out;
-}
