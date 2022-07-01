@@ -624,11 +624,11 @@ $font-sizes: (
 // scss-docs-end font-sizes
 
 // scss-docs-start headings-variables
-$headings-margin-bottom:      $spacer * .5 !default;
+$headings-margin-bottom:      $spacer !default;
 $headings-font-family:        $font-family-sans-serif !default; // null
 $headings-font-style:         null !default;
 $headings-font-weight:        700 !default;
-$headings-line-height:        1.2 !default;
+$headings-line-height:        1.1 !default;
 $headings-color:              null !default;
 // scss-docs-end headings-variables
 
@@ -1256,8 +1256,8 @@ $placeholder-opacity-min:           .2 !default;
 // Cards
 
 // scss-docs-start card-variables
-$card-spacer-y:                     $grid-gutter-width * .5 !default; // $spacer
-$card-spacer-x:                     $grid-gutter-width * .5 !default; // $spacer
+$card-spacer-y:                     $grid-gutter-width !default; // $spacer
+$card-spacer-x:                     $grid-gutter-width !default; // $spacer
 $card-title-spacer-y:               $spacer * .5 !default;
 $card-border-width:                 0 !default; // $border-width
 $card-border-color:                 rgba($black, .125) !default;

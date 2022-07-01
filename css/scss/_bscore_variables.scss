@@ -29,5 +29,24 @@ $contact-sidebar-mobile-padding-bottom: 1rem;
 
 
 // borders
-$corp-dotted-border: 2px dotted $white; // dotted lines
+$corp-dotted-border: 2px dotted $body-color; // dotted lines
 
+@mixin corp-dotted-border-top{
+	border-top: $corp-dotted-border;
+	padding-top: $spacer;
+}
+
+@mixin corp-dotted-border-top-off-page{
+	position: relative;
+	padding-top: $spacer;
+
+	&:before{
+		@include corp-dotted-border-top;
+		position: absolute;
+		display: block;
+		content: '';
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+}

@@ -249,21 +249,20 @@ body.home #nav-main{
     }
   }
   
-  button[data-bs-target="#offcanvas-navbar"] .bar{
-    background: $white;
-  }
-  .offcanvas.show + .header-actions .corp-offcanvas-toggle .bar{
-    background: $body-color;
-  }
+  // button[data-bs-target="#offcanvas-navbar"] .bar{
+  //   background: $white;
+  // }
+  // .offcanvas.show + .header-actions .corp-offcanvas-toggle .bar{
+  //   background: $body-color;
+  // }
 
   &.nav-main-sticky{
-    background: $body-color;
+    background: $white;
     @media (min-width: $corp-expanded-navbar-breakpoint){
-      background: $corp-transparent-background;
+      background: $black;
     }
   }
 }
-
 
 // Contact buttons 
 .widget-contact-sidebar-wrapper{
@@ -302,7 +301,7 @@ body.home #nav-main{
       text-align: center;
       margin: 1rem 0;
       @media (max-width: ($corp-contact-bar-breakpoint - 1px)){
-        margin: 0 1px;
+        margin: 0 1rem;
       }
 
       a{

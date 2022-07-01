@@ -15,6 +15,7 @@ h5, .h5{
   font-size: $h5-font-size;
 }
 
+
 .lead{
   font-family: $font-family-sans-serif;
 }
@@ -61,6 +62,7 @@ body.home{
       top: 0;
       width: 100vw;
       border-top: $corp-dotted-border;
+      border-top-color: $white;
       @media (min-width: $corp-desktop-gutter-width-beakpoint){
         right: $corp-grid-gutter-width-desktop * .5;
       }
@@ -121,7 +123,13 @@ body.page-template-page-expertise{
   }
 }
 
+.wrapper-expertise-team{
+  @include corp-dotted-border-top-off-page;
 
+  &:before{
+    left: -100vw;
+  }
+}
 
 
 
@@ -140,6 +148,13 @@ body.page-template-page-expertise{
   }
   @media (max-width: ($corp-contact-bar-breakpoint - 1px)){
     margin-bottom: $contact-sidebar-icon-size + 1rem + $contact-sidebar-mobile-padding-bottom; // $contact-sidebar-icon-size + ul padding + extra bottom padding
+  }
+
+  &.container-fluid{
+    @media (min-width: $corp-contact-bar-breakpoint){ // when contact-sidebar is right 
+      margin-right: $corp-contact-bar-width;
+      width: auto;
+    }
   }
   
 
