@@ -15,12 +15,12 @@ get_header();?>
                 <?php the_post(); ?>
                 <!-- TITLE -->
                 <?php the_title('<h1>', '</h1>'); ?>
-                <!-- #entry-header -->
+                <!-- /.entry-header -->
               </header>
               <!-- CONTENT -->
               <?php the_content(); ?>
-          </div><!-- #col --> 
-        </div><!-- #row -->  
+          </div><!-- /.col --> 
+        </div><!-- /.row -->  
         <div class="corp-track-records-wrapper">
           <!-- TRACK RECORDS  -->
             <?php
@@ -42,19 +42,20 @@ get_header();?>
                   <?php setup_postdata($post); ?>
                     <div class="col">
                       <div class="corp-track-record">
-                          <h2 class="h5 corp-track-record-title"><?php the_title(); ?></h5><!-- #card-title -->
-                          <p class="corp-track-record-subtitle">card category</p><!-- #card-subtitle -->
-                          <?php the_content(); ?><!-- #card-text -->
-                      </div><!-- #corp-track-record -->
-                    </div><!-- #col -->
+                          <h2 class="h5 corp-track-record-title"><?php the_title(); ?></h5><!-- /.corp-track-record-title -->
+                          <p class="corp-track-record-subtitle">card category</p><!-- /.corp-track-record-subtitle -->
+                          <?php the_content(); ?>
+                      </div><!-- /.corp-track-record -->
+                    </div><!-- /.col -->
                   <?php } ?>
                 <?php wp_reset_postdata(); ?>
-              </div><!-- #row -->
+              </div><!-- /.row -->
             <?php } ?>
-        </div><!-- /.corp-track-records-wrapper -->          
-      </div><!-- #container -->
+          <!-- /TRACK RECORDS  -->               
+        </div><!-- /.corp-track-records-wrapper --> 
+      </div><!-- /.container -->
       <?php get_template_part('includes/footer', 'quote', array('postID' => get_the_ID())); ?>                    
-    </main><!-- #main -->
-  </div><!-- #primary -->
-</div><!-- #content -->
+    </main><!-- main -->
+  </div><!-- /.primary -->
+</div><!-- /.content -->
 <?php get_footer();

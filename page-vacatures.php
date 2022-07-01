@@ -15,11 +15,11 @@ get_header();?>
               <?php the_post(); ?>              
               <!-- Title -->
               <?php the_title('<h1>', '</h1>'); ?>
-              <!-- .entry-header -->
+              <!-- /.entry-header -->
             </header>
             <!-- Content -->
             <?php the_content(); ?>
-          </div><!-- .col -->
+          </div><!-- /.col -->
           <div class="col-6 parallax-col" data-scroll-speed="1">
             <!-- VACATURES -->
             <?php
@@ -54,19 +54,19 @@ get_header();?>
                   <div class="corp-vacature">
                     <h5 class="corp-vacature-title"><a href="<?php echo esc_url($url);?>"><?php the_title(); ?></a></h5><!-- .corp-vacature-title -->
                     <?php the_content(); ?>
-                  </div><!-- .corp-vacature -->                    
+                  </div><!-- /.corp-vacature -->                    
                 <?php endforeach;?>
                 <?php wp_reset_postdata(); ?>
-              </div><!-- .wrapper-vacatures-listing -->
+              </div><!-- /.wrapper-vacatures-listing -->
               <?php } ?>
-              <!-- #VACATURES --> 
+              <!-- /VACATURES --> 
               <!-- RIGHT COLUMN EXTRA CONTENT. -->
               <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'right_column', true))) { ?>
                 <div class="wrapper-vacatures-rechter-kolom-extra">                           
                   <?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'right_column', true));?>
-                </div>
+                </div><!-- /.wrapper-vacatures-rechter-kolom-extra -->
               <?php } ?>
-              <!-- #RIGHT COLUMN EXTRA CONTENT. -->
+              <!-- /RIGHT COLUMN EXTRA CONTENT. -->
               <!-- RIGHT COLUMN CONTACT PERSON. -->                         
               <?php
               $mensenID = intval(get_post_meta(get_the_ID(), _CMB . 'vacature_contact', true));
@@ -99,15 +99,15 @@ get_header();?>
                         <a href="mailto:<?php echo $text_email;?>" target="_blank"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg></a>      
                       </li>
                     <?php } ?>                     
-                  </ul><!-- .contactperson-icons -->                   
-                </div><!-- .wrapper-vacatures-rechter-kolom-contactpersoon -->                                
+                  </ul><!-- /.contactperson-icons -->                   
+                </div><!-- /.wrapper-vacatures-rechter-kolom-contactpersoon -->                                
               <?php } ?>             
-              <!-- #RIGHT COLUMN CONTACT PERSON. -->                       
-            </div><!-- .col -->
-          </div><!-- .row -->
-        </div><!-- .container -->               
-      </main><!-- main -->      
-    </div><!-- .primary -->
-  </div><!-- .content -->
+              <!-- /RIGHT COLUMN CONTACT PERSON. -->                       
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->               
+      </main><!--/ main -->      
+    </div><!-- /.primary -->
+  </div><!-- /.content -->
   <?php
   get_footer();
