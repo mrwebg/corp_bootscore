@@ -70,7 +70,7 @@ get_header();?>
               <!-- RIGHT COLUMN CONTACT PERSON. -->                         
               <?php
               $mensenID = intval(get_post_meta(get_the_ID(), _CMB . 'vacature_contact', true));
-              if(!empty($mensenID) && is_int($mensenID)){
+              if(!empty($mensenID) && is_int($mensenID)){                
                 $postMensen = get_post($mensenID);
                 $post_title = $postMensen->post_title;
                 $text_email = get_post_meta($mensenID, _CMB . 'text_email', true);
