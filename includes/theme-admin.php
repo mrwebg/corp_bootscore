@@ -26,12 +26,13 @@ if (is_admin()) {
 }
 /* MIME TYPES.
   ================================================== */
-  function mrweb_enable_vcard( $mime_types ){
+  function mrweb_enable_custom_mimes( $mime_types ){
     $mime_types['vcf'] = 'text/vcard';
     $mime_types['vcard'] = 'text/vcard';
+    $mimes['svg'] = 'image/svg+xml';    
     return $mime_types;
   }
-  add_filter('upload_mimes', 'mrweb_enable_vcard' );
+  add_filter('upload_mimes', 'mrweb_enable_custom_mimes' );
   /* DISABLE GUTENBERG
     ================================================== */
   function mrweb_disable_block_styles() {
@@ -215,10 +216,11 @@ function mrweb_first_paragraph_class_lead($content){
   }
 }
 add_filter('the_content', 'mrweb_first_paragraph_class_lead');
-// Allow svg upload
 
-function cc_mime_types($mimes) {
-  $mimes['svg'] = 'image/svg+xml';
-  return $mimes;
+
+// ADD QUERY VAR FOR PID ($post->ID).
+function add_post_id_query_var( $vars ){
+  $vars[] = "p";
+  return $vars;
 }
-add_filter('upload_mimes', 'cc_mime_types');
+add_filter( 'query_vars', 'add_post_id_query_var' );

@@ -13,7 +13,7 @@ get_header();?>
           <div class="col-lg-6 parallax-col" data-scroll-speed="12">
             <header class="entry-header">
               <?php the_post(); ?>
-              <!-- Title -->
+              <!-- TITLE -->
               <?php the_title('<h1>', '</h1>'); ?>
               <!-- .entry-header -->
             </header>
@@ -72,7 +72,7 @@ get_header();?>
               </div>              
             <?php } ?>
             <!-- #LEFT COLUMN EXTRA CONTENT. -->             
-          </div><!-- /.col- -->
+          </div><!-- #col- -->
           <div class="col-6 parallax-col" data-scroll-speed="1">
             <!-- RIGHT COLUMN EXTRA CONTENT. -->
             <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'right_column', true))) { ?>
@@ -81,46 +81,11 @@ get_header();?>
               </div>
             <?php } ?>
             <!-- #RIGHT COLUMN EXTRA CONTENT. -->                        
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.entry-content -->
-      <!-- QUOTE. -->
-      <?php
-      $selected_quote_id = get_post_meta(get_the_ID(),  _CMB .'select_quote', true);
-      if('' !== $selected_quote_id && $selected_quote_id > 0 ){
-        $selected_quote   = get_post( intval($selected_quote_id) );
-        setup_postdata($selected_quote);
-        $quote_bron = get_post_meta($selected_quote_id, _CMB . 'text_bron', true);
-        $quote_url = get_post_meta($selected_quote_id, _CMB . 'url_bron', true);
-        ?>
-        <div class="corp-footer-quote-wrapper">
-          <div class="container">
-            <div class="row justify-content-end">
-              <div class="col-lg-6">
-                <figure style="margin:0;">
-                  <blockquote class="blockquote">
-                    <p><?php echo ucfirst($selected_quote->post_title); ?></p>
-                  </blockquote>
-                  <?php
-                  if('' !== $quote_bron && '' !== $quote_url){?>
-                  <figcaption class="blockquote-footer">
-                    <a href="<?php echo get_post_meta($selected_quote_id, _CMB . 'url_bron', true);?>" target="_blank"><cite title="<?php echo get_post_meta($selected_quote_id, _CMB .'text_bron', true); ?>"><?php echo strtoupper(get_post_meta($selected_quote_id, _CMB .'text_bron', true)); ?></cite></a>
-                  </figcaption>
-                  <?php
-                }
-                ?>
-                </figure>
-              </div>
-            </div>
-          </div>
-        </div>
-        <?php
-        wp_reset_postdata();
-      }
-      ?>
-      <!-- #QUOTE. -->      
-      </main><!-- #main -->
-    </div><!-- #primary -->
-  </div><!-- #content -->
-  <?php
-  get_footer();
+          </div><!-- #col -->
+        </div><!-- #row -->
+      </div><!-- #container -->
+      <?php get_template_part('includes/footer', 'quote', array('postID' => get_the_ID())); ?>           
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div><!-- #content -->
+<?php get_footer();
