@@ -275,6 +275,7 @@ function mrweb_register_cmb2_metaboxes() {
     'type' => 'select',
     'show_option_none' => true,
     'options' => mrweb_return_posts('mensen'),
+    'default' => '179',
     'show_in_rest' => true,
   ));          
 }
