@@ -21,9 +21,8 @@ get_header();?>
               <?php the_content(); ?>
           </div><!-- #col --> 
         </div><!-- #row -->  
-        <div class="row">
-          <div class="col">
-            <!-- TRACK RECORDS  -->
+        <div class="corp-track-records-wrapper">
+          <!-- TRACK RECORDS  -->
             <?php
             $post_type = 'deals';
             $post_args = array(
@@ -35,27 +34,24 @@ get_header();?>
             $post_array = get_posts($post_args);
             ?>
             <?php if (is_array($post_array) && count($post_array) > 0) { ?>
-              <div class="row row-cols-4 row-cols-md-4 g-4">
+              <div class="row row-cols-4 row-cols-md-4">
                 <?php foreach ($post_array as $post) { ?>
                   <?php $expertise = get_the_terms(get_the_ID(), "expertise"); ?>
                   <?php $expertise_name = (is_array($expertise) && count($expertise)>0)? $expertise[0]->name : ""; ?>
                   <?php $expertise_id = (is_array($expertise) && count($expertise)>0)? $expertise[0]->term_id : 0; ?>
                   <?php setup_postdata($post); ?>
                     <div class="col">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <h2 class="h5 card-title"><?php the_title(); ?></h5><!-- #card-title -->
-                          <h3 class="h6 card-subtitle mb-2 text-muted">card category</h3><!-- #card-subtitle -->
+                      <div class="corp-track-record">
+                          <h2 class="h5 corp-track-record-title"><?php the_title(); ?></h5><!-- #card-title -->
+                          <p class="corp-track-record-subtitle">card category</p><!-- #card-subtitle -->
                           <?php the_content(); ?><!-- #card-text -->
-                        </div><!-- #card-body -->
-                      </div><!-- #card -->
+                      </div><!-- #corp-track-record -->
                     </div><!-- #col -->
                   <?php } ?>
                 <?php wp_reset_postdata(); ?>
               </div><!-- #row -->
-            <?php } ?>            
-          </div><!-- #col -->  
-        </div><!-- #row -->     
+            <?php } ?>
+        </div><!-- /.corp-track-records-wrapper -->          
       </div><!-- #container -->
       <?php get_template_part('includes/footer', 'quote', array('postID' => get_the_ID())); ?>                    
     </main><!-- #main -->
