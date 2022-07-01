@@ -24,6 +24,7 @@ $corp-navbar-height-xl-sticky: $corp-navbar-height-xl * .6;
 // contact bar
 $corp-contact-bar-width: 3rem; // width black bar on right (desktop)
 $corp-contact-bar-breakpoint: 768px; // right position
+$corp-contact-bar-fixed-breakpoint: $corp-desktop-gutter-width-beakpoint;
 $contact-sidebar-icon-size: 1.5rem; 
 $contact-sidebar-mobile-padding-bottom: 1rem;
 
