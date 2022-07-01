@@ -49,14 +49,12 @@ get_header();?>
                 <?php
                 foreach ($post_array as $post):
                   setup_postdata($post);
-                  $url = get_the_permalink();
-                  //echo esc_url( add_query_arg( 'c', $my_value_for_c, site_url( '/some_other_page/' ) ) );
-                  //echo $url;// https://corp.nl/_WPCA22/vacature/ma-pe-advocaat/                  
+                  $url = get_the_permalink();              
                   ?>
                   <div class="col">
                     <div class="card h-100">
                       <div class="card-body">
-                        <h5 class="card-title"><a href="<?php echo esc_url( add_query_arg( 'p', $post->ID, $url ) );?>"><?php the_title(); ?></a></h5>
+                        <h5 class="card-title"><a href="<?php echo esc_url($url);?>"><?php the_title(); ?></a></h5>
                         <?php the_content(); ?>
                       </div>
                     </div><!-- .card -->

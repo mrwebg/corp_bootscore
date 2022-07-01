@@ -223,4 +223,20 @@ function add_post_id_query_var( $vars ){
   $vars[] = "p";
   return $vars;
 }
-add_filter( 'query_vars', 'add_post_id_query_var' );
+remove_filter( 'query_vars', 'add_post_id_query_var' );
+
+
+add_filter( 'shortcode_atts_wpcf7', 'custom_shortcode_atts_wpcf7_filter', 10, 3 );
+ 
+function custom_shortcode_atts_wpcf7_filter( $out, $pairs, $atts ) {
+  $vacature_id = 'vacature_id';
+  $vacature_name = 'vacature_name';
+ 
+  if ( isset( $atts[$vacature_id] ) ) {
+    $out[$vacature_id] = $atts[$vacature_id];
+  }
+  if ( isset( $atts[$vacature_name] ) ) {
+    $out[$vacature_name] = $atts[$vacature_name];
+  } 
+  return $out;
+}
