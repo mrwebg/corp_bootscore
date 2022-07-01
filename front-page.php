@@ -10,22 +10,18 @@
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
-      <!-- TITLE & DESCRIPTION. -->
       <div class="container">
         <div class="row">
           <div class="col">
             <header class="entry-header text-white mb-4">
               <?php the_post(); ?>
               <!-- Title -->
-              <?php the_title('<h1 class="display-1">', '</h1>'); ?>
-              <!-- .entry-header -->
-              <h2 class="display-2 blog-description"><?php bloginfo('description'); ?></h2>
-              <!-- .blog-description -->
-            </header>
+              <?php the_title('<h1 class="display-1">', '</h1>'); ?>              
+              <h2 class="display-2 blog-description"><?php bloginfo('description'); ?></h2><!-- /.blog-description -->
+            </header><!-- /.entry-header -->
           </div>
         </div>
-      </div>
-      <!-- END TITLE & DESCRIPTION. -->
+      </div><!-- /.container -->
       <!-- FEATURED. -->
       <?php
       $featured_post_type_selected = get_post_meta(get_the_ID(),  _CMB .'featured_select', true);
@@ -43,13 +39,13 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div><!-- /.container-fluid .corp-home-featured-wrapper -->
           <?php
           wp_reset_postdata();
         }
       }
       ?>
-      <!-- END FEATURED. -->
+      <!-- /FEATURED. -->
       <!-- TEASERS. -->
       <div class="container-fluid corp-home-teasers-wrapper mb-4">
         <div class="container text-white">
@@ -64,11 +60,11 @@
             </div>
           </div>
         </div>
-      </div>
-      <!-- END TEASERS. -->
+      </div><!-- /.corp-home-teasers-wrapper -->
+      <!-- /TEASERS. -->
       <?php get_template_part('includes/footer', 'quote', array('postID' => get_the_ID())); ?>
-    </main><!-- #main -->
-  </div><!-- #primary -->
-</div><!-- #content -->
+    </main><!-- /main -->
+  </div><!-- /.primary -->
+</div><!-- /.content -->
 <?php
 get_footer();
