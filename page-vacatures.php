@@ -52,7 +52,7 @@ get_header();?>
                   $url = get_the_permalink();              
                   ?>
                   <div class="corp-vacature">
-                    <h5 class="corp-vacature-title"><a href="<?php echo esc_url($url);?>"><?php the_title(); ?></a></h5><!-- .corp-vacature-title -->
+                    <h2 class="corp-vacature-title"><a href="<?php echo esc_url($url);?>"><?php the_title(); ?></a></h2><!-- .corp-vacature-title -->
                     <?php the_content(); ?>
                   </div><!-- /.corp-vacature -->                    
                 <?php endforeach;?>
@@ -70,7 +70,7 @@ get_header();?>
               <!-- RIGHT COLUMN CONTACT PERSON. -->                         
               <?php
               $mensenID = intval(get_post_meta(get_the_ID(), _CMB . 'vacature_contact', true));
-              if(!empty($mensenID) && is_int($mensenID)){
+              if(!empty($mensenID) && is_int($mensenID)){                
                 $postMensen = get_post($mensenID);
                 $post_title = $postMensen->post_title;
                 $text_email = get_post_meta($mensenID, _CMB . 'text_email', true);
@@ -82,7 +82,7 @@ get_header();?>
               } 
               if(!empty($post_title) && !empty($text_email) && !empty($permalink)){?>
                 <div class="wrapper-vacatures-rechter-kolom-contactpersoon"> 
-                  <h5><a href="<?php echo $permalink;?>"><?php echo $post_title; ?></a></h5>                          
+                  <h3><a href="<?php echo $permalink;?>"><?php echo $post_title; ?></a></h3>                          
                   <ul class="contactperson-icons">
                     <?php if(!empty($text_telefoon_formatted)) { ?>
                       <li>
