@@ -216,7 +216,7 @@ function mrweb_register_cmb2_metaboxes() {
     'type' => 'wysiwyg',
     'default' => 'Optioneel: voeg extra content toe',
   ));  
-  // PAGEVACATURES.
+  // PAGE VACATURES. (overzicht)
   $cmb_pv = new_cmb2_box( array(
     'id'           => 'pv_extra_content',
     'title'        => 'EXTRA CONTENT',
@@ -240,7 +240,38 @@ function mrweb_register_cmb2_metaboxes() {
     'show_option_none' => true,
     'options' => mrweb_return_posts('mensen'),
     'show_in_rest' => true,
-  ));        
+  )); 
+  // PAGE VACATURE. (single-vacature)
+  // $cmb_sv = new_cmb2_box( array(
+  //   'id'           => 'sv_extra_content',
+  //   'title'        => 'EXTRA CONTENT',
+  //   'object_types' => array( 'page' ), // post type
+  //   'show_on'      => array( 'key' => 'page-template', 'value' => 'single-vacature.php' ),
+  //   'context'      => 'normal', //  'normal', 'advanced', or 'side'
+  //   'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
+  //   'show_names'   => true, // Show field names on the left
+  //   'closed'       => false,
+  // ));
+  // $cmb_sv->add_field(array(
+  //   'name' => 'rechter kolom content',
+  //   'id' => $prefix . 'right_column_intro_title',
+  //   'type' => 'text',
+  //   'default' => 'Intro titel',
+  // ));   
+  // $cmb_sv->add_field(array(
+  //   'name' => 'rechter kolom content',
+  //   'id' => $prefix . 'right_column_intro_title',
+  //   'type' => 'wysiwyg',
+  //   'default' => 'Optioneel: voeg extra content toe',
+  // )); 
+  // $cmb_sv->add_field(array(
+  //   'name' => 'contact_persoon',
+  //   'id' => $prefix . 'vacature_contact',
+  //   'type' => 'select',
+  //   'show_option_none' => true,
+  //   'options' => mrweb_return_posts('mensen'),
+  //   'show_in_rest' => true,
+  // ));          
 }
 /* ADD CORP THEME OPTIONS PAGE */
 add_action( 'cmb2_admin_init', 'mrweb_register_theme_options_metabox' );
