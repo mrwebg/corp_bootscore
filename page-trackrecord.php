@@ -10,7 +10,7 @@ get_header();?>
     <main id="main" class="site-main">
       <div class="container entry-content">    
         <div class="row">
-          <div class="col-6">
+          <div class="col-12 col-lg-6">
             <header class="entry-header">
                 <?php the_post(); ?>
                 <!-- TITLE -->
@@ -34,15 +34,16 @@ get_header();?>
             $post_array = get_posts($post_args);
             ?>
             <?php if (is_array($post_array) && count($post_array) > 0) { ?>
-              <div class="row row-cols-4 row-cols-md-4">
+              <div class="row">
                 <?php foreach ($post_array as $post) { ?>
                   <?php $expertise = get_the_terms(get_the_ID(), "expertise"); ?>
                   <?php $expertise_name = (is_array($expertise) && count($expertise)>0)? $expertise[0]->name : ""; ?>
                   <?php $expertise_id = (is_array($expertise) && count($expertise)>0)? $expertise[0]->term_id : 0; ?>
                   <?php setup_postdata($post); ?>
-                    <div class="col">
+                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
                       <div class="corp-track-record">
                           <h2 class="h5 corp-track-record-title"><?php the_title(); ?></h5><!-- /.corp-track-record-title -->
+                          <div class="corp-track-record-title-border"></div>
                           <p class="corp-track-record-subtitle">card category</p><!-- /.corp-track-record-subtitle -->
                           <?php the_content(); ?>
                       </div><!-- /.corp-track-record -->

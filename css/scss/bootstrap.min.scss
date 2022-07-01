@@ -1,6 +1,8 @@
 @import "bootstrap/bootstrap"; // full copy of Bootstrap with variables in /bootstrap/_variables.scss 
 @import "bscore_variables"; // extra theme variables
 @import "bscore_navs"; // navs styling 
+@import "bscore_footer"; // footer styling 
+@import "bscore_grid"; // corp global grid and featured image styling 
 @import "bscore_style";
 @import "bscore_custom";
 // @import "fontawesome"; // not used?
