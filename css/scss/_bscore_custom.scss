@@ -132,6 +132,23 @@ body.page-template-page-expertise{
 }
 
 
+// Track records page
+.corp-track-records-wrapper{
+  > .row{
+    background: $white;
+    padding-top: $grid-gutter-width;
+    @media (min-width: $corp-desktop-gutter-width-beakpoint){
+      padding: ($corp-grid-gutter-width-desktop * .5) ($corp-grid-gutter-width-desktop * .25) 0;
+    }
+
+    > *{
+      @media (min-width: $corp-desktop-gutter-width-beakpoint){
+        padding: 0 ($corp-grid-gutter-width-desktop * .25) ($corp-grid-gutter-width-desktop * .25);
+      }
+    }
+  }
+}
+
 
 // Footer
 
