@@ -1,7 +1,7 @@
 <?php
 function corp_featured_image_background() {
   //if ( is_page()){
-  if (! is_page_template( 'page-team.php' ) || ! is_page_template( 'single-mensen.php' ) || ! is_page_template( 'page-contact.php' )) {
+  if (! is_page_template( 'page-team.php' ) || ! is_page_template( 'single-mensen.php' )  || ! is_page_template( 'single-vacature.php' )|| ! is_page_template( 'page-contact.php' )) {
     global $post;
     $html = '<!-- FEATURED IMAGE BACKGROUND. -->';
     $featured_image_alt = $post->post_title;
