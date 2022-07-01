@@ -6,6 +6,15 @@
 */
 ?>
 <?php get_header();?>
+
+<?php
+$vacature_id = get_query_var( 'p' );
+if(isset($vacature_id)){
+  echo $vacature_id;
+}
+?>
+
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
