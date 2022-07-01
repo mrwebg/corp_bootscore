@@ -1,0 +1,44 @@
+// Footer
+
+.bootscore-footer{
+  padding-top: 6rem;
+  padding-bottom: 2.5rem;
+  display: flex;
+  gap: $grid-gutter-width;
+  flex-direction: column;
+  @include media-breakpoint-up(xxl){
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  @media (max-width: ($corp-contact-bar-breakpoint - 1px)){
+    margin-bottom: $contact-sidebar-icon-size + 1rem + $contact-sidebar-mobile-padding-bottom; // $contact-sidebar-icon-size + ul padding + extra bottom padding
+  }
+
+  &.container-fluid{
+    @media (min-width: $corp-contact-bar-breakpoint){ // when contact-sidebar is right 
+      margin-right: $corp-contact-bar-width;
+      width: auto;
+    }
+  }
+  
+
+  .corp-bedrijfsgegevens{
+    padding: ($nav-link-padding-y + $navbar-padding-y) 0;
+    font-family: $font-family-sans-serif;
+
+    span{
+      // white-space: nowrap;
+    }
+  }
+
+  #footer-menu li:last-child a{
+    padding-right: 0;
+  }
+}
+body.home .bootscore-footer{
+  color: $white;
+
+  .navbar-light .navbar-nav .nav-link:not(:hover):not(focus){
+    color: $white;
+  }
+}
