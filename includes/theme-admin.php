@@ -212,3 +212,9 @@ function mrweb_first_paragraph_class_lead($content){
   }
 }
 add_filter('the_content', 'mrweb_first_paragraph_class_lead');
+
+function rankya_remove_global_styles() {
+  remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
+  remove_action( 'in_admin_header', 'wp_global_styles_render_svg_filters' );
+  }
+  add_action('after_setup_theme', 'rankya_remove_global_styles', 10, 0);

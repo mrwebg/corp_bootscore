@@ -132,7 +132,7 @@ function add_theme_cpts() {
     'label' => 'Vacature',
     'description' => 'Post type vacature',
     'labels' => $labels_va,
-    'supports' => array('title', 'editor', 'page-attributes', 'thumbnail'),
+    'supports' => array('title', 'editor', 'page-attributes'),
     'hierarchical' => true,
     'public' => true,
     'show_ui' => true,
