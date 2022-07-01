@@ -19,7 +19,7 @@ get_header();?>
             </header>
             <!-- Content -->
             <?php the_content(); ?>
-          </div><!-- #col -->
+          </div><!-- .col -->
           <div class="col-6 parallax-col" data-scroll-speed="1">
             <!-- VACATURES -->
             <?php
@@ -52,12 +52,12 @@ get_header();?>
                   $url = get_the_permalink();              
                   ?>
                   <div class="corp-vacature">
-                    <h5 class="corp-vacature-title"><a href="<?php echo esc_url($url);?>"><?php the_title(); ?></a></h5><!-- #corp-vacature-title -->
-                    <?php the_content(); ?><!-- #corp-vacature-content -->
-                  </div><!-- #corp-vacature -->                    
+                    <h5 class="corp-vacature-title"><a href="<?php echo esc_url($url);?>"><?php the_title(); ?></a></h5><!-- .corp-vacature-title -->
+                    <?php the_content(); ?>
+                  </div><!-- .corp-vacature -->                    
                 <?php endforeach;?>
                 <?php wp_reset_postdata(); ?>
-              </div><!-- #wrapper-vacatures-listing -->
+              </div><!-- .wrapper-vacatures-listing -->
               <?php } ?>
               <!-- #VACATURES --> 
               <!-- RIGHT COLUMN EXTRA CONTENT. -->
@@ -99,15 +99,15 @@ get_header();?>
                         <a href="mailto:<?php echo $text_email;?>" target="_blank"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg></a>      
                       </li>
                     <?php } ?>                     
-                  </ul>                  
-                </div>                                
+                  </ul><!-- .contactperson-icons -->                   
+                </div><!-- .wrapper-vacatures-rechter-kolom-contactpersoon -->                                
               <?php } ?>             
               <!-- #RIGHT COLUMN CONTACT PERSON. -->                       
-            </div><!-- #col -->
-          </div><!-- #row -->
-        </div><!-- #container -->               
-      </main><!-- #main -->      
-    </div><!-- #primary -->
-  </div><!-- #content -->
+            </div><!-- .col -->
+          </div><!-- .row -->
+        </div><!-- .container -->               
+      </main><!-- main -->      
+    </div><!-- .primary -->
+  </div><!-- .content -->
   <?php
   get_footer();
