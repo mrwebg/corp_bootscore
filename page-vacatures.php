@@ -45,23 +45,19 @@ get_header();?>
             $post_array = get_posts($post_args);
             ?>            
             <?php if (is_array($post_array) && count($post_array) > 0){ ?>
-              <div class="row">
+              <div class="wrapper-vacatures-listing">
                 <?php
                 foreach ($post_array as $post):
                   setup_postdata($post);
                   $url = get_the_permalink();              
                   ?>
-                  <div class="col">
-                    <div class="card h-100">
-                      <div class="card-body">
-                        <h5 class="card-title"><a href="<?php echo esc_url($url);?>"><?php the_title(); ?></a></h5>
-                        <?php the_content(); ?>
-                      </div>
-                    </div><!-- .card -->
-                  </div><!-- .col -->
+                  <div class="corp-vacature">
+                    <h5 class="corp-vacature-title"><a href="<?php echo esc_url($url);?>"><?php the_title(); ?></a></h5><!-- #corp-vacature-title -->
+                    <?php the_content(); ?><!-- #corp-vacature-content -->
+                  </div><!-- #corp-vacature -->                    
                 <?php endforeach;?>
                 <?php wp_reset_postdata(); ?>
-              </div>
+              </div><!-- #wrapper-vacatures-listing -->
               <?php } ?>
               <!-- #VACATURES --> 
               <!-- RIGHT COLUMN EXTRA CONTENT. -->
