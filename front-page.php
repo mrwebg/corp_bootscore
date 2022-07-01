@@ -14,12 +14,12 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <header class="entry-header text-white">
+            <header class="entry-header text-white mb-4">
               <?php the_post(); ?>
               <!-- Title -->
               <?php the_title('<h1 class="display-1">', '</h1>'); ?>
               <!-- .entry-header -->
-              <h2 class="blog-description"><?php bloginfo('description'); ?></h2>
+              <h2 class="display-2 blog-description"><?php bloginfo('description'); ?></h2>
               <!-- .blog-description -->
             </header>
           </div>
@@ -34,9 +34,9 @@
         if('' !== $featured_post_id && $featured_post_id > 0 ){
           $featured_post   = get_post( intval($featured_post_id) );
           setup_postdata($featured_post);?>
-          <div class="container-fluid corp-home-featured-wrapper">
+          <div class="container-fluid corp-home-featured-wrapper mb-5">
             <div class="row justify-content-end">
-              <div class="col-lg-6 col-xxl-5">
+              <div class="col-lg-7 col-xl-6 col-xxxl-5">
                 <div class="card card-body corp-featured-post-<?php echo $featured_post_type_selected; ?>">
                   <h3 class=""><a href="<?php echo get_the_permalink($featured_post_id);?>"><?php echo $featured_post->post_title;?></a></h3>
                   <div class="content"><?php echo apply_filters( 'the_content', $featured_post->post_content ); ?></div>
@@ -51,7 +51,7 @@
       ?>
       <!-- END FEATURED. -->
       <!-- TEASERS. -->
-      <div class="container-fluid corp-home-teasers-wrapper">
+      <div class="container-fluid corp-home-teasers-wrapper mb-4">
         <div class="container text-white">
           <div class="row bg-transparent">
             <div class="col-md">
