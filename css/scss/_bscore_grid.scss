@@ -3,6 +3,22 @@
 // All global grid styling for pages/templates
 // including fixed featured image 
 
+// footer always on bottom screen
+#page{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    > footer{
+      margin-top: auto;
+    }
+}
+body.admin-bar #page{
+    min-height: calc(100vh - 32px);
+    @media screen and (max-width: 782px){
+      min-height: calc(100vh - 48px);
+    }
+}
 
 .site-content{
   // padding height fixed navbar 
@@ -80,6 +96,18 @@ body.page-template-page-trackrecord{
 
       &:not(:first-child){
         margin-top: 4rem;
+        @include media-breakpoint-up(lg){
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+// positioning 2nd col 
+body.page-template-page-expertise{
+  .entry-content{
+    > .row > *{
+      &:not(:first-child){
         @include media-breakpoint-up(lg){
           margin-top: 15rem;
           margin-top: 25vh;
