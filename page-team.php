@@ -52,7 +52,7 @@ get_header();?>
               $url = get_the_permalink();
               $text_email = get_post_meta(get_the_ID(), _CMB . 'text_email', true);
               $text_telefoon = get_post_meta(get_the_ID(), _CMB . 'text_telefoon', true);
-              $text_telefoon_formatted = str_replace(array(' ', '(', ')'), "", $adres_telefoon);              
+              $text_telefoon_formatted = str_replace(array(' ', '(', ')'), "", $text_telefoon);              
               $text_mobiel = get_post_meta(get_the_ID(), _CMB . 'text_mobiel', true);
               $text_mobiel_formatted = str_replace(array(' ', '(', ')'), "", $text_mobiel);
               $expertise = get_the_terms(get_the_ID(), "expertise");
