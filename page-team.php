@@ -71,13 +71,13 @@ get_header();?>
                     <?php if (!empty($expertise_name)){ ?><h3 class="h6 card-subtitle mb-2 text-muted"><?php echo $expertise_name;?></h3><?php } ?>
                     <ul class="card-list-team-icons">
                       <?php if (!empty($text_telefoon)) { ?>
-                        <li><a href="tel:<?php echo $text_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone" title="<?php echo $text_telefoon;?>"><use xlink:href="#icon-phone"></use></svg></a></li>
+                        <li title="<?php echo $text_telefoon;?>"><a href="tel:<?php echo $text_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a></li>
                       <?php } ?>
                       <?php if (!empty($text_mobiel)) { ?>
-                        <li><a href="tel:<?php echo $text_mobiel_formatted;?>" target="_blank"><svg class="icon icon-mobile" title="<?php echo $text_mobiel;?>"><use xlink:href="#icon-mobile"></use></svg></a></li>
+                        <li title="<?php echo $text_mobiel;?>"><a href="tel:<?php echo $text_mobiel_formatted;?>" target="_blank"><svg class="icon icon-mobile"><use xlink:href="#icon-mobile"></use></svg></a></li>
                       <?php } ?>                      
                       <?php if (!empty($text_email)) { ?>
-                        <li><a href="mailto:<?php echo $text_email;?>" target="_blank"><svg class="icon icon-email" title="<?php echo $text_email;?>"><use xlink:href="#icon-email"></use></svg></a></li>
+                        <li title="<?php echo $text_email;?>"><a href="mailto:<?php echo $text_email;?>" target="_blank"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg></a></li>
                       <?php } ?>                      
                     </ul><!-- /.card-list-team-icons -->
                   </div><!-- /.card-body -->
