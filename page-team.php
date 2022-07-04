@@ -52,8 +52,9 @@ get_header();?>
               $url = get_the_permalink();
               $text_email = get_post_meta(get_the_ID(), _CMB . 'text_email', true);
               $text_telefoon = get_post_meta(get_the_ID(), _CMB . 'text_telefoon', true);
+              $text_telefoon_formatted = str_replace(array(' ', '(', ')'), "", $adres_telefoon);              
               $text_mobiel = get_post_meta(get_the_ID(), _CMB . 'text_mobiel', true);
-              //$file_vcard = get_post_meta(get_the_ID(), _CMB . 'file_vcard', true);
+              $text_mobiel_formatted = str_replace(array(' ', '(', ')'), "", $text_mobiel);
               $expertise = get_the_terms(get_the_ID(), "expertise");
               $expertise_name = (is_array($expertise) && count($expertise)>0)? $expertise[0]->name : "";              
               $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "thumbnail")[0];
@@ -69,10 +70,15 @@ get_header();?>
                     <h2 class="h3 card-title"><a href="<?php echo $url;?>"><?php the_title(); ?></a></h2><!-- /.card-title -->
                     <?php if (!empty($expertise_name)){ ?><h3 class="h6 card-subtitle mb-2 text-muted"><?php echo $expertise_name;?></h3><?php } ?>
                     <ul class="card-list-team-icons">
-                      <?php if (!empty($text_email)) { ?><li>text_email: <?php echo $text_email;?></li><?php } ?>
-                      <?php if (!empty($text_telefoon)) { ?><li>text_telefoon: <?php echo $text_telefoon;?></li><?php } ?>
-                      <?php if (!empty($text_mobiel)) { ?><li>text_mobiel: <?php echo $text_mobiel;?></li><?php } ?>
-                      <?php if (!empty($file_vcard)) { ?><li>file_vcard: <?php echo $file_vcard;?></li><?php } ?>
+                      <?php if (!empty($text_telefoon)) { ?>
+                        <li><a href="tel:<?php echo $text_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a></li>
+                      <?php } ?>
+                      <?php if (!empty($text_mobiel)) { ?>
+                        <li><a href="tel:<?php echo $text_mobiel_formatted;?>" target="_blank"><svg class="icon icon-mobile"><use xlink:href="#icon-mobile"></use></svg></a></li>
+                      <?php } ?>                      
+                      <?php if (!empty($text_email)) { ?>
+                        <li><a href="mailto:<?php echo $text_email;?>" target="_blank"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg></a></li>
+                      <?php } ?>                      
                     </ul><!-- /.card-list-team-icons -->
                   </div><!-- /.card-body -->
                 </div><!-- /.card -->
