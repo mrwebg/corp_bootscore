@@ -53,7 +53,7 @@ get_header();?>
               $text_email = get_post_meta(get_the_ID(), _CMB . 'text_email', true);
               $text_telefoon = get_post_meta(get_the_ID(), _CMB . 'text_telefoon', true);
               $text_mobiel = get_post_meta(get_the_ID(), _CMB . 'text_mobiel', true);
-              $file_vcard = get_post_meta(get_the_ID(), _CMB . 'file_vcard', true);
+              //$file_vcard = get_post_meta(get_the_ID(), _CMB . 'file_vcard', true);
               $expertise = get_the_terms(get_the_ID(), "expertise");
               $expertise_name = (is_array($expertise) && count($expertise)>0)? $expertise[0]->name : "";              
               $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "thumbnail")[0];
