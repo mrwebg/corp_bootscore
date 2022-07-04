@@ -44,12 +44,12 @@
             <!-- FEATURED BACKGROUND IMAGE. -->             
             <?php
             $featured_image_alt = get_the_title();
-            $featured_thumbail_id = get_post_thumbnail_id(get_the_ID());
+            //$featured_thumbail_id = get_post_thumbnail_id(get_the_ID());
             //if(!empty($featured_thumbail_id) && $featured_thumbail_id > 0){
               //$featured_image_source = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "full")[0];
               $featured_image_source = 'https://corp.nl/_WPCA22/wp-content/uploads/2022/06/praia-de-odeceixe-mar-beach-wallpaper-preview.jpg';
               if(!empty($featured_image_source) && '' !== $featured_image_source){
-                $html ='<figure class="featured-image-background">
+                $html ='<figure class="featured-image-background-left">
                 <picture>
                 <img src="'.$featured_image_source.'" alt="'.$featured_image_alt.'">
                 </picture>

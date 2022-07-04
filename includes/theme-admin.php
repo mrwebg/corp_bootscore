@@ -82,6 +82,7 @@ if (is_admin()) {
 
   // MENSEN PORTRAIT IMAGE SIZE;
   add_image_size( 'team-portrait', 600, 600, false );
+  add_image_size( 'team-medium', 300, 300, false );
 
   // UNSET PAGE TEMPLATE FROM PAGE ATTRIBUTES METABOX TEMPLATE DROPDOWN.
   add_filter( 'theme_page_templates', 'mrweb_remove_page_template' );

@@ -29,6 +29,9 @@ function corp_widget_contact_sidebar() {
             <li>
               <a href="<?php echo $maps_url;?>" target="_blank"><svg class="icon icon-location"><use xlink:href="#icon-location"></use></svg><span><?php esc_html_e('Lokatie op Google Maps', 'corp'); ?></span></a>       
             </li>
+            <li>
+              <a href="<?php echo $maps_url;?>" target="_blank"><svg class="icon icon-vcard"><use xlink:href="#icon-vcard"></use></svg><span><?php esc_html_e('Lokatie op Google Maps', 'corp'); ?></span></a>       
+            </li>                           
           </ul>
         </div>
         <!-- #WIDGET CONTACT SIDEBAR -->
