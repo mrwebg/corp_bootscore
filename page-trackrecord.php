@@ -44,7 +44,7 @@ get_header();?>
                         <div class="corp-track-record">
                             <h2 class="h5 corp-track-record-title"><?php the_title(); ?></h5><!-- /.corp-track-record-title -->
                             <div class="corp-track-record-title-border"></div>
-                            <p class="corp-track-record-subtitle">card category</p><!-- /.corp-track-record-subtitle -->
+                            <!--p class="corp-track-record-subtitle">card category</p--><!-- /.corp-track-record-subtitle -->
                             <?php the_content(); ?>
                         </div><!-- /.corp-track-record -->
                       </div><!-- /.col -->
