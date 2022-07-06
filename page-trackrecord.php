@@ -56,9 +56,9 @@ get_header();?>
           </div><!-- /.corp-track-records-wrapper --> 
           </div>
         </div><!-- /.row -->  
-      </div><!-- /.container -->
+      </div><!-- /.container.entry-content -->
       <?php get_template_part('includes/footer', 'quote', array('postID' => get_the_ID())); ?>                    
-    </main><!-- main -->
+    </main><!-- /main -->
   </div><!-- /.primary -->
-</div><!-- /.content -->
+</div><!-- #content -->
 <?php get_footer();
