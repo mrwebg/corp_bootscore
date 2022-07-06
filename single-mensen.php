@@ -18,6 +18,8 @@ $text_url_linkedin = get_post_meta(get_the_ID(), _CMB . 'text_url_linkedin', tru
 $portrait = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "team-portrait")[0];
 $expertise = get_the_terms(get_the_ID(), "expertise");
 $expertise_name = (is_array($expertise) && count($expertise)>0)? $expertise[0]->name : "";
+$expertise_id = (is_array($expertise) && count($expertise)>0)? $expertise[0]->term_id : 0;              
+$expertise_url = mrweb_expertise_page_url($expertise_id); 
 ?>
 <script type="application/ld+json">{
   "@context": "http://www.schema.org",
@@ -41,6 +43,7 @@ $expertise_name = (is_array($expertise) && count($expertise)>0)? $expertise[0]->
               <?php the_post(); ?>
               <!-- TITLE -->
               <?php the_title('<h1>', '</h1>'); ?>
+              <small class="text-muted"><a href="<?php echo $expertise_url;?>"><?php echo $expertise_name;?></a>/small>
               <!-- ..entry-header -->
             </header>
             <!-- CONTENT -->
