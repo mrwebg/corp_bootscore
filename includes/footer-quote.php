@@ -1,4 +1,3 @@
-<!--QUOTE: template-part footer-quote -->
 <?php
 if( $args['postID'] ){
   $postID = $args['postID'];
@@ -30,7 +29,6 @@ if( $args['postID'] ){
         </div>
       </div>
     </div>
-  </div>
+  </div><!-- /.corp-footer-quote-wrapper -->
   <?php wp_reset_postdata(); } ?>
-  <!-- #QUOTE. -->  
 <?php }
