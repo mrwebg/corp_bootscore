@@ -16,8 +16,7 @@ get_header();?>
               <!-- Title -->
               <?php the_title('<h1>', '</h1>'); ?>
               <!-- /.entry-header -->
-          </header>
-          <div class="entry-content">
+            </header>
             <!-- Content -->
             <?php the_content(); ?>
           </div><!-- /.col -->
