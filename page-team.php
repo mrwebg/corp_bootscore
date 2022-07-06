@@ -88,9 +88,9 @@ get_header();?>
             <?php wp_reset_postdata(); ?>
           <?php endif; ?>          
         </div><!-- /.row -->
-      </div><!-- /.container -->
-    </main><!-- /main-->
+      </div><!-- /.container.entry-content -->
+    </main><!-- /main -->
   </div><!-- /.primary -->
-</div><!-- /.content -->
+</div><!-- #content -->
 <?php
 get_footer();
