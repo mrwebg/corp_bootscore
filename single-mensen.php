@@ -49,7 +49,18 @@ $expertise_name = (is_array($expertise) && count($expertise)>0)? $expertise[0]->
             <?php the_content(); ?> 
           </div>
           <div class="col">
-            <?php if (!empty($portrait)) { ?><li>portrait: <?php echo $portrait;?></li><?php } ?>
+            <?php if (!empty($portrait)) { ?>
+              <figure class="featured-image-mensen">
+                <picture>
+                  <img src="<?php echo $portrait;?>" alt="<?php echo get_the_title();?>">
+                </picture>
+                <noscript>
+                  <picture>
+                    <img src="<?php echo $portrait;?>" alt="<?php echo get_the_title();?>">
+                  </picture>
+                </noscript>
+              </figure><!-- /.featured-image-mensen-->
+            <?php } ?>
           </div>          
         </div>
         <div class="row">
