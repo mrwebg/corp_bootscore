@@ -2,7 +2,7 @@
 function corp_featured_image_background() {
   global $post;
   if (! is_page_template( 'page-team.php' ) && 'mensen' !== $post->post_type  && 'vacature' !== $post->post_type || ! is_page_template( 'page-contact.php' )) {
-    $html = '';
+    $html = '<!-- .featured-image-background -->';
     $featured_image_alt = $post->post_title;
     $featured_thumbail_id = get_post_thumbnail_id($post->ID);
     if(!empty($featured_thumbail_id) && $featured_thumbail_id > 0){
@@ -18,7 +18,7 @@ function corp_featured_image_background() {
         <img src="'.$featured_image_source.'" alt="'.$featured_image_alt.'">
         </picture>
         </noscript>
-        </figure>
+        </figure><!-- /.featured-image-background -->
         ';
       }
     }
