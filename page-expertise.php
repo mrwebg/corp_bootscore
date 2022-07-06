@@ -61,7 +61,7 @@ get_header();?>
                     <?php if (!empty($text_email)) { ?><?php echo $text_email;?></br><?php } ?>
                     <?php if (!empty($text_telefoon)) { ?><?php echo $text_telefoon;?></br><?php } ?>
                     <?php if (!empty($text_mobiel)) { ?><?php echo $text_mobiel;?></br><?php } ?>
-                </div>
+                  </div><!-- /.wrapper-expertise-team-member -->
                 <?php endforeach;?>
                 <?php wp_reset_postdata(); ?>
               </div><!-- /.wrapper-expertise-team -->  
