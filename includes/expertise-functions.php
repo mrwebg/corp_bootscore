@@ -5,5 +5,6 @@ if(!function_exists('mrweb_expertise_page_url')){
         $url = 'not found yet';
         $post_type = 'page';
         $expertise_category = 'expertise';
+        return $url;
     }
 }
