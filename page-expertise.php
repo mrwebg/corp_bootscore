@@ -25,6 +25,8 @@ get_header();?>
             $expertise = get_the_terms(get_the_ID(), "expertise");
             $expertise_name = (is_array($expertise) && count($expertise)>0)? $expertise[0]->name : "";
             $expertise_id = (is_array($expertise) && count($expertise)>0)? $expertise[0]->term_id : 0;
+            $term_page = mrweb_expertise_page_url($expertise_id);
+            print_f($term_page);
             // ARGS FOR CURRENT TEAM BELONGINGING TO CURRENT EXPERTISE TERM ID.
             $post_type = 'mensen';
             $post_args = array(
