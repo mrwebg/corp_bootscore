@@ -1,7 +1,7 @@
 <?php
 function corp_widget_contact_sidebar() {
   global $post;?>
-  <!-- WIDGET CONTACT SIDEBAR -->
+  <!-- widget-contact-sidebar-wrapper -->
   <?php
   $bedrijfsgegevens = get_option('bedrijfsgegevens');
   if(is_array($bedrijfsgegevens) && count($bedrijfsgegevens) > 0 ){
@@ -28,7 +28,7 @@ function corp_widget_contact_sidebar() {
           </li>                        
         </ul>
       </div>
-      <!-- #WIDGET CONTACT SIDEBAR -->
+      <!-- /.widget-contact-sidebar-wrapper -->
 <?php
     }
   }
