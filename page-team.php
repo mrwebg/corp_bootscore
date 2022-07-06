@@ -55,7 +55,10 @@ get_header();?>
               $text_mobiel = get_post_meta(get_the_ID(), _CMB . 'text_mobiel', true);
               $text_mobiel_formatted = str_replace(array(' ', '(', ')'), "", $text_mobiel);
               $expertise = get_the_terms(get_the_ID(), "expertise");
-              $expertise_name = (is_array($expertise) && count($expertise)>0)? $expertise[0]->name : "";              
+              $expertise_name = (is_array($expertise) && count($expertise)>0)? $expertise[0]->name : ""; 
+              $expertise_id = (is_array($expertise) && count($expertise)>0)? $expertise[0]->term_id : 0;              
+              $expertise_page_url = mrweb_expertise_page_url($expertise_id);
+              print_f($expertise_page_url);             
               $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "thumbnail")[0];
               $portrait = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "team-portrait")[0];
               ?>
