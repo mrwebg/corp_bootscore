@@ -5,6 +5,7 @@ require_once 'includes/helper-functions.php';
 require_once 'includes/theme-admin.php';
 require_once 'includes/theme-lockout-public.php';
 require_once 'includes/theme-cpts.php';
+require_once 'includes/expertise-functions.php';
 // Modules
 require_once 'includes/featured-image-background.php';
 require_once 'includes/widget-contact-sidebar.php';
