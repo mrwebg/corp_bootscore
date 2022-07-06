@@ -57,8 +57,7 @@ get_header();?>
               $expertise = get_the_terms(get_the_ID(), "expertise");
               $expertise_name = (is_array($expertise) && count($expertise)>0)? $expertise[0]->name : ""; 
               $expertise_id = (is_array($expertise) && count($expertise)>0)? $expertise[0]->term_id : 0;              
-              $expertise_page_url = mrweb_expertise_page_url($expertise_id);
-              print_r($expertise_page_url);             
+              $expertise_url = mrweb_expertise_page_url($expertise_id);           
               $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "thumbnail")[0];
               $portrait = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "team-portrait")[0];
               ?>
@@ -70,7 +69,7 @@ get_header();?>
                       <noscript><picture><img src="<?php echo $portrait;?>" alt="<?php echo get_the_title();?>"></picture></noscript>
                     </figure><!-- /.team-thumbnail -->
                     <h2 class="h3 card-title"><a href="<?php echo $url;?>"><?php the_title(); ?></a></h2><!-- /.card-title -->
-                    <?php if (!empty($expertise_name)){ ?><h3 class="h6 card-subtitle mb-2 text-muted"><?php echo $expertise_name;?></h3><?php } ?>
+                    <?php if (!empty($expertise_name) && !empty($expertise_url)){ ?><h3 class="h6 card-subtitle mb-2 text-muted"><a href="<?php echo $expertise_url;?>"><?php echo $expertise_name;?></a></h3><?php } ?>
                     <ul class="card-list-team-icons">
                       <?php if (!empty($text_telefoon)) { ?>
                         <li title="<?php echo $text_telefoon;?>"><a href="tel:<?php echo $text_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a></li>
