@@ -10,7 +10,7 @@
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
-      <div class="container">
+      <div class="container entry-content">
         <div class="row">
           <div class="col">
             <header class="entry-header text-white mb-4">
@@ -21,7 +21,7 @@
             </header><!-- /.entry-header -->
           </div>
         </div>
-      </div><!-- /.container -->
+      </div><!-- /.container.entry-content -->
       <!-- FEATURED. -->
       <?php
       $featured_post_type_selected = get_post_meta(get_the_ID(),  _CMB .'featured_select', true);
@@ -45,7 +45,6 @@
         }
       }
       ?>
-      <!-- /FEATURED. -->
       <!-- TEASERS. -->
       <div class="container-fluid corp-home-teasers-wrapper mb-4">
         <div class="container text-white">
@@ -60,11 +59,10 @@
             </div>
           </div>
         </div>
-      </div><!-- /.corp-home-teasers-wrapper -->
-      <!-- /TEASERS. -->
+      </div><!-- /.container-fluid.corp-home-teasers-wrapper -->
       <?php get_template_part('includes/footer', 'quote', array('postID' => get_the_ID())); ?>
     </main><!-- /main -->
   </div><!-- /.primary -->
-</div><!-- /.content -->
+</div><!-- #content -->
 <?php
 get_footer();
