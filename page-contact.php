@@ -19,14 +19,14 @@ get_header();?>
             </header>
             <!-- CONTENT -->
             <?php the_content(); ?>            
-          </div><!-- #col- -->
+          </div><!-- /.col- -->
           <div class="col-6">
                       
-          </div><!-- #col -->
-        </div><!-- #row -->
-      </div><!-- #container -->
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container.entry-content -->
       <?php get_template_part('includes/footer', 'quote', array('postID' => get_the_ID())); ?>           
-    </main><!-- #main -->
-  </div><!-- #primary -->
-</div><!-- #content -->
+    </main><!-- /main -->
+  </div><!-- /.primary -->
+</div><!-- /.content -->
 <?php get_footer();
