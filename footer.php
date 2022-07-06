@@ -40,7 +40,7 @@
       ?>
   </div><!-- /.container-fluid bootscore-footer -->
 </footer>
-</div><!-- /#page /.site -->
+</div><!-- /#page.site -->
 <?php wp_footer(); ?>
 </body>
 </html>
