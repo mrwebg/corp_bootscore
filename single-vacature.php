@@ -109,8 +109,8 @@
             <!-- /RIGHT COLUMN CONTACT PERSON. -->                                                                                
           </div><!-- /.col -->
         </div><!-- /.row -->
-      </div><!-- /.container -->               
-    </main><!-- /main -->      
+      </div><!-- /.container.entry-content -->
+    </main><!-- /main -->
   </div><!-- /.primary -->
-</div><!-- /.content -->
+</div><!-- #content -->
 <?php get_footer();
