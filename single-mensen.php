@@ -1,8 +1,9 @@
 <?php
 /**
-* single-mensen.php
+* Template Name: Single Page Mensen
+* Template Post Type: mensen
 * @package WordPress
-* @subpackage corp
+* @subpackage corp_bootscore
 */
 ?>
 <?php get_header();

@@ -29,15 +29,15 @@ function return_WPLANG_slug($default_slug){
   $slugs = array(
     'track_record' => array(
       'nl_NL' => 'track-record',
-      'en_US' => 'track-record'
+      'en_GB' => 'track-record'
     ),
     'team' => array(
       'nl_NL' => 'mensen',
-      'en_US' => 'team'
+      'en_GB' => 'team'
     ),
     'vacature' => array(
       'nl_NL' => 'vacature',
-      'en_US' => 'jobs'
+      'en_GB' => 'jobs'
     ),
   );
   return $slugs[$default_slug][WPLANG];

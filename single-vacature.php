@@ -1,8 +1,9 @@
 <?php
 /**
-* single-vacature.php
+* Template Name: Single Page Vacature
+* Template Post Type: vacature
 * @package WordPress
-* @subpackage corp
+* @subpackage corp_bootscore
 */
 ?>
 <?php get_header();?>

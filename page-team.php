@@ -60,7 +60,7 @@ get_header();?>
               $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "thumbnail")[0];
               $portrait = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "team-portrait")[0];
               ?>
-              <div class="col">
+              <div class="col-3">
                 <div class="card h-100">
                   <div class="card-body">
                     <figure class="team-portrait-medium">
