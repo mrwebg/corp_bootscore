@@ -39,7 +39,7 @@ $expertise_name = (is_array($expertise) && count($expertise)>0)? $expertise[0]->
           <div class="col">
           <header class="entry-header">
               <?php the_post(); ?>
-              <?php echo get_post_type();?>
+              <?php //echo  get_post_type(get_the_ID() );?>
               <!-- TITLE -->
               <?php the_title('<h1>', '</h1>'); ?>
               <!-- ..entry-header -->
