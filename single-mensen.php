@@ -32,36 +32,40 @@ $expertise_name = (is_array($expertise) && count($expertise)>0)? $expertise[0]->
   <?php if (!empty($text_mobiel)) { ?>,"telephone":"<?php $find = [" ", "(0)"];$replace = ["", ""]; echo str_replace($find, $replace, $text_mobiel);?>"<?php } ?>
 }
 </script>
-<!-- start body layout and content -->
-<div id="content" class="site-content container py-5 mt-5">
+<?php get_header();?>
+<div id="content" class="site-content">
   <div id="primary" class="content-area">
-    <div class="row">
-      <div class="col-md-8 col-xxl-9">
-        <main id="main" class="site-main">
-          <?php if (have_posts()):?>
-            <?php while (have_posts()) :?>
+    <main id="main" class="site-main">
+      <div class="container entry-content">    
+        <div class="row">
+          <div class="col">
+          <header class="entry-header">
               <?php the_post(); ?>
-              <header class="entry-header">
-                <h1>title: <?php echo $title;?></h1>
-              </header><!-- .entry-header -->
-              <div class="entry-content">
-                <?php the_content(); ?>
-                <ul>
-                  <?php if (!empty($text_email)) { ?><li>text_email: <?php echo $text_email;?></li><?php } ?>
-                    <?php if (!empty($text_telefoon)) { ?><li>text_telefoon: <?php echo $text_telefoon;?></li><?php } ?>
-                      <?php if (!empty($text_mobiel)) { ?><li>text_mobiel: <?php echo $text_mobiel;?></li><?php } ?>
-                        <?php if (!empty($file_vcard)) { ?><li>file_vcard: <?php echo $file_vcard;?></li><?php } ?>
-                          <?php if (!empty($text_url_linkedin)) { ?><li>text_url_linkedin: <?php echo $text_url_linkedin;?></li><?php } ?>
-                            <?php if (!empty($thumbnail)) { ?><li>thumbnail: <?php echo $thumbnail;?></li><?php } ?>
-                              <?php if (!empty($portrait)) { ?><li>portrait: <?php echo $portrait;?></li><?php } ?>
-                              <?php if (!empty($expertise_name))  { ?><li>expertise: <?php echo $expertise_name;?></li><?php } ?>
-                              </ul>
-                            <?php endwhile;?>
-                          <?php endif; ?>
-                        </div><!-- .entry-content -->
-                      </main><!-- #main -->
-                    </div><!-- col -->
-                  </div><!-- row -->
-                </div><!-- #primary -->
-              </div><!-- #content -->
-              <?php get_footer();
+              <!-- TITLE -->
+              <?php the_title('<h1>', '</h1>'); ?>
+              <!-- ..entry-header -->
+            </header>
+            <!-- CONTENT -->
+            <?php the_content(); ?> 
+          </div>
+          <div class="col">
+            <?php if (!empty($portrait)) { ?><li>portrait: <?php echo $portrait;?></li><?php } ?>
+          </div>          
+        </div>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <?php if (!empty($text_email)) { ?><li>text_email: <?php echo $text_email;?></li><?php } ?>
+              <?php if (!empty($text_telefoon)) { ?><li>text_telefoon: <?php echo $text_telefoon;?></li><?php } ?>
+              <?php if (!empty($text_mobiel)) { ?><li>text_mobiel: <?php echo $text_mobiel;?></li><?php } ?>
+              <?php if (!empty($file_vcard)) { ?><li>file_vcard: <?php echo $file_vcard;?></li><?php } ?>
+              <?php if (!empty($text_url_linkedin)) { ?><li>text_url_linkedin: <?php echo $text_url_linkedin;?></li><?php } ?>
+              <?php if (!empty($expertise_name))  { ?><li>expertise: <?php echo $expertise_name;?></li><?php } ?>
+            </ul>            
+          </div>        
+        </div>        
+      </div><!-- /.container.entry-content -->
+    </main><!-- /main -->
+  </div><!-- /.primary -->
+</div><!-- #content -->
+<?php get_footer();
