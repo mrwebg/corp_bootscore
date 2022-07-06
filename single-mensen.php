@@ -43,7 +43,7 @@ $expertise_url = mrweb_expertise_page_url($expertise_id);
               <?php the_post(); ?>
               <!-- TITLE -->
               <?php the_title('<h1>', '</h1>'); ?>
-              <small class="text-muted"><a href="<?php echo $expertise_url;?>"><?php echo $expertise_name;?></a>/small>
+              <small class="text-muted"><a href="<?php echo $expertise_url;?>"><?php echo $expertise_name;?></a></small>
               <!-- ..entry-header -->
             </header>
             <!-- CONTENT -->
