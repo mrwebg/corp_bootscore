@@ -59,14 +59,12 @@ get_header();?>
                 <?php wp_reset_postdata(); ?>
               </div><!-- /.wrapper-vacatures-listing -->
               <?php } ?>
-              <!-- /VACATURES --> 
               <!-- RIGHT COLUMN EXTRA CONTENT. -->
               <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'right_column', true))) { ?>
                 <div class="wrapper-vacatures-rechter-kolom-extra">                           
                   <?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'right_column', true));?>
                 </div><!-- /.wrapper-vacatures-rechter-kolom-extra -->
               <?php } ?>
-              <!-- /RIGHT COLUMN EXTRA CONTENT. -->
               <!-- RIGHT COLUMN CONTACT PERSON. -->                         
               <?php
               $mensenID = intval(get_post_meta(get_the_ID(), _CMB . 'vacature_contact', true));
@@ -101,13 +99,11 @@ get_header();?>
                     <?php } ?>                     
                   </ul><!-- /.contactperson-icons -->                   
                 </div><!-- /.wrapper-vacatures-rechter-kolom-contactpersoon -->                                
-              <?php } ?>             
-              <!-- /RIGHT COLUMN CONTACT PERSON. -->                       
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </div><!-- /.container -->               
-      </main><!--/ main -->      
-    </div><!-- /.primary -->
-  </div><!-- /.content -->
-  <?php
-  get_footer();
+              <?php } ?>                     
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container.entry-content -->
+    </main><!-- /main -->
+  </div><!-- /.primary -->
+</div><!-- #content -->
+<?php get_footer();
