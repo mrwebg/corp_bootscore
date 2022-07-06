@@ -64,10 +64,10 @@ get_header();?>
               <div class="col-3">
                 <div class="card h-100">
                   <div class="card-body">
-                    <figure class="team-portrait-medium">
+                    <figure class="team-portrait">
                       <picture><img src="<?php echo $portrait;?>" alt="<?php echo get_the_title();?>"></picture>
                       <noscript><picture><img src="<?php echo $portrait;?>" alt="<?php echo get_the_title();?>"></picture></noscript>
-                    </figure><!-- /.team-thumbnail -->
+                    </figure><!-- /.team-portrait -->
                     <h2 class="h3 card-title"><a href="<?php echo $url;?>"><?php the_title(); ?></a></h2><!-- /.card-title -->
                     <?php if (!empty($expertise_name) && !empty($expertise_url)){ ?><h3 class="h6 card-subtitle mb-2 text-muted"><a href="<?php echo $expertise_url;?>"><?php echo $expertise_name;?></a></h3><?php } ?>
                     <ul class="card-list-team-icons">
