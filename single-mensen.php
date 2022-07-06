@@ -15,11 +15,9 @@ $text_telefoon = get_post_meta(get_the_ID(), _CMB . 'text_telefoon', true);
 $text_mobiel = get_post_meta(get_the_ID(), _CMB . 'text_mobiel', true);
 $file_vcard = get_post_meta(get_the_ID(), _CMB . 'file_vcard', true);
 $text_url_linkedin = get_post_meta(get_the_ID(), _CMB . 'text_url_linkedin', true);
-$thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "thumbnail")[0];
 $portrait = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "team-portrait")[0];
 $expertise = get_the_terms(get_the_ID(), "expertise");
 $expertise_name = (is_array($expertise) && count($expertise)>0)? $expertise[0]->name : "";
-// JSON-LD.
 ?>
 <script type="application/ld+json">{
   "@context": "http://www.schema.org",
@@ -41,6 +39,7 @@ $expertise_name = (is_array($expertise) && count($expertise)>0)? $expertise[0]->
           <div class="col">
           <header class="entry-header">
               <?php the_post(); ?>
+              <?php echo get_post_type();?>
               <!-- TITLE -->
               <?php the_title('<h1>', '</h1>'); ?>
               <!-- ..entry-header -->
