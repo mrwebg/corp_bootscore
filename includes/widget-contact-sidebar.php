@@ -1,8 +1,6 @@
 <?php
 function corp_widget_contact_sidebar() {
-  global $post;?>
-  <!-- widget-contact-sidebar-wrapper -->
-  <?php
+  global $post;
   $bedrijfsgegevens = get_option('bedrijfsgegevens');
   if(is_array($bedrijfsgegevens) && count($bedrijfsgegevens) > 0 ){
     $adres_telefoon = (array_key_exists('adres_telefoon', $bedrijfsgegevens))? $bedrijfsgegevens['adres_telefoon'] : '';
@@ -11,7 +9,8 @@ function corp_widget_contact_sidebar() {
     $social_linkedin = (array_key_exists('social_linkedin', $bedrijfsgegevens))? $bedrijfsgegevens['social_linkedin'] : '';
     $maps_url = (array_key_exists('maps_url', $bedrijfsgegevens))? $bedrijfsgegevens['maps_url'] : '';
     if(!empty($adres_telefoon) && '' !== $adres_telefoon && !empty($adres_email) && '' !== $adres_email && !empty($maps_url) && '' !== $maps_url){
-      ?>  
+      ?> 
+      <!-- widget-contact-sidebar-wrapper --> 
       <div class="widget-contact-sidebar-wrapper">
         <ul class="widget-contact-sidebar">
           <li>
@@ -21,7 +20,7 @@ function corp_widget_contact_sidebar() {
             <a href="mailto:<?php echo $adres_email;?>" target="_blank"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg><span><?php echo $adres_email;?></span></a>      
           </li>
           <li>
-            <a href="<?php echo $social_linkedin;?>" target="_blank"><svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg><span><?php _e('Volg ons op Linkedin', 'corp'); ?></span></a>       
+            <a href="<?php echo $social_linkedin;?>" target="_blank"><svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg><span><?php _e('Volg ons op Linkedin', 'corp_bootscore'); ?></span></a>       
           </li>            
           <li>
             <a href="<?php echo $maps_url;?>" target="_blank"><svg class="icon icon-location"><use xlink:href="#icon-location"></use></svg><span><?php esc_html_e('Lokatie op Google Maps', 'corp'); ?></span></a>       
