@@ -83,16 +83,14 @@ $expertise_url = mrweb_expertise_page_url($expertise_id);
           </div><!-- /.col -->
         </div><!-- ./row -->
       </div><!-- /.container.entry-content -->
-
       <div class="corp-gray-bleed-bg bleed-left">
         <div class="container">
           <ul class="corp-contact-icons">
-            <?php if (!empty($file_vcard)) { ?><li><a href="<?php echo $file_vcard;?>"><svg class="icon icon-vcard"><use xlink:href="#icon-vcard"></use></svg></a> <?php echo esc_html_e('Download vCard', 'corp' ); ?></li><?php } ?>
             <?php if (!empty($text_url_linkedin)) { ?><li><a href="<?php echo $text_url_linkedin;?>" target="_blank"><svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg></a> <?php echo esc_html_e('Linkedin', 'corp' ); ?></li><?php } ?>
+            <?php if (!empty($file_vcard)) { ?><li><a href="<?php echo $file_vcard;?>"><svg class="icon icon-vcard"><use xlink:href="#icon-vcard"></use></svg></a> <?php echo esc_html_e('Download vCard', 'corp' ); ?></li><?php } ?>            
           </ul>
         </div><!-- /.container -->
       </div><!-- /.corp-gray-bleed-bg --> 
-
     </main><!-- /main -->
   </div><!-- /.primary -->
 </div><!-- #content -->
