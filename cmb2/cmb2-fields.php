@@ -216,6 +216,22 @@ function mrweb_register_cmb2_metaboxes() {
     'type' => 'wysiwyg',
     'default' => 'Optioneel: voeg extra content toe',
   ));  
+  // PAGE CONTACT.
+  $cmb_cp = new_cmb2_box( array(
+    'id'           => 'left_column_contact',
+    'title'        => 'EXTRA CONTENT',
+    'object_types' => array( 'page' ), // post type
+    'show_on'      => array( 'key' => 'page-template', 'value' => 'page-contact.php' ),
+    'context'      => 'normal', //  'normal', 'advanced', or 'side'
+    'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
+    'show_names'   => true, // Show field names on the left
+    'closed'       => false,
+  ));
+  $cmb_cp->add_field(array(
+    'name' => 'Algemene informatie',
+    'id' => $prefix . 'algemene_informatie',
+    'type' => 'wysiwyg',
+  ));
   // PAGE VACATURES. (overzicht)
   $cmb_pv = new_cmb2_box( array(
     'id'           => 'pv_extra_content',

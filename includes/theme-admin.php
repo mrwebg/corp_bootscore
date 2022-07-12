@@ -18,6 +18,7 @@ function add_child_theme_textdomain() {
   load_child_theme_textdomain( 'corp_bootscore', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
+
 /* ADMIN SCRIPTS HOOKED
   ================================================== */
 if (is_admin()) {
@@ -208,14 +209,14 @@ function mrweb_first_paragraph_class_lead($content){
   // Testing to see if the content is a Page or Custom Post Type of school, if so, display the text normally (without the class = intro).
   if ( 'deals' === get_post_type()) {
     return preg_replace('/<p([^>]+)?>/', '<p$1>', $content, 1);
-  } else {
+    } else {
     return preg_replace('/<p([^>]+)?>/', '<p$1 class="lead">', $content, 1);
-  }
-}
-add_filter('the_content', 'mrweb_first_paragraph_class_lead');
+            }
+            }
+            add_filter('the_content', 'mrweb_first_paragraph_class_lead');
 
-function rankya_remove_global_styles() {
-  remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
-  remove_action( 'in_admin_header', 'wp_global_styles_render_svg_filters' );
-  }
-  add_action('after_setup_theme', 'rankya_remove_global_styles', 10, 0);
+            function rankya_remove_global_styles() {
+            remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
+            remove_action( 'in_admin_header', 'wp_global_styles_render_svg_filters' );
+            }
+            add_action('after_setup_theme', 'rankya_remove_global_styles', 10, 0);
