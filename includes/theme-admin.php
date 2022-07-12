@@ -211,12 +211,12 @@ function mrweb_first_paragraph_class_lead($content){
     return preg_replace('/<p([^>]+)?>/', '<p$1>', $content, 1);
     } else {
     return preg_replace('/<p([^>]+)?>/', '<p$1 class="lead">', $content, 1);
-            }
-            }
-            add_filter('the_content', 'mrweb_first_paragraph_class_lead');
+  }
+}
+add_filter('the_content', 'mrweb_first_paragraph_class_lead');
 
-            function rankya_remove_global_styles() {
-            remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
-            remove_action( 'in_admin_header', 'wp_global_styles_render_svg_filters' );
-            }
-            add_action('after_setup_theme', 'rankya_remove_global_styles', 10, 0);
+function rankya_remove_global_styles() {
+  remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
+  remove_action( 'in_admin_header', 'wp_global_styles_render_svg_filters' );
+}
+add_action('after_setup_theme', 'rankya_remove_global_styles', 10, 0);
