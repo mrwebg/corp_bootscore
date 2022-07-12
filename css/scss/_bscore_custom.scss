@@ -170,5 +170,86 @@ body.home .corp-footer-quote-wrapper .container:before{
   }
 }
 
+// Team pagina
+
+.corp-team-wrapper{
+  position: relative;
+  padding-top: $spacer * 3;
+
+  > .row{
+
+  }
+
+  .corp-team-item{
+    margin-bottom: $spacer * 1.5;
+
+    .team-portrait{
+      &:after{
+        display: block;
+        content: "";
+        position: absolute;
+        right: 0;
+        width: 100vw;
+        margin-top: -1px;
+        border-bottom: $corp-dotted-border;
+        // @media (min-width: $corp-desktop-gutter-width-beakpoint){
+        //   right: $corp-grid-gutter-width-desktop * .5;
+        // }
+      }
+    }
+    .team-title{
+      margin-bottom: $headings-margin-bottom * .25;
+
+      a{
+        text-decoration: none;
+      }
+    }
+    .team-subtitle{
+      a{
+        text-decoration: none;
+        color: $body-color;
+      }
+    }
+
+    ul.corp-contact-icons{
+      display: flex;
+      gap: $spacer * .25;
+    }
+  }
+}
+
+ul.corp-contact-icons{
+  list-style: none;
+  padding: 0;
+
+  > li{
+    > a{
+      background: $primary;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: $contact-icon-size;
+      height: $contact-icon-size;
+      border-radius: $contact-icon-size * .5;
+      color: $white;
+      text-align: center;
+
+      svg{
+        width: $contact-icon-size * .4;
+        height: $contact-icon-size * .4;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 
