@@ -268,23 +268,11 @@ function mrweb_register_cmb2_metaboxes() {
     'closed'       => false,
   ));
   $cmb_sv->add_field(array(
-    'name' => 'formulier intro titel',
-    'id' => $prefix . 'cf7_intro_title',
-    'type' => 'text',
-    'default' => 'Interesse? Neem contact met ons op.',
-  ));
-  $cmb_sv->add_field(array(
     'name' => 'formulier intro text',
     'id' => $prefix . 'cf7_intro_body',
     'type' => 'text',
     'default' => 'Stuur door middel van onderstaand formulier je gegevens dan nemen wij spoedig contact met je op.',
-  ));
-  $cmb_sv->add_field(array(
-    'name' => 'formulier contact persoon titel',
-    'id' => $prefix . 'cf7_contactpersoon_titel',
-    'type' => 'text',
-    'default' => 'Of neem direct contact op met:',
-  ));     
+  ));   
   $cmb_sv->add_field(array(
     'name' => 'contact_persoon',
     'id' => $prefix . 'vacature_contact',
