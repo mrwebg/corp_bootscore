@@ -37,45 +37,58 @@ $expertise_url = mrweb_expertise_page_url($expertise_id);
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
       <div class="container entry-content">    
-        <div class="row">
-          <div class="col">
+        <div class="row single-mensen-above-line">
+          <div class="col-lg-6 col-xxl-7">
           <header class="entry-header">
               <?php the_post(); ?>
               <!-- TITLE -->
               <?php the_title('<h1>', '</h1>'); ?>
-              <small class="text-muted"><a href="<?php echo $expertise_url;?>"><?php echo $expertise_name;?></a></small>
+              <p class="d-none"><a href="<?php echo $expertise_url;?>"><?php echo $expertise_name;?></a></p>
               <!-- ..entry-header -->
             </header>
             <!-- CONTENT -->
             <?php the_content(); ?> 
           </div>
-          <div class="col">
-            <?php if (!empty($portrait)) { ?>
-              <figure class="featured-image-mensen">
-                <picture>
-                  <img src="<?php echo $portrait;?>" alt="<?php echo get_the_title();?>">
-                </picture>
-                <noscript>
+          <div class="col-lg-6 col-xxl-5">
+            <div class="featured-image-mensen-wrapper">
+              <?php if (!empty($portrait)) { ?>
+                <figure class="featured-image-mensen">
                   <picture>
                     <img src="<?php echo $portrait;?>" alt="<?php echo get_the_title();?>">
                   </picture>
-                </noscript>
-              </figure><!-- /.featured-image-mensen-->
-            <?php } ?>
-          </div>          
-        </div>
-        <div class="row">
-          <div class="col">
-            <ul>
-              <?php if (!empty($text_email)) { ?><li>text_email: <?php echo $text_email;?></li><?php } ?>
-              <?php if (!empty($text_telefoon)) { ?><li>text_telefoon: <?php echo $text_telefoon;?></li><?php } ?>
-              <?php if (!empty($text_mobiel)) { ?><li>text_mobiel: <?php echo $text_mobiel;?></li><?php } ?>
-              <?php if (!empty($file_vcard)) { ?><li>file_vcard: <?php echo $file_vcard;?></li><?php } ?>
-              <?php if (!empty($text_url_linkedin)) { ?><li>text_url_linkedin: <?php echo $text_url_linkedin;?></li><?php } ?>
-            </ul>            
-          </div>        
-        </div>        
+                  <noscript>
+                    <picture>
+                      <img src="<?php echo $portrait;?>" alt="<?php echo get_the_title();?>">
+                    </picture>
+                  </noscript>
+                </figure><!-- /.featured-image-mensen-->
+              <?php } ?>
+            </div><!-- /.featured-image-mensen-wrapper -->
+          </div><!-- /.col -->          
+        </div><!-- /.row .single-mensen-above-line -->
+
+        <div class="row single-mensen-below-line">
+          <div class="col-lg-6 col-xxl-7">
+            <!-- please insert extra text area https://github.com/mrwebg/corp_bootscore/issues/7 -->     
+          </div><!-- /.col -->        
+        </div><!-- ./row -->
+
+        <ul class="corp-contact-icons">
+          <?php if (!empty($text_email)) { ?><li title="<?php echo $text_email;?>"><a href="mailto:<?php echo $text_email;?>" target="_blank"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg></a> <?php echo $text_email;?></li><?php } ?>
+          <?php if (!empty($text_telefoon)) { ?><li title="<?php echo $text_telefoon;?>"><a href="tel:<?php echo $text_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a> <?php echo $text_telefoon;?></li><?php } ?>
+          <?php if (!empty($text_mobiel)) { ?><li title="<?php echo $text_mobiel;?>"><a href="tel:<?php echo $text_mobiel_formatted;?>" target="_blank"><svg class="icon icon-mobile"><use xlink:href="#icon-mobile"></use></svg></a> <?php echo $text_mobiel;?></li><?php } ?>
+        </ul>              
       </div><!-- /.container.entry-content -->
+
+      <div class="corp-gray-bleed-bg bleed-left">
+        <div class="container">
+          <ul class="corp-contact-icons">
+            <?php if (!empty($file_vcard)) { ?><li>file_vcard: <?php echo $file_vcard;?></li><?php } ?>
+            <?php if (!empty($text_url_linkedin)) { ?><li>text_url_linkedin: <?php echo $text_url_linkedin;?></li><?php } ?>
+          </ul>
+        </div><!-- /.container -->
+      </div><!-- /.corp-gray-bleed-bg --> 
+
     </main><!-- /main -->
   </div><!-- /.primary -->
 </div><!-- #content -->
