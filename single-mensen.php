@@ -75,17 +75,15 @@ $expertise_url = mrweb_expertise_page_url($expertise_id);
             <div class="contact-page-extra">
               <?php echo wpautop($extra_content);?>
             </div><!-- /.contact-page-extra-->            
-            <?php } ?>   
-          </div><!-- /.col -->        
-        </div><!-- ./row -->
-
-          <ul class="corp-contact-icons">
+            <?php } ?>
+            <ul class="corp-contact-icons">
             <?php if (!empty($text_email)) { ?><li title="<?php echo $text_email;?>"><a href="mailto:<?php echo $text_email;?>" target="_blank"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg></a> <?php echo $text_email;?></li><?php } ?>
             <?php if (!empty($text_telefoon)) { ?><li title="<?php echo $text_telefoon;?>"><a href="tel:<?php echo $text_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a> <?php echo $text_telefoon;?></li><?php } ?>
             <?php if (!empty($text_mobiel)) { ?><li title="<?php echo $text_mobiel;?>"><a href="tel:<?php echo $text_mobiel_formatted;?>" target="_blank"><svg class="icon icon-mobile"><use xlink:href="#icon-mobile"></use></svg></a> <?php echo $text_mobiel;?></li><?php } ?>
-          </ul>              
-          </div>          
-        </div>
+          </ul>               
+          </div><!-- /.col -->
+
+        </div><!-- ./row -->
       </div><!-- /.container.entry-content -->
 
       <div class="corp-gray-bleed-bg bleed-left">
