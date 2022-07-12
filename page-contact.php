@@ -36,7 +36,7 @@ get_header();?>
                   <?php echo $adres_postcode; ?> <?php echo $adres_woonplaats; ?>
                 </p>
                 <p class="maps-url">
-                  <a href="<?php echo $maps_url; ?>" target="_blank"><?php echo esc_html_e('Locatie in Google Maps', 'corp_bootscore' ); ?></a>
+                  <a href="<?php echo $maps_url; ?>" target="_blank"><?php echo esc_html_e('Locatie op Google Maps', 'corp' ); ?></a>
                 </p>
               </div>
             <?php } ?>
@@ -50,7 +50,7 @@ get_header();?>
               $social_linkedin = (array_key_exists('social_linkedin', $bedrijfsgegevens))? $bedrijfsgegevens['social_linkedin'] : 'linkedin url ontbreekt'; ?>
             <?php } ?>
             <div class="wrapper-contact-icons">
-              <h2><?php echo esc_html_e('Direct contact', 'corp_bootscore' ); ?></h2>
+              <h2><?php echo esc_html_e('Direct contact', 'corp' ); ?></h2>
               <ul class="list-contact-icons">
               <?php if (!empty($adres_email)) { ?>
                 <li title="<?php echo $adres_email;?>">
@@ -73,7 +73,7 @@ get_header();?>
                   <a href="<?php echo $social_linkedin;?>" target="_blank">
                     <svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg>
                   </a>
-                  <span><?php echo esc_html_e('Volg ons op Linkedin', 'corp_bootscore' ); ?></span>
+                  <span><?php echo esc_html_e('Volg ons op Linkedin', 'corp' ); ?></span>
                 </li>
               <?php } ?>              
               </ul>  
@@ -83,7 +83,7 @@ get_header();?>
         <div class="row">
           <div class="col-lg-6">
             <div class="wrapper-contact-algemene-info">
-              <h2><?php echo esc_html_e('Algemene informatie', 'corp_bootscore' ); ?></h2>
+              <h2><?php echo esc_html_e('Algemene informatie', 'corp' ); ?></h2>
               <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'algemene_informatie', true))) { ?>              
               <div class="contact-algemene-info"><?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'algemene_informatie', true));?></div>
               <?php } ?>  
