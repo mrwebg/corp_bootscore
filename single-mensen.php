@@ -47,7 +47,7 @@ $expertise_url = mrweb_expertise_page_url($expertise_id);
               <!-- ..entry-header -->
             </header>
             <!-- CONTENT -->
-            <?php the_content(); ?> 
+            <?php the_content(); ?>          
           </div>
           <div class="col">
             <?php if (!empty($portrait)) { ?>
@@ -66,6 +66,13 @@ $expertise_url = mrweb_expertise_page_url($expertise_id);
         </div>
         <div class="row">
           <div class="col">
+          <?php $extra_content = get_post_meta(get_the_ID(), _CMB . 'extra_content', true);?>
+            <?php if(!empty($extra_content)){?>
+            <!-- CONTENT PAGE EXTRA CONTENT ONDER STIPPELLIJN -->
+            <div class="contact-page-extra">
+              <?php echo wpautop($extra_content);?>
+            </div><!-- /.contact-page-extra-->            
+            <?php } ?>            
             <ul class="single-mensen-contact-icons">
               <?php if (!empty($text_email)) { ?><li>text_email: <?php echo $text_email;?></li><?php } ?>
               <?php if (!empty($text_telefoon)) { ?><li>text_telefoon: <?php echo $text_telefoon;?></li><?php } ?>

@@ -118,6 +118,22 @@ function mrweb_register_cmb2_metaboxes() {
         'type' => 'wysiwyg',
       ));
   // MENSEN.
+  $cmb_mensen1 = new_cmb2_box(array(
+    'id' => $prefix . 'mensen',
+    'title' => 'Extra Content [optioneel]',
+    'object_types' => array('mensen'), // Post type
+    'context' => 'normal',
+    'priority' => 'high',
+    'show_names' => false, // Show field names on the left
+    'cmb_styles' => true, // false to disable the CMB stylesheet
+    'closed' => true,
+    'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
+  ));  
+  $cmb_mensen1->add_field(array(
+    'name' => 'extra content',
+    'id' => $prefix . 'extra_content',
+    'type' => 'wysiwyg',
+  ));
   $cmb_mensen = new_cmb2_box(array(
     'id' => $prefix . 'mensen',
     'title' => 'NAW GEGEVENS',
