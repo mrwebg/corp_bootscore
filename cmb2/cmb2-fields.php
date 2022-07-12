@@ -219,12 +219,12 @@ function mrweb_register_cmb2_metaboxes() {
   // PAGE CONTACT.
   $cmb_cp = new_cmb2_box( array(
     'id'           => 'left_column_contact',
-    'title'        => 'EXTRA CONTENT',
+    'title'        => 'Algemene informatie',
     'object_types' => array( 'page' ), // post type
     'show_on'      => array( 'key' => 'page-template', 'value' => 'page-contact.php' ),
     'context'      => 'normal', //  'normal', 'advanced', or 'side'
     'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
-    'show_names'   => true, // Show field names on the left
+    'show_names'   => false, // Show field names on the left
     'closed'       => false,
   ));
   $cmb_cp->add_field(array(
