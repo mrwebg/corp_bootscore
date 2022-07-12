@@ -66,7 +66,7 @@ $expertise_url = mrweb_expertise_page_url($expertise_id);
         </div>
         <div class="row">
           <div class="col">
-            <ul>
+            <ul class="single-mensen-contact-icons">
               <?php if (!empty($text_email)) { ?><li>text_email: <?php echo $text_email;?></li><?php } ?>
               <?php if (!empty($text_telefoon)) { ?><li>text_telefoon: <?php echo $text_telefoon;?></li><?php } ?>
               <?php if (!empty($text_mobiel)) { ?><li>text_mobiel: <?php echo $text_mobiel;?></li><?php } ?>
