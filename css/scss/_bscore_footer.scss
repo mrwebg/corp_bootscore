@@ -1,6 +1,8 @@
 // Footer
 
 .bootscore-footer{
+  position: relative; // on top of white bg
+  background: $white;
   padding-top: 6rem;
   padding-bottom: 2.5rem;
   display: flex;
@@ -37,6 +39,7 @@
 }
 body.home .bootscore-footer{
   color: $white;
+  background: transparent;
 
   .navbar-light .navbar-nav .nav-link:not(:hover):not(focus){
     color: $white;
