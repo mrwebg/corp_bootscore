@@ -25,13 +25,10 @@
           <div class="col-6 parallax-col" data-scroll-speed="1"> 
             <div class="wrapper-contact-cf7-intro" style="background-color:#fff;"> 
               <!-- RIGHT COLUMN CF7 INTRO. -->
-              <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'cf7_intro_title', true))) { ?>
-                <h2 class="h5 cf7_intro_title"><?php echo get_post_meta(get_the_ID(), _CMB . 'cf7_intro_title', true) ;?></h2><!-- /.cf7_intro_title -->  
-              <?php } ?>
-              <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'cf7_intro_body', true))) { ?>
-                <p class="cf7_intro_body"><?php echo get_post_meta(get_the_ID(), _CMB . 'cf7_intro_body', true) ;?></p><!-- /.cf7_intro_body -->  
-              <?php } ?>            
-              <!-- /RIGHT COLUMN CF7 INTRO. -->
+              <h2 class="h5 cf7_intro_title"><?php echo esc_html_e('Interesse? Neem contact met ons op.', 'corp_bootscore' ); ?></h2><!-- /.cf7_intro_title -->  
+            <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'cf7_intro_body', true))) { ?>
+              <p class="cf7_intro_body"><?php echo get_post_meta(get_the_ID(), _CMB . 'cf7_intro_body', true) ;?></p><!-- /.cf7_intro_body -->  
+            <?php } ?>            
             </div><!-- /.wrapper-contact-cf7-intro -->
             <div class="wrapper-contact-cf7-featured-image"> 
             <!-- CONTACT FORM 7. -->             
@@ -41,7 +38,6 @@
                 <?php echo apply_shortcodes($cf7_shortcode);?>
               </div><!-- /.wrapper-vacature-cf7 -->  
             <?php } ?>
-            <!-- /CONTACT FORM 7. -->
             <!-- FEATURED BACKGROUND IMAGE. -->             
             <?php
             $featured_image_alt = get_the_title();
@@ -63,15 +59,10 @@
               }
               echo $html;                 
             //}           
-            ?>
-            <!-- /FEATURED BACKGROUND IMAGE. -->              
+            ?>             
             </div><!-- /.wrapper-contact-cf7-featured-image --> 
             <!-- RIGHT COLUMN CONTACT PERSON INTRO. -->
-            <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'cf7_contactpersoon_titel', true))) { ?>
-              <h2 class="h5 cf7_contactpersoon_titel"><?php echo get_post_meta(get_the_ID(), _CMB . 'cf7_contactpersoon_titel', true) ;?></h2><!-- /.cf7_contactpersoon_titel -->  
-            <?php } ?>           
-            <!-- /RIGHT COLUMN CONTACT PERSON INTRO. -->            
-            <!-- RIGHT COLUMN CONTACT PERSON. -->                         
+              <h2 class="h5 cf7_contactpersoon_titel"><?php echo esc_html_e('Of neem direct contact op met:', 'corp_bootscore' ); ?></h2><!-- /.cf7_contactpersoon_titel -->                                             
             <?php
             $mensenID = intval(get_post_meta(get_the_ID(), _CMB . 'vacature_contact', true));
             if(!empty($mensenID) && is_int($mensenID)){                
@@ -105,8 +96,7 @@
                   <?php } ?>                     
                 </ul><!-- /.contactperson-icons -->                   
               </div><!-- /.wrapper-vacatures-rechter-kolom-contactpersoon -->                                
-            <?php } ?>             
-            <!-- /RIGHT COLUMN CONTACT PERSON. -->                                                                                
+            <?php } ?>                                                                                            
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container.entry-content -->
