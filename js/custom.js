@@ -28,32 +28,6 @@ jQuery(function ($) {
     }
   }
 
-  /* ==============================
-  Parallax scrolling col
-  ============================== */
-  // var parallaxcols = $('.parallax-col');
-  // var isObj = typeof(parallaxcols);
-  // var isFull = (parallaxcols.length > 0) ? true : false;
-  // var $window = $(window);
-  // if (isObj && isFull) {
-  //   $window.scroll(function () {
-  //     var win_sctop = Math.round($(window).scrollTop());
-  //     var win_width = $(window).width();
-  //     var win_height = $(window).height();
-  //     var doc_height = $(document).height();
-  //     var breakpoint = 992;
-  //     if (win_width >= breakpoint && (win_sctop + win_height + 1 < doc_height)) {
-  //       parallaxcols.each(function () {
-  //         var $this = $(this),
-  //           scrollspeed = parseInt($this.data('scroll-speed')),
-  //           val = - win_sctop / scrollspeed;
-  //         $this.css('transform', 'translateY(' + val + 'px)');
-  //         $this.css('margin-bottom', val + 'px');
-  //       });
-  //     }
-  //   });
-  // }  
-
    /* ==============================
   On window.scroll use requestAnimationFrame to move cols
   ============================== */
@@ -89,6 +63,9 @@ jQuery(function ($) {
     }
   })
 
+/* ==============================
+  Tooltip init
+============================== */
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
