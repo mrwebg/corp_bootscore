@@ -65,7 +65,7 @@ $expertise_url = mrweb_expertise_page_url($expertise_id);
           </div>          
         </div>
         <div class="row">
-          <div class="col">
+          <div class="col-lg-6">
           <?php $extra_content = get_post_meta(get_the_ID(), _CMB . 'extra_content', true);?>
             <?php if(!empty($extra_content)){?>
             <!-- CONTENT PAGE EXTRA CONTENT ONDER STIPPELLIJN -->
