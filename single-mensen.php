@@ -47,7 +47,7 @@ $expertise_url = mrweb_expertise_page_url($expertise_id);
               <!-- ..entry-header -->
             </header>
             <!-- CONTENT -->
-            <?php the_content(); ?> 
+            <?php the_content(); ?>          
           </div>
           <div class="col-lg-6 col-xxl-5">
             <div class="featured-image-mensen-wrapper">
@@ -69,15 +69,35 @@ $expertise_url = mrweb_expertise_page_url($expertise_id);
 
         <div class="row single-mensen-below-line">
           <div class="col-lg-6 col-xxl-7">
-            <!-- please insert extra text area https://github.com/mrwebg/corp_bootscore/issues/7 -->     
+            <?php $extra_content = get_post_meta(get_the_ID(), _CMB . 'extra_content', true);?>
+            <?php if(!empty($extra_content)){?>
+            <!-- CONTENT PAGE EXTRA CONTENT ONDER STIPPELLIJN -->
+            <div class="contact-page-extra">
+              <?php echo wpautop($extra_content);?>
+            </div><!-- /.contact-page-extra-->            
+            <?php } ?>   
           </div><!-- /.col -->        
         </div><!-- ./row -->
 
-        <ul class="corp-contact-icons">
-          <?php if (!empty($text_email)) { ?><li title="<?php echo $text_email;?>"><a href="mailto:<?php echo $text_email;?>" target="_blank"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg></a> <?php echo $text_email;?></li><?php } ?>
-          <?php if (!empty($text_telefoon)) { ?><li title="<?php echo $text_telefoon;?>"><a href="tel:<?php echo $text_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a> <?php echo $text_telefoon;?></li><?php } ?>
-          <?php if (!empty($text_mobiel)) { ?><li title="<?php echo $text_mobiel;?>"><a href="tel:<?php echo $text_mobiel_formatted;?>" target="_blank"><svg class="icon icon-mobile"><use xlink:href="#icon-mobile"></use></svg></a> <?php echo $text_mobiel;?></li><?php } ?>
-        </ul>              
+          <ul class="corp-contact-icons">
+            <?php if (!empty($text_email)) { ?><li title="<?php echo $text_email;?>"><a href="mailto:<?php echo $text_email;?>" target="_blank"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg></a> <?php echo $text_email;?></li><?php } ?>
+            <?php if (!empty($text_telefoon)) { ?><li title="<?php echo $text_telefoon;?>"><a href="tel:<?php echo $text_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a> <?php echo $text_telefoon;?></li><?php } ?>
+            <?php if (!empty($text_mobiel)) { ?><li title="<?php echo $text_mobiel;?>"><a href="tel:<?php echo $text_mobiel_formatted;?>" target="_blank"><svg class="icon icon-mobile"><use xlink:href="#icon-mobile"></use></svg></a> <?php echo $text_mobiel;?></li><?php } ?>
+          </ul>              
+          </div>          
+        </div>
+        <div class="row">
+          <div class="col">
+                   
+            <ul class="single-mensen-contact-icons">
+              <?php if (!empty($text_email)) { ?><li>text_email: <?php echo $text_email;?></li><?php } ?>
+              <?php if (!empty($text_telefoon)) { ?><li>text_telefoon: <?php echo $text_telefoon;?></li><?php } ?>
+              <?php if (!empty($text_mobiel)) { ?><li>text_mobiel: <?php echo $text_mobiel;?></li><?php } ?>
+              <?php if (!empty($file_vcard)) { ?><li>file_vcard: <?php echo $file_vcard;?></li><?php } ?>
+              <?php if (!empty($text_url_linkedin)) { ?><li>text_url_linkedin: <?php echo $text_url_linkedin;?></li><?php } ?>
+            </ul>            
+          </div>        
+        </div>        
       </div><!-- /.container.entry-content -->
 
       <div class="corp-gray-bleed-bg bleed-left">

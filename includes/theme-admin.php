@@ -220,3 +220,14 @@ function rankya_remove_global_styles() {
   remove_action( 'in_admin_header', 'wp_global_styles_render_svg_filters' );
 }
 add_action('after_setup_theme', 'rankya_remove_global_styles', 10, 0);
+
+// REMOVE MENU CLASS FOR NONE BLOG SINGLE PAGES
+function mrweb_nav_classes( $classes, $item ) {
+  if( ( is_singular( 'vacature' ) || is_singular( 'mensen' ) )
+      && ( 'News' === $item->title ||  'Nieuws' === $item->title) ){
+      $classes = array_diff( $classes, array( 'current_page_parent', 'current-post-ancestor' ) );
+  }
+  // onder andere condities kan ik ook een class toevoegen: $classes[] = 'my-class-name'
+  return $classes;
+}
+add_filter( 'nav_menu_css_class', 'mrweb_nav_classes', 10, 2 );
