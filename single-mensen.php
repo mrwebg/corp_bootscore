@@ -86,18 +86,6 @@ $expertise_url = mrweb_expertise_page_url($expertise_id);
           </ul>              
           </div>          
         </div>
-        <div class="row">
-          <div class="col">
-                   
-            <ul class="single-mensen-contact-icons">
-              <?php if (!empty($text_email)) { ?><li>text_email: <?php echo $text_email;?></li><?php } ?>
-              <?php if (!empty($text_telefoon)) { ?><li>text_telefoon: <?php echo $text_telefoon;?></li><?php } ?>
-              <?php if (!empty($text_mobiel)) { ?><li>text_mobiel: <?php echo $text_mobiel;?></li><?php } ?>
-              <?php if (!empty($file_vcard)) { ?><li>file_vcard: <?php echo $file_vcard;?></li><?php } ?>
-              <?php if (!empty($text_url_linkedin)) { ?><li>text_url_linkedin: <?php echo $text_url_linkedin;?></li><?php } ?>
-            </ul>            
-          </div>        
-        </div>        
       </div><!-- /.container.entry-content -->
 
       <div class="corp-gray-bleed-bg bleed-left">
