@@ -25,7 +25,7 @@
           <div class="col-6 parallax-col" data-scroll-speed="1"> 
             <div class="wrapper-contact-cf7-intro" style="background-color:#fff;"> 
               <!-- RIGHT COLUMN CF7 INTRO. -->
-              <h2 class="h5 cf7_intro_title"><?php echo esc_html_e('Interesse? Neem contact met ons op.', 'corp_bootscore' ); ?></h2><!-- /.cf7_intro_title -->  
+              <h2 class="h5 cf7_intro_title"><?php echo esc_html_e('Interesse? Neem contact met ons op.', 'corp' ); ?></h2><!-- /.cf7_intro_title -->  
             <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'cf7_intro_body', true))) { ?>
               <p class="cf7_intro_body"><?php echo get_post_meta(get_the_ID(), _CMB . 'cf7_intro_body', true) ;?></p><!-- /.cf7_intro_body -->  
             <?php } ?>            
