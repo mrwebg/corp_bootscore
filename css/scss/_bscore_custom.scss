@@ -75,7 +75,7 @@ body.home{
   }
 }
 
-.corp-footer-quote-wrapper{
+.corp-footer-quote-wrapper, .corp-gray-bleed-bg{
   .container{
     position: relative;
     padding-top: $spacer;
@@ -91,6 +91,17 @@ body.home{
       background: $corp-transparent-background;
       @media (min-width: $corp-desktop-gutter-width-beakpoint){
         left: $corp-grid-gutter-width-desktop * .5;
+      }
+    }
+  }
+
+  &.bleed-left{ // default is right
+    .container:before{
+      right: $grid-gutter-width * .5;
+      left: auto;
+      @media (min-width: $corp-desktop-gutter-width-beakpoint){
+        right: $corp-grid-gutter-width-desktop * .5;
+        left: auto;
       }
     }
   }
@@ -212,8 +223,11 @@ body.home .corp-footer-quote-wrapper .container:before{
     }
 
     ul.corp-contact-icons{
-      display: flex;
-      gap: $spacer * .25;
+      flex-direction: row;
+
+      > li > a{
+        margin-right: 0;
+      }
     }
   }
 }
@@ -221,8 +235,14 @@ body.home .corp-footer-quote-wrapper .container:before{
 ul.corp-contact-icons{
   list-style: none;
   padding: 0;
+  display: flex;
+  gap: $spacer * .25;
+  flex-direction: column;
 
   > li{
+    display: flex;
+    align-items: center;
+
     > a{
       background: $primary;
       display: flex;
@@ -233,6 +253,7 @@ ul.corp-contact-icons{
       border-radius: $contact-icon-size * .5;
       color: $white;
       text-align: center;
+      margin-right: $spacer * .5;
 
       svg{
         width: $contact-icon-size * .4;
@@ -243,8 +264,38 @@ ul.corp-contact-icons{
 }
 
 
+// Single Mensen
 
+.row.single-mensen-above-line{
+  display: flex;
+  align-items: end;
 
+  > *:first-child{
+    padding-bottom: $spacer * .75;
+  }
+}
+
+.featured-image-mensen-wrapper{
+  position: relative;
+
+  &:after{
+    display: block;
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 100vw;
+    margin-top: -1px;
+    border-bottom: $corp-dotted-border;
+  }
+
+  .featured-image-mensen{
+    margin-bottom: 0;
+  }
+}
+
+.single-mensen-below-line{
+  padding-top: $spacer;
+}
 
 
 
