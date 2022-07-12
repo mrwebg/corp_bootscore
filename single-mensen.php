@@ -14,6 +14,7 @@ $text_email = get_post_meta(get_the_ID(), _CMB . 'text_email', true);
 $text_telefoon = get_post_meta(get_the_ID(), _CMB . 'text_telefoon', true);
 $text_telefoon_formatted = str_replace(array(' ', '(', ')'), "", $text_telefoon);
 $text_mobiel = get_post_meta(get_the_ID(), _CMB . 'text_mobiel', true);
+$text_mobiel_formatted = str_replace(array(' ', '(', ')'), "", $text_mobiel);
 $file_vcard = get_post_meta(get_the_ID(), _CMB . 'file_vcard', true);
 $text_url_linkedin = get_post_meta(get_the_ID(), _CMB . 'text_url_linkedin', true);
 $portrait = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "team-portrait")[0];
