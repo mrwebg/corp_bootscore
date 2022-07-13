@@ -47,17 +47,31 @@ body.home{
   &.container-fluid{
     padding-left: 0;
     padding-right: 0;
-    @media (min-width: $corp-contact-bar-breakpoint){
+    @media (min-width: $corp-contact-bar-fixed-breakpoint){
       padding-left: $corp-contact-bar-width;
       padding-right: $corp-contact-bar-width;
     }
   }
 
-  .card-title{
-    @include corp-heading-border-bottom;
-  }
-  .lead{
-    @include corp-lead-styling-as-p;
+  .card{
+    position: relative;
+
+    .card-title{
+      @include corp-heading-border-bottom;
+
+      a:before{
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top:0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .lead{
+      @include corp-lead-styling-as-p;
+    }
   }
 }
 .corp-home-teasers-wrapper{
@@ -388,8 +402,20 @@ body.page-template-page-vacatures{
 
 .wrapper-vacatures-listing{
   .corp-vacature{
+    position: relative;
+
     .card-title{
       @include corp-heading-border-bottom;
+
+      a:before{
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top:0;
+        width: 100%;
+        height: 100%;
+      }
     }
     .lead{
       @include corp-lead-styling-as-p;

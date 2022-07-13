@@ -72,7 +72,7 @@ body.admin-bar #page{
     }
   }
   .card-body{
-    padding: ($corp-grid-gutter-width-desktop * .25) ($corp-grid-gutter-width-desktop * .5);
+    padding: (($corp-grid-gutter-width-desktop * .25) + $spacer) ($corp-grid-gutter-width-desktop * .5) ($corp-grid-gutter-width-desktop * .25);
   }
 }
 
