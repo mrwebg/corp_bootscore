@@ -226,7 +226,6 @@ function mrweb_nav_classes( $classes, $item ) {
   if( ( is_singular( 'vacature' ) || is_singular( 'mensen' ) )
       && ( 'News' === $item->title ||  'Nieuws' === $item->title) ){
       $classes = array_diff( $classes, array( 'current_page_parent', 'current-post-ancestor' ) );
-      print 'ancestor = ' . $item->current_item_ancestor;
   }
   // onder andere condities kan ik ook een class toevoegen: $classes[] = 'my-class-name'
   return $classes;
