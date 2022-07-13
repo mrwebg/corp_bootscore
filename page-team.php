@@ -70,7 +70,7 @@ get_header();?>
                         <noscript><picture><img src="<?php echo $portrait;?>" alt="<?php echo get_the_title();?>"></picture></noscript>
                       </figure><!-- /.team-portrait -->
                       </a>
-                      <h3 class="h4 team-title"><a href="<?php echo $url;?>"><?php the_title(); ?></a></h3><!-- /.card-title -->
+                      <h2 class="h4 team-title"><a href="<?php echo $url;?>"><?php the_title(); ?></a></h2><!-- /.h4.team-title -->
                       <?php if (!empty($expertise_name) && !empty($expertise_url)){ ?><p class="team-subtitle"><a href="<?php echo $expertise_url;?>"><?php echo $expertise_name;?></a></p><?php } ?>
                       <ul class="corp-contact-icons corp-contact-icons-row">
                         <?php if (!empty($text_telefoon)) { ?>
@@ -82,7 +82,7 @@ get_header();?>
                         <?php if (!empty($text_email)) { ?>
                           <li title="<?php echo $text_email;?>"><a href="mailto:<?php echo $text_email;?>" target="_blank"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg></a></li>
                         <?php } ?>                      
-                      </ul><!-- /.card-list-team-icons -->
+                      </ul><!-- /.corp-contact-icons.corp-contact-icons-row -->
                   </div><!-- /.corp-team-item -->
                 </div><!-- /.col -->
               <?php endforeach;?>
