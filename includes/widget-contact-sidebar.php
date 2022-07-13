@@ -13,12 +13,9 @@ function corp_widget_contact_sidebar() {
       <!-- widget-contact-sidebar-wrapper --> 
       <div class="widget-contact-sidebar-wrapper">
         <ul class="widget-contact-sidebar">
-          <li class="d-none d-md-block"><!-- phone icon with tooltip on desktop -->
-            <a href="#" data-bs-toggle="tooltip" data-bs-original-title="<?php echo $adres_telefoon;?>"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a> 
-          </li>  
-          <li class="d-block d-md-none"><!-- phone icon with tel: link on mobile -->
-            <a href="tel:<?php echo $adres_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a>
-          </li>             
+          <li>
+            <a href="tel:<?php echo $adres_telefoon_formatted;?>" data-bs-toggle="tooltip" data-bs-original-title="<?php echo $adres_telefoon;?>"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a> 
+          </li>              
           <li>
             <a href="mailto:<?php echo $adres_email;?>" data-bs-toggle="tooltip" data-bs-original-title="<?php echo $adres_email;?>" target="_blank"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg><span><?php echo $adres_email;?></span></a>      
           </li>
