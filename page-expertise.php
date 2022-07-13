@@ -51,17 +51,25 @@ get_header();?>
                 foreach ($post_array as $post):
                   setup_postdata($post);
                   $title = ucfirst(get_the_title());
-                  $url = ucfirst(get_the_permalink(get_the_ID()));
+                  $url = get_the_permalink(get_the_ID());
                   $text_email = get_post_meta(get_the_ID(), _CMB . 'text_email', true);
                   $text_telefoon = get_post_meta(get_the_ID(), _CMB . 'text_telefoon', true);
+                  $text_telefoon_formatted = str_replace(array(' ', '(', ')'), "", $text_telefoon);              
                   $text_mobiel = get_post_meta(get_the_ID(), _CMB . 'text_mobiel', true);
+                  $text_mobiel_formatted = str_replace(array(' ', '(', ')'), "", $text_mobiel);
                   ?>
-                  <div class="wrapper-expertise-team-member">
-                    <?php if (!empty($title)) { ?><h3><a href="<?php echo $url;?>"><?php echo $title;?></a></h3><?php } ?>
-                    <?php if (!empty($text_email)) { ?><?php echo $text_email;?></br><?php } ?>
-                    <?php if (!empty($text_telefoon)) { ?><?php echo $text_telefoon;?></br><?php } ?>
-                    <?php if (!empty($text_mobiel)) { ?><?php echo $text_mobiel;?></br><?php } ?>
-                  </div><!-- /.wrapper-expertise-team-member -->
+                  <h3 class="h4 team-title"><a href="<?php echo $url;?>"><?php echo $title; ?></a></h3><!-- /.h4.team-title -->                      
+                  <ul class="corp-contact-icons corp-contact-icons-row">
+                    <?php if (!empty($text_telefoon)) { ?>
+                      <li title="<?php echo $text_telefoon;?>"><a href="tel:<?php echo $text_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a></li>
+                    <?php } ?>
+                    <?php if (!empty($text_mobiel)) { ?>
+                      <li title="<?php echo $text_mobiel;?>"><a href="tel:<?php echo $text_mobiel_formatted;?>" target="_blank"><svg class="icon icon-mobile"><use xlink:href="#icon-mobile"></use></svg></a></li>
+                    <?php } ?>                      
+                    <?php if (!empty($text_email)) { ?>
+                      <li title="<?php echo $text_email;?>"><a href="mailto:<?php echo $text_email;?>" target="_blank"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg></a></li>
+                    <?php } ?>                      
+                  </ul><!-- /.corp-contact-icons.corp-contact-icons-row -->
                 <?php endforeach;?>
                 <?php wp_reset_postdata(); ?>
               </div><!-- /.wrapper-expertise-team -->  
