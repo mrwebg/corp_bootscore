@@ -4,6 +4,11 @@
 
 // Type
 
+// text selection
+::selection{
+  background: rgba($primary, .15);
+}
+
 // bug headings smaller line-height
 h1, .h1{
   line-height: 1.1;
@@ -25,6 +30,10 @@ h5, .h5{
   font-family: $font-family-sans-serif;
 }
 
+body mark, body .mark{
+  padding: 0; // var $mark-padding not changed by _bootstrap_variables.scss!
+  background: rgba($black, .1); // var $mark-bg not changed by _bootstrap_variables.scss!
+}
 
 // Pages
 
@@ -35,11 +44,11 @@ body.home{
       font-size: $font-size-base * 4.5;
     }
   }
-  .lead{
-    @include media-breakpoint-up(xl){
-      font-size: $font-size-base * 1.9;
-    }
-  }
+  // .lead{
+  //   @include media-breakpoint-up(xl){
+  //     font-size: $font-size-base * 1.9;
+  //   }
+  // }
 }
 
 .corp-home-featured-wrapper,
@@ -47,9 +56,30 @@ body.home{
   &.container-fluid{
     padding-left: 0;
     padding-right: 0;
-    @media (min-width: $corp-contact-bar-breakpoint){
+    @media (min-width: $corp-contact-bar-fixed-breakpoint){
       padding-left: $corp-contact-bar-width;
       padding-right: $corp-contact-bar-width;
+    }
+  }
+
+  .card{
+    position: relative;
+
+    .card-title{
+      @include corp-heading-border-bottom;
+
+      a:before{
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top:0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .lead{
+      @include corp-lead-styling-as-p;
     }
   }
 }
@@ -222,13 +252,13 @@ body.home .corp-footer-quote-wrapper .container:before{
       }
     }
 
-    ul.corp-contact-icons{
-      flex-direction: row;
+    // ul.corp-contact-icons{
+    //   flex-direction: row;
 
-      > li > a{
-        margin-right: 0;
-      }
-    }
+    //   > li > a{
+    //     margin-right: 0;
+    //   }
+    // }
   }
 }
 
@@ -259,6 +289,14 @@ ul.corp-contact-icons{
         width: $contact-icon-size * .4;
         height: $contact-icon-size * .4;
       }
+    }
+  }
+
+  &.corp-contact-icons-row{
+    flex-direction: row;
+
+    > li > a{
+      margin-right: 0;
     }
   }
 }
@@ -305,37 +343,66 @@ ul.corp-contact-icons{
 // Vacatures / Werken bij
 
 body.page-template-page-vacatures{
+  // fixed white bg first col
+  &:before{
+    @include media-breakpoint-up(lg){
+      position: fixed;
+      content: "";
+      display: block;
+      top:0;
+      bottom: 0;
+      right:50%;
+      background: $white;
+      width: (get-breakpoints("lg") * .5); // 50% container width
+    }
+    @include media-breakpoint-up(xl){
+      width: (get-breakpoints("xl") * .5); // 50% container width
+    }
+    @include media-breakpoint-up(xxl){
+      width: (get-breakpoints("xxl") * .5); // 50% container width
+    }
+    @include media-breakpoint-up(xxxl){
+      width: (get-breakpoints("xxxl") * .5); // 50% container width
+    }
+  }
   .site-content{
-    overflow: hidden;
+    // overflow: hidden;
 
-    .entry-content > .container{
-      @include media-breakpoint-up(lg){
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+    .entry-content{
+      > .container{
+        @include media-breakpoint-up(lg){
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+        }
 
-      > .row{
-        > *:first-child{
-          background: $white;
-          @include media-breakpoint-up(lg){
-            position: relative;
+        > .row{
+          > *:first-child{
+            background: $white;
+            // @include media-breakpoint-up(lg){
+            //   position: relative;
 
-            &:before{
-              position: absolute;
-              display: block;
-              content: "";
-              left: 0;
-              right: 0;
-              top: -100vh;
-              bottom: $spacer * -4;
-              background: $white;
-            }
+            //   &:before{
+            //     position: absolute;
+            //     display: block;
+            //     content: "";
+            //     left: 0;
+            //     right: 0;
+            //     top: -100vh;
+            //     bottom: $spacer * -4;
+            //     background: $white;
+            //   }
 
-             > *{
-              position: relative;
-            }
+            //    > *{
+            //     position: relative;
+            //   }
+            // }
           }
+        }
+      }
+      > .container-fluid{
+        @include media-breakpoint-up(lg){
+          min-height: 100vh; // fix for absolute position .container
         }
       }
     }
@@ -343,8 +410,44 @@ body.page-template-page-vacatures{
 }
 
 .wrapper-vacatures-listing{
-  
+  .corp-vacature{
+    position: relative;
+
+    .card-title{
+      @include corp-heading-border-bottom;
+
+      a:before{
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top:0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .lead{
+      @include corp-lead-styling-as-p;
+    }
+  }
 }
+
+.wrapper-vacatures-rechter-kolom-extra{
+  background: $corp-gray-light-bg;
+
+  .wrapper-vacatures-rechter-kolom-contactpersoon{
+    border-top: $corp-dotted-border;
+    padding-top: $spacer;
+
+    .contactpersoon-title{
+      a{
+        text-decoration: none;
+      }
+    }
+
+  }
+}
+
 
 
 

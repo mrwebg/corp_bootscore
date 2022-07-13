@@ -34,7 +34,7 @@
             <div class="row justify-content-end">
               <div class="col-lg-7 col-xl-6 col-xxxl-5">
                 <div class="card card-body corp-featured-post-<?php echo $featured_post_type_selected; ?>">
-                  <h3 class=""><a href="<?php echo get_the_permalink($featured_post_id);?>"><?php echo $featured_post->post_title;?></a></h3>
+                  <h3 class="card-title"><a href="<?php echo get_the_permalink($featured_post_id);?>"><?php echo $featured_post->post_title;?></a></h3>
                   <div class="content"><?php echo apply_filters( 'the_content', $featured_post->post_content ); ?></div>
                 </div>
               </div>
