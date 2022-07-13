@@ -65,7 +65,6 @@ get_header();
             <?php endif; ?>
           <?php endwhile; ?>
         <?php endif; ?>
-
         <div class="row">
           <div class="col">
             <!-- Pagination -->
