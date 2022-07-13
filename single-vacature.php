@@ -12,7 +12,7 @@
     <main id="main" class="site-main">
       <div class="container entry-content">    
         <div class="row">
-          <div class="col-lg-6 parallax-col" data-scroll-speed="12">
+          <div class="col-lg-6 corp-col-white-bg parallax-col" data-scroll-speed="12">
             <header class="entry-header">
               <?php the_post(); ?>
               <!-- TITLE -->
@@ -22,18 +22,18 @@
             <!-- CONTENT -->
             <?php the_content(); ?>         
           </div><!-- /.col- -->
-          <div class="col-6 parallax-col" data-scroll-speed="1"> 
-            <div class="wrapper-contact-cf7-intro" style="background-color:#fff;"> 
+          <div class="col-lg-6 corp-col-white-bg parallax-col" data-scroll-speed="1"> 
+            <div class="wrapper-contact-cf7-intro"> 
               <!-- RIGHT COLUMN CF7 INTRO. -->
-              <h2 class="h5 cf7_intro_title"><?php echo esc_html_e('Interesse? Neem contact met ons op.', 'corp' ); ?></h2><!-- /.cf7_intro_title -->  
+              <h2 class="h4 corp-heading-border-bottom cf7_intro_title"><?php echo esc_html_e('Interesse? Neem contact met ons op.', 'corp' ); ?></h2><!-- /.cf7_intro_title -->  
             <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'cf7_intro_body', true))) { ?>
               <p class="cf7_intro_body"><?php echo get_post_meta(get_the_ID(), _CMB . 'cf7_intro_body', true) ;?></p><!-- /.cf7_intro_body -->  
             <?php } ?>            
             </div><!-- /.wrapper-contact-cf7-intro -->
-            <div class="wrapper-contact-cf7-featured-image"> 
+            <div class="wrapper-contact-cf7-featured-image mt-3 mb-3"> 
             <!-- CONTACT FORM 7. -->             
             <?php if ( shortcode_exists( 'contact-form-7' ) ) {?>
-              <div class="wrapper-vacature-cf7" style="background-color:#fff;"> 
+              <div class="wrapper-vacature-cf7"> 
                 <?php $cf7_shortcode = '[contact-form-7 id="1585" title="vacature-formulier-nl"]';?>
                 <?php echo apply_shortcodes($cf7_shortcode);?>
               </div><!-- /.wrapper-vacature-cf7 -->  

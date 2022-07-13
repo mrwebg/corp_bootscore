@@ -25,6 +25,10 @@ h5, .h5{
   font-size: $h5-font-size;
 }
 
+.corp-heading-border-bottom{
+  @include corp-heading-border-bottom;
+}
+
 
 .lead{
   font-family: $font-family-sans-serif;
@@ -319,9 +323,8 @@ ul.corp-contact-icons{
       position: absolute;
       padding: 0;
       width: 100vw;
-      margin-top: -1px;
       border-bottom: $corp-dotted-border;
-      bottom: 0;
+      bottom: -1px;
       z-index: 1;
     }
   }
@@ -357,7 +360,7 @@ body.page-template-page-vacatures{
       bottom: 0;
       right:50%;
       background: $white;
-      width: (get-breakpoints("lg") * .5); // 50% container width
+      width: (get-container-width("lg") * .5); // 50% container width
     }
     @media (min-width: $corp-contact-bar-breakpoint) and (max-width: $corp-contact-bar-fixed-breakpoint - 1px){
       left: 0;
@@ -365,13 +368,13 @@ body.page-template-page-vacatures{
       width: auto;
     } 
     @include media-breakpoint-up(xl){
-      width: (get-breakpoints("xl") * .5); // 50% container width
+      width: (get-container-width("xl") * .5); // 50% container width
     }
     @include media-breakpoint-up(xxl){
-      width: (get-breakpoints("xxl") * .5); // 50% container width
+      width: (get-container-width("xxl") * .5); // 50% container width
     }
     @include media-breakpoint-up(xxxl){
-      width: (get-breakpoints("xxxl") * .5); // 50% container width
+      width: (get-container-width("xxxl") * .5); // 50% container width
     }
   }
   .site-content{
@@ -461,5 +464,59 @@ body.page-template-page-vacatures{
 }
 
 
+// Single vacature
+
+.wrapper-contact-cf7-featured-image{
+  position: relative;
+  background: $corp-gray-light-bg;
+  padding: $grid-gutter-width ($grid-gutter-width * .5);
+  margin-left: ($grid-gutter-width * -.5);
+  margin-right: ($grid-gutter-width * -.5);
+  @media (min-width: $corp-desktop-gutter-width-beakpoint){
+    padding: ($corp-grid-gutter-width-desktop * .25) ($corp-grid-gutter-width-desktop * .5);
+    margin-left: ($corp-grid-gutter-width-desktop * -.5);
+    margin-right: ($corp-grid-gutter-width-desktop* -.5);
+  }
+
+  .featured-image-background-left{
+    position: fixed;
+    top: $corp-navbar-height-xs;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    margin: 0;
+    z-index: -1;
+    @include media-breakpoint-up(lg){
+      display: none;
+    }
+    @include media-breakpoint-up(xl){
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      height: auto;
+      left: auto;
+      right: get-container-width(xl); // col-6
+      width: calc((100vw - #{get-container-width(xl)}) * .5);
+    }
+    @include media-breakpoint-up(xxl){
+      right: get-container-width(xxl); // col-6
+      width: calc((100vw - #{get-container-width(xxl)}) * .5);
+    }
+    @include media-breakpoint-up(xxxl){
+      right: get-container-width(xxxl); // col-6
+      width: calc((100vw - #{get-container-width(xxxl)}) * .5);
+    }
+
+    img{
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
 
 
