@@ -41,15 +41,17 @@ $expertise_url = mrweb_expertise_page_url($expertise_id);
       <div class="container entry-content">    
         <div class="row single-mensen-above-line">
           <div class="col-lg-6 col-xxl-7">
-          <header class="entry-header">
-              <?php the_post(); ?>
-              <!-- TITLE -->
-              <?php the_title('<h1>', '</h1>'); ?>
-              <p class="d-none"><a href="<?php echo $expertise_url;?>"><?php echo $expertise_name;?></a></p>
-              <!-- ..entry-header -->
-            </header>
-            <!-- CONTENT -->
-            <?php the_content(); ?>          
+            <div class="single-mensen-intro-wrapper">
+              <header class="entry-header">
+                <?php the_post(); ?>
+                <!-- TITLE -->
+                <?php the_title('<h1>', '</h1>'); ?>
+                <p class="d-none"><a href="<?php echo $expertise_url;?>"><?php echo $expertise_name;?></a></p>
+                <!-- ..entry-header -->
+              </header>
+              <!-- CONTENT -->
+              <?php the_content(); ?>
+            </div>          
           </div>
           <div class="col-lg-6 col-xxl-5">
             <div class="featured-image-mensen-wrapper">
@@ -85,7 +87,7 @@ $expertise_url = mrweb_expertise_page_url($expertise_id);
           </div><!-- /.col -->
         </div><!-- ./row -->
       </div><!-- /.container.entry-content -->
-      <div class="corp-gray-bleed-bg bleed-left">
+      <div class="corp-gray-bleed-bg bleed-left pb-2">
         <div class="container">
           <ul class="corp-contact-icons">
             <?php if (!empty($text_url_linkedin)) { ?><li><a href="<?php echo $text_url_linkedin;?>" target="_blank"><svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg></a> <?php echo esc_html_e('Linkedin', 'corp' ); ?></li><?php } ?>
