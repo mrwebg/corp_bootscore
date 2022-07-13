@@ -77,10 +77,12 @@ body.admin-bar #page{
 }
 
 
-// padding before (featured image above conten)
+// padding before (featured image above content)
+// white bg cols (.corp-col-white-bg)
 body.page-template-page-expertise,
 body.page-template-page-trackrecord,
-body.page-template-page-vacatures{
+body.page-template-page-vacatures,
+body.single-vacature{
   .entry-content{
     @include media-breakpoint-down(lg){
       padding-top: 10rem;

@@ -75,6 +75,7 @@ $corp-dotted-border: 2px dotted $body-color; // dotted lines
 }
 
 // helper function to get max-widths .container
-@function get-breakpoints($key: "sm") {
+@function get-container-width($key: "sm") {
     @return map-get($container-max-widths, $key);
 }
+
