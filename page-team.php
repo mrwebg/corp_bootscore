@@ -91,6 +91,7 @@ get_header();?>
           </div><!-- /.row -->
         </div>
       </div><!-- /.container.entry-content -->
+      <?php get_template_part('includes/footer', 'quote', array('postID' => get_the_ID())); ?>              
     </main><!-- /main -->
   </div><!-- /.primary -->
 </div><!-- #content -->
