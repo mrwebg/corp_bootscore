@@ -46,7 +46,7 @@ get_header();?>
             ?>            
             <?php if (is_array($post_array) && count($post_array) > 0): ?>
               <div class="wrapper-expertise-team">
-                <h2>Team <?php //echo $expertise_name;?></h2>
+                <h2>Team <?php echo $expertise_name;?></h2>
                 <?php
                 foreach ($post_array as $post):
                   setup_postdata($post);
