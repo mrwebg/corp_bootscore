@@ -93,6 +93,7 @@ $expertise_url = mrweb_expertise_page_url($expertise_id);
           </ul>
         </div><!-- /.container -->
       </div><!-- /.corp-gray-bleed-bg --> 
+      <?php get_template_part('includes/footer', 'quote', array('postID' => get_the_ID())); ?>              
     </main><!-- /main -->
   </div><!-- /.primary -->
 </div><!-- #content -->
