@@ -59,17 +59,17 @@ get_header();?>
                   $text_mobiel_formatted = str_replace(array(' ', '(', ')'), "", $text_mobiel);
                   ?>
                   <h3 class="h4 team-title"><a href="<?php echo $url;?>"><?php echo $title; ?></a></h3><!-- /.h4.team-title -->                      
-                      <ul class="corp-contact-icons corp-contact-icons-row">
-                        <?php if (!empty($text_telefoon)) { ?>
-                          <li title="<?php echo $text_telefoon;?>"><a href="tel:<?php echo $text_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a></li>
-                        <?php } ?>
-                        <?php if (!empty($text_mobiel)) { ?>
-                          <li title="<?php echo $text_mobiel;?>"><a href="tel:<?php echo $text_mobiel_formatted;?>" target="_blank"><svg class="icon icon-mobile"><use xlink:href="#icon-mobile"></use></svg></a></li>
-                        <?php } ?>                      
-                        <?php if (!empty($text_email)) { ?>
-                          <li title="<?php echo $text_email;?>"><a href="mailto:<?php echo $text_email;?>" target="_blank"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg></a></li>
-                        <?php } ?>                      
-                      </ul><!-- /.corp-contact-icons.corp-contact-icons-row -->
+                  <ul class="corp-contact-icons corp-contact-icons-row">
+                    <?php if (!empty($text_telefoon)) { ?>
+                      <li title="<?php echo $text_telefoon;?>"><a href="tel:<?php echo $text_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a></li>
+                    <?php } ?>
+                    <?php if (!empty($text_mobiel)) { ?>
+                      <li title="<?php echo $text_mobiel;?>"><a href="tel:<?php echo $text_mobiel_formatted;?>" target="_blank"><svg class="icon icon-mobile"><use xlink:href="#icon-mobile"></use></svg></a></li>
+                    <?php } ?>                      
+                    <?php if (!empty($text_email)) { ?>
+                      <li title="<?php echo $text_email;?>"><a href="mailto:<?php echo $text_email;?>" target="_blank"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg></a></li>
+                    <?php } ?>                      
+                  </ul><!-- /.corp-contact-icons.corp-contact-icons-row -->
                 <?php endforeach;?>
                 <?php wp_reset_postdata(); ?>
               </div><!-- /.wrapper-expertise-team -->  

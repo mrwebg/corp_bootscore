@@ -224,13 +224,11 @@ function mrweb_register_cmb2_metaboxes() {
     'name' => 'linker kolom content',
     'id' => $prefix . 'left_column',
     'type' => 'wysiwyg',
-    'default' => 'Optioneel: voeg extra content toe',
   ));
   $cmb_rc->add_field(array(
     'name' => 'rechter kolom content',
     'id' => $prefix . 'right_column',
     'type' => 'wysiwyg',
-    'default' => 'Optioneel: voeg extra content toe',
   ));  
   // PAGE CONTACT.
   $cmb_cp = new_cmb2_box( array(
@@ -263,7 +261,6 @@ function mrweb_register_cmb2_metaboxes() {
     'name' => 'rechter kolom content',
     'id' => $prefix . 'right_column',
     'type' => 'wysiwyg',
-    'default' => 'Optioneel: voeg extra content toe',
   )); 
   $cmb_pv->add_field(array(
     'name' => 'contact_persoon',
