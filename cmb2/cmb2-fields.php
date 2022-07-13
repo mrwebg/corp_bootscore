@@ -209,27 +209,38 @@ function mrweb_register_cmb2_metaboxes() {
     'id' => $prefix . 'url_bron',
     'type' => 'text_url',
   ));
-  // PAGE EXPERTISE.
+  // PAGE EXPERTISE LINKER KOLOM.
   $cmb_rc = new_cmb2_box( array(
     'id'           => 'right_column_content',
-    'title'        => 'EXTRA CONTENT',
+    'title'        => 'LINKER KOLOM (extra content)',
     'object_types' => array( 'page' ), // post type
     'show_on'      => array( 'key' => 'page-template', 'value' => 'page-expertise.php' ),
     'context'      => 'normal', //  'normal', 'advanced', or 'side'
     'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
-    'show_names'   => true, // Show field names on the left
-    'closed'       => false,
+    'show_names'   => false, // Show field names on the left
+    'closed'       => true,
   ));
   $cmb_rc->add_field(array(
     'name' => 'linker kolom content',
     'id' => $prefix . 'left_column',
     'type' => 'wysiwyg',
+  )); 
+  // PAGE EXPERTISE RECHTER KOLOM.
+  $cmb_rc2 = new_cmb2_box( array(
+    'id'           => 'right_column_content2',
+    'title'        => 'RECHTER KOLOM (extra content)',
+    'object_types' => array( 'page' ), // post type
+    'show_on'      => array( 'key' => 'page-template', 'value' => 'page-expertise.php' ),
+    'context'      => 'normal', //  'normal', 'advanced', or 'side'
+    'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
+    'show_names'   => false, // Show field names on the left
+    'closed'       => true,
   ));
-  $cmb_rc->add_field(array(
+  $cmb_rc2->add_field(array(
     'name' => 'rechter kolom content',
     'id' => $prefix . 'right_column',
     'type' => 'wysiwyg',
-  ));  
+  ));    
   // PAGE CONTACT.
   $cmb_cp = new_cmb2_box( array(
     'id'           => 'left_column_contact',
