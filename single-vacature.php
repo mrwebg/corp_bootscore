@@ -62,7 +62,7 @@
             ?>             
             </div><!-- /.wrapper-contact-cf7-featured-image --> 
             <!-- RIGHT COLUMN CONTACT PERSON INTRO. -->
-              <h2 class="h5 cf7_contactpersoon_titel"><?php echo esc_html_e('Of neem direct contact op met:', 'corp_bootscore' ); ?></h2><!-- /.cf7_contactpersoon_titel -->                                             
+              <h2 class="h5 cf7_contactpersoon_titel"><?php echo esc_html_e('Of neem direct contact op met:', 'corp' ); ?></h2><!-- /.cf7_contactpersoon_titel -->                                             
             <?php
             $mensenID = intval(get_post_meta(get_the_ID(), _CMB . 'vacature_contact', true));
             if(!empty($mensenID) && is_int($mensenID)){                

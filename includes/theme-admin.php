@@ -14,10 +14,10 @@ wp_enqueue_script('corp-bootscore', get_stylesheet_directory_uri() . '/js/custom
 }
 /* TEXTDOMAIN CORP
 ================================================== */
-function add_child_theme_textdomain() {
-  load_child_theme_textdomain( 'corp', get_stylesheet_directory() . '/languages' );
+add_action('after_setup_theme', 'corp_theme_textdomain');
+function corp_theme_textdomain() {
+  load_theme_textdomain('corp', get_stylesheet_directory() . '/languages');
 }
-add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 
 /* ADMIN SCRIPTS HOOKED
   ================================================== */
@@ -204,16 +204,6 @@ $urls = array_diff( $urls, array( $emoji_svg_url ) );
 
 return $urls;
 }
-// ADD CLASS LEAD TO FIRST PARAGRAPH OF THE CONTENT.
-function mrweb_first_paragraph_class_lead($content){
-  // Testing to see if the content is a Page or Custom Post Type Deals, if so, display the text normally (without the class = intro).
-  if ( 'deals' === get_post_type()) {
-    return preg_replace('/<p([^>]+)?>/', '<p$1>', $content, 1);
-    } else {
-    return preg_replace('/<p([^>]+)?>/', '<p$1 class="lead">', $content, 1);
-  }
-}
-remove_filter('the_content', 'mrweb_first_paragraph_class_lead');
 
 function rankya_remove_global_styles() {
   remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
