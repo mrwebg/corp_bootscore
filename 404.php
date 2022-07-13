@@ -16,7 +16,7 @@
 get_header();
 ?>
 
-<div id="content" class="site-content container PAGEMRWEB">
+<div id="content" class="site-content container 404MRWEB">
   <div id="primary" class="content-area">
     
     <!-- Hook to add something nice -->
