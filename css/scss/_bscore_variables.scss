@@ -5,6 +5,7 @@
 
 // colors
 $corp-transparent-background: rgba($gray-800, 10%);
+$corp-gray-light-bg: $gray-200;
 
 // grid
 $corp-desktop-gutter-width-beakpoint: 1200px; // larger paddings large screens = xl 
@@ -53,4 +54,27 @@ $corp-dotted-border: 2px dotted $body-color; // dotted lines
 		left: 0;
 		right: 0;
 	}
+}
+
+// heading with border-bottom
+@mixin corp-heading-border-bottom{
+	padding-bottom: $spacer * .5;
+	border-bottom: $corp-dotted-border;
+
+	a{
+		text-decoration: none;
+	}
+}
+
+// lead styling article excerpts as p
+@mixin corp-lead-styling-as-p{
+	font-family: $font-family-base;
+	line-height: $line-height-base;
+	font-weight: $font-weight-base;
+	font-size: $font-size-base;
+}
+
+// helper function to get max-widths .container
+@function get-breakpoints($key: "sm") {
+    @return map-get($container-max-widths, $key);
 }

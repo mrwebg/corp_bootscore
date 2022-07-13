@@ -26,7 +26,7 @@ get_header();?>
        
         <div class="container-fluid corp-full-width-grid-posts-wrapper">
           <div class="row justify-content-end">
-             <div class="col-lg-7 col-xl-6 col-xxxl-5 parallax-col" data-scroll-speed="1">
+             <div class="col-lg-6 col-xl-6 col-xxxl-5 corp-2ng-col parallax-col" data-scroll-speed="1">
               <!-- VACATURES -->
               <?php
               $post_type = 'vacature';
@@ -51,7 +51,7 @@ get_header();?>
               $post_array = get_posts($post_args);
               ?>            
               <?php if (is_array($post_array) && count($post_array) > 0){ ?>
-                <div class="wrapper-vacatures-listing mb-3">
+                <div class="wrapper-vacatures-listing mb-4">
                   <?php
                   foreach ($post_array as $post):
                     setup_postdata($post);
@@ -67,10 +67,9 @@ get_header();?>
                 <?php } ?>
 
                 <!-- RIGHT COLUMN EXTRA CONTENT. -->
+                <div class="card card-body wrapper-vacatures-rechter-kolom-extra">                           
                 <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'right_column', true))) { ?>
-                  <div class="card card-body wrapper-vacatures-rechter-kolom-extra pt-2 pb-1">                           
                     <?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'right_column', true));?>
-                  </div><!-- /.wrapper-vacatures-rechter-kolom-extra -->
                 <?php } ?>
                 <!-- RIGHT COLUMN CONTACT PERSON. -->                         
                 <?php
@@ -86,9 +85,9 @@ get_header();?>
                   $permalink = get_the_permalink($mensenID); 
                 } 
                 if(!empty($post_title) && !empty($text_email) && !empty($permalink)){?>
-                  <div class="card card-body wrapper-vacatures-rechter-kolom-contactpersoon pb-2"> 
-                    <h3><a href="<?php echo $permalink;?>"><?php echo $post_title; ?></a></h3>                          
-                    <ul class="contactperson-icons">
+                  <div class="wrapper-vacatures-rechter-kolom-contactpersoon mt-3"> 
+                    <h3 class="contactpersoon-title"><a href="<?php echo $permalink;?>"><?php echo $post_title; ?></a></h3>                          
+                    <ul class="corp-contact-icons corp-contact-icons-row">
                       <?php if(!empty($text_telefoon_formatted)) { ?>
                         <li>
                           <a href="tel:<?php echo $text_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a> 
@@ -106,7 +105,8 @@ get_header();?>
                       <?php } ?>                     
                     </ul><!-- /.contactperson-icons -->                   
                   </div><!-- /.wrapper-vacatures-rechter-kolom-contactpersoon -->                                
-                <?php } ?>                     
+                <?php } ?>
+              </div><!-- /.wrapper-vacatures-rechter-kolom-extra -->                     
             </div><!-- /.col --> 
           </div>
         </div>

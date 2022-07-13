@@ -72,7 +72,7 @@ get_header();?>
                       </a>
                       <h3 class="h4 team-title"><a href="<?php echo $url;?>"><?php the_title(); ?></a></h3><!-- /.card-title -->
                       <?php if (!empty($expertise_name) && !empty($expertise_url)){ ?><p class="team-subtitle"><a href="<?php echo $expertise_url;?>"><?php echo $expertise_name;?></a></p><?php } ?>
-                      <ul class="corp-contact-icons">
+                      <ul class="corp-contact-icons corp-contact-icons-row">
                         <?php if (!empty($text_telefoon)) { ?>
                           <li title="<?php echo $text_telefoon;?>"><a href="tel:<?php echo $text_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a></li>
                         <?php } ?>

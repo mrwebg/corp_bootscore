@@ -72,7 +72,7 @@ body.admin-bar #page{
     }
   }
   .card-body{
-    padding: $corp-grid-gutter-width-desktop * .5;
+    padding: ($corp-grid-gutter-width-desktop * .25) ($corp-grid-gutter-width-desktop * .5);
   }
 }
 
@@ -103,11 +103,14 @@ body.page-template-page-trackrecord{
     }
   }
 }
-// positioning 2nd col 
-body.page-template-page-expertise{
-  .entry-content{
+// positioning 2nd col lower
+body.page-template-page-expertise,
+body.page-template-page-vacatures{
+  .entry-content.container, // defualt pages
+  .entry-content > .container-fluid{ // Werken bij page
     > .row > *{
-      &:not(:first-child){
+      &:not(:first-child), // rows with multiple cols
+      &.corp-2ng-col{ // fix Werken bij pagina (2nd col is in different container)
         @include media-breakpoint-up(lg){
           margin-top: 15rem;
           margin-top: 25vh;
