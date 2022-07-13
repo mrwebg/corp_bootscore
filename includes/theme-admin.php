@@ -206,14 +206,14 @@ return $urls;
 }
 // ADD CLASS LEAD TO FIRST PARAGRAPH OF THE CONTENT.
 function mrweb_first_paragraph_class_lead($content){
-  // Testing to see if the content is a Page or Custom Post Type of school, if so, display the text normally (without the class = intro).
+  // Testing to see if the content is a Page or Custom Post Type Deals, if so, display the text normally (without the class = intro).
   if ( 'deals' === get_post_type()) {
     return preg_replace('/<p([^>]+)?>/', '<p$1>', $content, 1);
     } else {
     return preg_replace('/<p([^>]+)?>/', '<p$1 class="lead">', $content, 1);
   }
 }
-add_filter('the_content', 'mrweb_first_paragraph_class_lead');
+remove_filter('the_content', 'mrweb_first_paragraph_class_lead');
 
 function rankya_remove_global_styles() {
   remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
@@ -226,6 +226,7 @@ function mrweb_nav_classes( $classes, $item ) {
   if( ( is_singular( 'vacature' ) || is_singular( 'mensen' ) )
       && ( 'News' === $item->title ||  'Nieuws' === $item->title) ){
       $classes = array_diff( $classes, array( 'current_page_parent', 'current-post-ancestor' ) );
+      print 'ancestor = ' . $item->current_item_ancestor;
   }
   // onder andere condities kan ik ook een class toevoegen: $classes[] = 'my-class-name'
   return $classes;
