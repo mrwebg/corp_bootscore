@@ -10,7 +10,7 @@ get_header();?>
     <main id="main" class="site-main">
       <div class="container entry-content">    
         <div class="row">
-          <div class="col-lg-6 parallax-col" data-scroll-speed="12">
+          <div class="col-lg-6 corp-col-white-bg parallax-col" data-scroll-speed="12">
             <header class="entry-header">
               <?php the_post(); ?>
               <!-- TITLE -->
@@ -75,7 +75,7 @@ get_header();?>
             <?php } ?>
             <!-- /LEFT COLUMN EXTRA CONTENT. -->             
           </div><!-- /.col- -->
-          <div class="col-6 parallax-col" data-scroll-speed="1">
+          <div class="col-6 corp-col-white-bg parallax-col" data-scroll-speed="1">
             <!-- RIGHT COLUMN EXTRA CONTENT. -->
             <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'right_column', true))) { ?>
               <div class="wrapper-expertise-rechter-kolom-extra">                           

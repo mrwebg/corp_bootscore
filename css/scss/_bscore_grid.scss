@@ -76,16 +76,19 @@ body.admin-bar #page{
   }
 }
 
-// white bg cols
+
+// padding before (featured image above conten)
 body.page-template-page-expertise,
-body.page-template-page-trackrecord{
+body.page-template-page-trackrecord,
+body.page-template-page-vacatures{
   .entry-content{
     @include media-breakpoint-down(lg){
       padding-top: 10rem;
       padding-top: 30vh;
     }
 
-    > .row > *{ // col
+    // white bg cols 
+    .corp-col-white-bg{ // col
       background: $white;
       padding-top: $grid-gutter-width;
       padding-bottom: $grid-gutter-width;
@@ -103,6 +106,8 @@ body.page-template-page-trackrecord{
     }
   }
 }
+
+
 // positioning 2nd col lower
 body.page-template-page-expertise,
 body.page-template-page-vacatures{
@@ -142,6 +147,10 @@ body.page-template-page-vacatures{
   @media (min-width: $corp-contact-bar-breakpoint) and (max-width: $corp-contact-bar-fixed-breakpoint - 1px){ // when contact-sidebar is right on small screens
     right: $corp-contact-bar-width;
     width: calc(50% - (#{$corp-contact-bar-width} * .5));
+  }
+  @include media-breakpoint-down(lg){ // extra fix space for contact-sidebar media-query
+    right: 0;
+    width: 100%;
   }
 
   img, video{

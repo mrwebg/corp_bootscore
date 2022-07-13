@@ -11,7 +11,7 @@ get_header();?>
       <div class="entry-content">
         <div class="container">
            <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 corp-col-white-bg">
               <header class="entry-header">
                 <?php the_post(); ?>              
                 <!-- Title -->

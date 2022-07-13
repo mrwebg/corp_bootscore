@@ -355,6 +355,11 @@ body.page-template-page-vacatures{
       background: $white;
       width: (get-breakpoints("lg") * .5); // 50% container width
     }
+    @media (min-width: $corp-contact-bar-breakpoint) and (max-width: $corp-contact-bar-fixed-breakpoint - 1px){
+      left: 0;
+      right: calc(((100% - #{$corp-contact-bar-width}) * .5) + #{$corp-contact-bar-width});
+      width: auto;
+    } 
     @include media-breakpoint-up(xl){
       width: (get-breakpoints("xl") * .5); // 50% container width
     }
@@ -375,10 +380,13 @@ body.page-template-page-vacatures{
           left: 50%;
           transform: translateX(-50%);
         }
+        @media (min-width: $corp-contact-bar-breakpoint) and (max-width: $corp-contact-bar-fixed-breakpoint - 1px){
+          left: calc((100% - #{$corp-contact-bar-width}) * .5);
+        } 
 
         > .row{
           > *:first-child{
-            background: $white;
+            // background: $white;
             // @include media-breakpoint-up(lg){
             //   position: relative;
 
