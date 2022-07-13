@@ -4,6 +4,11 @@
 
 // Type
 
+// text selection
+::selection{
+  background: rgba($primary, .15);
+}
+
 // bug headings smaller line-height
 h1, .h1{
   line-height: 1.1;
@@ -25,6 +30,10 @@ h5, .h5{
   font-family: $font-family-sans-serif;
 }
 
+body mark, body .mark{
+  padding: 0; // var $mark-padding not changed by _bootstrap_variables.scss!
+  background: rgba($black, .1); // var $mark-bg not changed by _bootstrap_variables.scss!
+}
 
 // Pages
 
