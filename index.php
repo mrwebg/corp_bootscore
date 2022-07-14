@@ -27,7 +27,7 @@ get_header();
             <?php if (1 === $count)  :?>
               <div class="row blog-row-1">
                 <div class="col">
-                  <article class="bg-white" >
+                  <article class="card-body bg-white">
                     <header class="entry-header">
                       <!-- Title -->
                       <h1 class="h2 blog-post-title">
@@ -48,7 +48,7 @@ get_header();
                 <div class="row blog-row-2"><!-- .row OPEN row for 6 items-->
               <?php endif; ?>              
               <div class="col col-md-6">
-                <article class="bg-white" >
+                <article class="card-body bg-white">
                   <header class="entry-header">
                     <!-- Title -->
                     <h1 class="h2 blog-post-title">
