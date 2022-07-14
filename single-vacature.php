@@ -76,25 +76,19 @@
               $permalink = get_the_permalink($mensenID); 
             } 
             if(!empty($post_title) && !empty($text_email) && !empty($permalink)){?>
-              <div class="wrapper-vacatures-rechter-kolom-contactpersoon"> 
-                <h3><a href="<?php echo $permalink;?>"><?php echo $post_title; ?></a></h3>                          
-                <ul class="contactperson-icons">
-                  <?php if(!empty($text_telefoon_formatted)) { ?>
-                    <li>
-                      <a href="tel:<?php echo $text_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a> 
-                    </li>
+              <div class="wrapper-vacatures-rechter-kolom-contactpersoon">                 
+                <h3 class="h4 team-title"><a href="<?php echo $permalink;?>"><?php echo $post_title; ?></a></h3><!-- /.h4.team-title -->
+                <ul class="corp-contact-icons corp-contact-icons-row">
+                  <?php if (!empty($text_telefoon)) { ?>
+                    <li title="<?php echo $text_telefoon;?>"><a href="tel:<?php echo $text_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a> <span><?php echo $text_telefoon;?></span></li>
                   <?php } ?>
-                  <?php if(!empty($text_mobiel_formatted)) { ?>
-                    <li>
-                      <a href="tel:<?php echo $text_mobiel_formatted;?>" target="_blank"><svg class="icon icon-mobile"><use xlink:href="#icon-mobile"></use></svg></a> 
-                    </li>
+                  <?php if (!empty($text_mobiel)) { ?>
+                    <li title="<?php echo $text_mobiel;?>"><a href="tel:<?php echo $text_mobiel_formatted;?>" target="_blank"><svg class="icon icon-mobile"><use xlink:href="#icon-mobile"></use></svg></a> <span><?php echo $text_mobiel;?></span></li>
                   <?php } ?>                      
-                  <?php if(!empty($text_email)) { ?>                        
-                    <li>
-                      <a href="mailto:<?php echo $text_email;?>" target="_blank"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg></a>      
-                    </li>
-                  <?php } ?>                     
-                </ul><!-- /.contactperson-icons -->                   
+                  <?php if (!empty($text_email)) { ?>
+                    <li title="<?php echo $text_email;?>"><a href="mailto:<?php echo $text_email;?>" target="_blank"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg></a> <span><?php echo $text_email;?></span></li>
+                  <?php } ?>                      
+                </ul><!-- /.corp-contact-icons.corp-contact-icons-row -->                
               </div><!-- /.wrapper-vacatures-rechter-kolom-contactpersoon -->                                
             <?php } ?>                                                                                            
           </div><!-- /.col -->
