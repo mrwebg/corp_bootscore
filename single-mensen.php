@@ -83,15 +83,15 @@ $expertise_url = mrweb_expertise_page_url($expertise_id);
             <?php if (!empty($text_email)) { ?><li title="<?php echo $text_email;?>"><a href="mailto:<?php echo $text_email;?>" target="_blank"><svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg></a> <?php echo $text_email;?></li><?php } ?>
             <?php if (!empty($text_telefoon)) { ?><li title="<?php echo $text_telefoon;?>"><a href="tel:<?php echo $text_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a> <?php echo $text_telefoon;?></li><?php } ?>
             <?php if (!empty($text_mobiel)) { ?><li title="<?php echo $text_mobiel;?>"><a href="tel:<?php echo $text_mobiel_formatted;?>" target="_blank"><svg class="icon icon-mobile"><use xlink:href="#icon-mobile"></use></svg></a> <?php echo $text_mobiel;?></li><?php } ?>
+            <?php if (!empty($text_url_linkedin)) { ?><li><a href="<?php echo $text_url_linkedin;?>" target="_blank"><svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg></a> <?php echo esc_html_e('Linkedin', 'corp' ); ?></li><?php } ?>
+            <?php if (!empty($file_vcard)) { ?><li><a href="<?php echo $file_vcard;?>"><svg class="icon icon-vcard"><use xlink:href="#icon-vcard"></use></svg></a> <?php echo esc_html_e('Download vCard', 'corp' ); ?></li><?php } ?>
           </ul>               
           </div><!-- /.col -->
         </div><!-- ./row -->
       </div><!-- /.container.entry-content -->
-      <div class="corp-gray-bleed-bg bleed-left pb-2">
+      <div class="corp-gray-bleed-bg bleed-left pb-2 d-none">
         <div class="container">
           <ul class="corp-contact-icons">
-            <?php if (!empty($text_url_linkedin)) { ?><li><a href="<?php echo $text_url_linkedin;?>" target="_blank"><svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg></a> <?php echo esc_html_e('Linkedin', 'corp' ); ?></li><?php } ?>
-            <?php if (!empty($file_vcard)) { ?><li><a href="<?php echo $file_vcard;?>"><svg class="icon icon-vcard"><use xlink:href="#icon-vcard"></use></svg></a> <?php echo esc_html_e('Download vCard', 'corp' ); ?></li><?php } ?>            
           </ul>
         </div><!-- /.container -->
       </div><!-- /.corp-gray-bleed-bg --> 

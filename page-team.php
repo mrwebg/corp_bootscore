@@ -21,7 +21,7 @@ get_header();?>
             <?php the_content(); ?>
           </div><!-- /.col -->
         </div><!-- /.row -->
-        <div class="corp-team-wrapper">
+        <div class="corp-team-wrapper mb-4">
           <div class="row">
             <?php
             $post_type = 'mensen';
