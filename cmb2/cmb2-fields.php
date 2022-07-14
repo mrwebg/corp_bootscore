@@ -284,7 +284,7 @@ function mrweb_register_cmb2_metaboxes() {
   // PAGE VACATURE. (cpt vacature)
   $cmb_sv = new_cmb2_box( array(
     'id'           => 'sv_extra_content',
-    'title'        => 'Contact persoon',
+    'title'        => 'Vacature contact persoon',
     'object_types' => array( 'vacature' ), // post type
     'context'      => 'normal', //  'normal', 'advanced', or 'side'
     'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
