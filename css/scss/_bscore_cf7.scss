@@ -1,0 +1,156 @@
+// Contact Form 7 styling
+
+// input alg
+.wpcf7, form{
+  label{
+    margin-top: 1rem; 
+    font-weight: $font-weight-bold;
+    display: block;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+
+    + p{
+      display: none; // bugfix auto paragraphs in ActiveCampaign form
+    }
+  }
+  input:not([type="submit"]), textarea{
+    @extend .form-control;
+    border-color: transparent;
+    background: $input-bg !important;
+    margin-top: .4rem;
+    border-radius: $border-radius-lg;
+    padding: $input-btn-padding-y $input-btn-padding-x;
+    border-radius: 0;
+
+    // &:not(.qty){
+    //  padding: $input-btn-padding-y $input-btn-padding-x;
+    // }
+
+    &:focus{
+      outline: 0;
+      box-shadow: $input-btn-focus-box-shadow, $input-box-shadow;
+    }
+  }
+  input[type="submit"]{
+    width: auto;
+  }
+}
+
+
+.wpcf7 div[class*="col-"]{
+  input, textarea{
+    &:not([type="checkbox"]):not([type="submit"]){
+      width: 100%;
+    }
+  }
+}
+.input-group-append{
+  .btn-outline-secondary{
+    border-color: $input-border-color;
+
+    &:hover{
+      border-color: $secondary;
+    }
+  }
+}
+
+.wpcf7-checkbox{
+  display: block;
+  padding: .8rem 0;
+}
+
+.custom-select{
+  -webkit-appearance:none;
+}
+// acceptannce
+.wpcf7-acceptance{
+
+}
+.wpcf7-list-item{
+  padding-left: 2rem;
+  margin: 0;
+  position: relative;
+
+  > label{
+    padding-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .wpcf7-list-item-label:before {
+    position: absolute;
+    left: 0;
+    top: .4rem;
+      content: '';
+      margin-right: 10px;
+      display: inline-block;
+      margin-top: -2px;
+      width: 1.3rem;
+      height: 1.3rem;
+      background: transparent;
+      border: 1px solid $gray-400;
+      border-radius: $border-radius-sm;
+  }
+
+  input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+  
+    &:checked ~ .wpcf7-list-item-label{
+      &:before {
+          background: $body-color;
+          border-color: $body-color;
+      }
+      &:after {
+          content: '';
+          position: absolute;
+            left: .3rem;
+          top: .8rem;
+          background: white;
+          width: 2px;
+          height: 2px;
+          box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+          transform: rotate(45deg);
+      }
+    }
+    &:disabled ~ .wpcf7-list-item-label{
+        color: #b8b8b8;
+        cursor: auto;
+    }
+    &:disabled:before ~ .wpcf7-list-item-label{
+        box-shadow: none;
+        background: #ddd;
+    }
+  }
+}
+
+.wpcf7-spinner{
+  margin-top: $spacer;
+  display: block;
+  margin: ($spacer * .5) auto;
+}
+
+.form-control, .wpcf7 .wpcf7-validation-errors, .wpcf7 input[type=color], .wpcf7 input[type=date], .wpcf7 input[type=datetime-local], .wpcf7 input[type=datetime], .wpcf7 input[type=email], .wpcf7 input[type=file], .wpcf7 input[type=month], .wpcf7 input[type=number], .wpcf7 input[type=range], .wpcf7 input[type=search], .wpcf7 input[type=tel], .wpcf7 input[type=text], .wpcf7 input[type=time], .wpcf7 input[type=url], .wpcf7 input[type=week], .wpcf7 select, .wpcf7 textarea{
+  background: transparent;
+  font-family: $font-family-base;
+  color: $body-color;
+
+  &:focus{
+    background: transparent;
+  }
+}
+
+
+.wpcf7 form .wpcf7-response-output,
+.wpcf7 form.invalid .wpcf7-response-output, 
+.wpcf7 form.unaccepted .wpcf7-response-output{
+  margin-left: 0;
+  margin-right: 0;
+  padding: ($input-btn-padding-y * 2) $input-btn-padding-x;
+  border-color: $primary;
+  text-align: center;
+}
+
+.wpcf7-not-valid-tip{
+  margin-top: $spacer * .25;
+}
+

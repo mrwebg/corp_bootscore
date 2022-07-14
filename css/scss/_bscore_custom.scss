@@ -27,6 +27,27 @@ h5, .h5{
 
 .corp-heading-border-bottom{
   @include corp-heading-border-bottom;
+
+  &.border-offset-right,
+  &.border-offset-left{
+    border-bottom-color: transparent !important;
+    position: relative;
+
+    &:after{
+      position: absolute;
+      content: "";
+      display: block;
+      bottom: -2px;
+      left: 0;
+      width: 100vw;
+      border-bottom: $corp-dotted-border;
+    }
+
+    &:is(.border-offset-left):after{
+      left: auto;
+      right: 0;
+    }
+  }
 }
 
 
@@ -34,10 +55,15 @@ h5, .h5{
   font-family: $font-family-sans-serif;
 }
 
-body mark, body .mark{
-  padding: 0; // var $mark-padding not changed by _bootstrap_variables.scss!
-  background: rgba($black, .1); // var $mark-bg not changed by _bootstrap_variables.scss!
+// buttons
+.btn{
+  text-transform: uppercase;
 }
+.btn-block{
+  display: block;
+  width: 100% !important;
+}
+
 
 // Pages
 
@@ -454,17 +480,25 @@ body.page-template-page-vacatures{
     border-top: $corp-dotted-border;
     padding-top: $spacer;
 
-    .contactpersoon-title{
-      a{
-        text-decoration: none;
-      }
-    }
-
+  }
+}
+.contactpersoon-title{
+  a{ 
+    text-decoration: none;
   }
 }
 
 
 // Single vacature
+
+body.single-vacature{
+  // alignment 2nd col
+  .container.entry-content > .row > *:last-of-type{
+    @include media-breakpoint-up(lg){
+      margin-top: 1rem;
+    }
+  }
+}
 
 .wrapper-contact-cf7-featured-image{
   position: relative;

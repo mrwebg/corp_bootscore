@@ -25,7 +25,7 @@
           <div class="col-lg-6 corp-col-white-bg parallax-col" data-scroll-speed="1"> 
             <div class="wrapper-contact-cf7-intro"> 
               <!-- RIGHT COLUMN CF7 INTRO. -->
-              <h2 class="h4 corp-heading-border-bottom cf7_intro_title"><?php echo esc_html_e('Interesse? Neem contact met ons op.', 'corp' ); ?></h2><!-- /.cf7_intro_title -->  
+              <h2 class="h4 corp-heading-border-bottom border-offset-right cf7_intro_title"><?php echo esc_html_e('Interesse? Neem contact met ons op.', 'corp' ); ?></h2><!-- /.cf7_intro_title -->  
             <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'cf7_intro_body', true))) { ?>
               <p class="cf7_intro_body"><?php echo get_post_meta(get_the_ID(), _CMB . 'cf7_intro_body', true) ;?></p><!-- /.cf7_intro_body -->  
             <?php } ?>            
@@ -62,7 +62,7 @@
             ?>             
             </div><!-- /.wrapper-contact-cf7-featured-image --> 
             <!-- RIGHT COLUMN CONTACT PERSON INTRO. -->
-              <h2 class="h5 cf7_contactpersoon_titel"><?php echo esc_html_e('Of neem direct contact op met:', 'corp' ); ?></h2><!-- /.cf7_contactpersoon_titel -->                                             
+              <h2 class="h5 cf7_contactpersoon_titel corp-heading-border-bottom border-offset-right"><?php echo esc_html_e('Of neem direct contact op met:', 'corp' ); ?></h2><!-- /.cf7_contactpersoon_titel -->                                             
             <?php
             $mensenID = intval(get_post_meta(get_the_ID(), _CMB . 'vacature_contact', true));
             if(!empty($mensenID) && is_int($mensenID)){                
@@ -77,8 +77,8 @@
             } 
             if(!empty($post_title) && !empty($text_email) && !empty($permalink)){?>
               <div class="wrapper-vacatures-rechter-kolom-contactpersoon"> 
-                <h3><a href="<?php echo $permalink;?>"><?php echo $post_title; ?></a></h3>                          
-                <ul class="contactperson-icons">
+                <h3 class="contactpersoon-title"><a href="<?php echo $permalink;?>"><?php echo $post_title; ?></a></h3>
+                <ul class="corp-contact-icons corp-contact-icons-row">
                   <?php if(!empty($text_telefoon_formatted)) { ?>
                     <li>
                       <a href="tel:<?php echo $text_telefoon_formatted;?>" target="_blank"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg></a> 
