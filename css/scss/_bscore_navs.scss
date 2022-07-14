@@ -327,3 +327,18 @@ body.hfeed{
   }
 }
 
+// pagination
+ul.pagination{
+  margin-top: 4rem;
+
+  > li{
+    a{
+      font-family: $btn-font-family;
+      font-size: $btn-font-size;
+      line-height: $btn-line-height;
+      font-weight: $btn-font-weight;
+      padding: $btn-padding-y 1rem;
+    }
+  }
+}
+
