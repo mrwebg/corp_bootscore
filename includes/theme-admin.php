@@ -23,7 +23,8 @@ function corp_theme_textdomain() {
   ================================================== */
 if (is_admin()) {
   add_action('admin_init', 'mrweb_add_column_templatename');
-  add_action('admin_init', 'gtwc_remove_column_date');
+  add_action('admin_init', 'mrweb_remove_column_date');
+  add_action('admin_init', 'mrweb_add_column_order');
 }
 /* MIME TYPES.
   ================================================== */
@@ -138,7 +139,7 @@ function mrweb_page_column_populate_template($column, $post_id) {
 /* POST-LISTING => REMOVE COLUMN DATE FOR ANY POSTTYPE
   ================================================== */
 
-function gtwc_remove_column_date() {
+function mrweb_remove_column_date() {
     $posttypes = array("page", "mensen", "quotes");
     if (is_array($posttypes) && count($posttypes) > 0) {
         foreach ($posttypes as $posttype) {
@@ -153,6 +154,42 @@ function gtwc_remove_column_date() {
 function grasland_post_remove_column_date($columns) {
     unset($columns['date']);
     return $columns;
+}
+
+/* ADD ORDER COLUMN FOR ANY POSTTYPE
+  ================================================== */
+
+  function mrweb_add_column_order() {
+    $posttypes = array('vacature');
+    if (is_array($posttypes) && count($posttypes) > 0) {
+        foreach ($posttypes as $posttype) {
+            if (post_type_exists($posttype)) {
+                // first get the post type formarray and add column name and id
+                $filter = 'manage_edit-' . $posttype . '_columns';
+                add_filter($filter, 'grasland_post_column_add_order');
+                // populate the column
+                $action = 'manage_' . $posttype . '_posts_custom_column';
+                add_action($action, 'grasland_post_column_populate_order', 10, 1);
+            }
+        }
+    }
+}
+
+function grasland_post_column_add_order($columns) {
+    $columns['menu_order'] = "Volgorde";
+    return $columns;
+}
+
+function grasland_post_column_populate_order($columnname) {
+    global $post;
+    switch ($columnname) {
+        case 'menu_order':
+            $order = $post->menu_order;
+            echo $order;
+            break;
+        default:
+            break;
+    }
 }
 
 /* REMOVE EMOJI'S
