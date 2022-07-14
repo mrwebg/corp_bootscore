@@ -38,7 +38,7 @@ get_header();
                     </header>                    
                     <!-- Excerpt & Read more -->
                     <div class="card-text mt-auto">
-                      <?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'corp'); ?></a>
+                      <?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Lees meer', 'corp'); ?></a>
                     </div>
                   </article><!-- /article -->                  
                 </div><!-- /.col -->  
@@ -59,7 +59,7 @@ get_header();
                   </header>                    
                   <!-- Excerpt & Read more -->
                   <div class="card-text mt-auto">
-                    <?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'corp'); ?></a>
+                    <?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Lees meer', 'corp'); ?></a>
                   </div>
                 </article><!-- /article -->  
               </div><!-- /.col -->  
