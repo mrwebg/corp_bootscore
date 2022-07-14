@@ -6,7 +6,7 @@
   padding-top: 6rem;
   padding-bottom: 2.5rem;
   display: flex;
-  gap: $grid-gutter-width;
+  column-gap: $grid-gutter-width;
   flex-direction: column;
   @include media-breakpoint-up(xxl){
     flex-direction: row;
