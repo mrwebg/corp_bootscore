@@ -284,19 +284,13 @@ function mrweb_register_cmb2_metaboxes() {
   // PAGE VACATURE. (cpt vacature)
   $cmb_sv = new_cmb2_box( array(
     'id'           => 'sv_extra_content',
-    'title'        => 'EXTRA CONTENT',
+    'title'        => 'Vacature contact persoon',
     'object_types' => array( 'vacature' ), // post type
     'context'      => 'normal', //  'normal', 'advanced', or 'side'
     'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
-    'show_names'   => true, // Show field names on the left
+    'show_names'   => false, // Show field names on the left
     'closed'       => false,
   ));
-  $cmb_sv->add_field(array(
-    'name' => 'formulier intro text',
-    'id' => $prefix . 'cf7_intro_body',
-    'type' => 'text',
-    'default' => 'Stuur door middel van onderstaand formulier je gegevens dan nemen wij spoedig contact met je op.',
-  ));   
   $cmb_sv->add_field(array(
     'name' => 'contact_persoon',
     'id' => $prefix . 'vacature_contact',
