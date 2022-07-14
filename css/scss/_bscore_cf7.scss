@@ -9,7 +9,7 @@
     font-family: $headings-font-family;
     font-weight: $headings-font-weight;
 
-    + p{
+    + br{
       display: none; // bugfix auto paragraphs in ActiveCampaign form
     }
   }
