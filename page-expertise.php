@@ -45,8 +45,8 @@ get_header();?>
             $post_array = get_posts($post_args);
             ?>            
             <?php if (is_array($post_array) && count($post_array) > 0): ?>
-              <div class="wrapper-expertise-team">
-                <h2>Team <?php echo $expertise_name;?></h2>
+              <div class="wrapper-expertise-team mt-4 pt-3">
+                <h2 class="h3 d-none">Team <?php echo $expertise_name;?></h2>
                 <?php
                 foreach ($post_array as $post):
                   setup_postdata($post);
@@ -77,7 +77,7 @@ get_header();?>
             <!-- /TEAM. -->
             <!-- LEFT COLUMN EXTRA CONTENT. -->          
             <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'left_column', true))) { ?>              
-              <div class="wrapper-expertise-linker-kolom-extra">
+              <div class="wrapper-expertise-linker-kolom-extra mt-4">
                 <?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'left_column', true));?>           
               </div><!-- /.wrapper-expertise-linker-kolom-extra -->              
             <?php } ?>
@@ -86,7 +86,7 @@ get_header();?>
           <div class="col-6 corp-col-white-bg parallax-col" data-scroll-speed="1">
             <!-- RIGHT COLUMN EXTRA CONTENT. -->
             <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'right_column', true))) { ?>
-              <div class="wrapper-expertise-rechter-kolom-extra">                           
+              <div class="wrapper-expertise-rechter-kolom-extra mt-4">                           
                 <?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'right_column', true));?>
               </div><!-- /.wrapper-expertise-rechter-kolom-extra -->   
             <?php } ?>

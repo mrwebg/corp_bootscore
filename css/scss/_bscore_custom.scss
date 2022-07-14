@@ -12,6 +12,10 @@
 // bug headings smaller line-height
 h1, .h1{
   line-height: 1.1;
+  margin-bottom: $spacer;
+}
+h2, .h2{
+
 }
 
 // small headings not responsive
@@ -238,12 +242,23 @@ body.home .corp-footer-quote-wrapper{
 
 // Expertise pages
 
-.wrapper-expertise-team{
+.wrapper-expertise-team, 
+.wrapper-expertise-linker-kolom-extra{
   @include corp-dotted-border-top-off-page;
 
   &:before{
     left: -100vw;
   }
+
+  .team-title{
+    a{
+      text-decoration: none;
+    }
+  }
+}
+
+.wrapper-expertise-rechter-kolom-extra{
+
 }
 
 
@@ -364,6 +379,7 @@ ul.corp-contact-icons{
   display: flex;
   gap: $spacer * .25;
   flex-direction: column;
+  margin-bottom: $spacer * 1.5;
 
   > li{
     display: flex;
@@ -384,6 +400,10 @@ ul.corp-contact-icons{
       svg{
         width: $contact-icon-size * .4;
         height: $contact-icon-size * .4;
+      }
+
+      &:hover, &:focus{
+        background: shift-color($primary, $link-shade-percentage);
       }
     }
   }
