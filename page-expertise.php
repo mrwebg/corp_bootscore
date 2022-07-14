@@ -86,7 +86,7 @@ get_header();?>
           <div class="col-6 corp-col-white-bg parallax-col" data-scroll-speed="1">
             <!-- RIGHT COLUMN EXTRA CONTENT. -->
             <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'right_column', true))) { ?>
-              <div class="wrapper-expertise-rechter-kolom-extra mt-4">                           
+              <div class="wrapper-expertise-rechter-kolom-extra">                           
                 <?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'right_column', true));?>
               </div><!-- /.wrapper-expertise-rechter-kolom-extra -->   
             <?php } ?>
