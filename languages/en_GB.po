@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: corp_bootscore\n"
-"POT-Creation-Date: 2022-07-13 22:39+0200\n"
-"PO-Revision-Date: 2022-07-14 09:36+0200\n"
+"POT-Creation-Date: 2022-07-14 09:48+0200\n"
+"PO-Revision-Date: 2022-07-14 09:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -153,7 +153,14 @@ msgstr ""
 msgid "Interesse? Neem contact met ons op."
 msgstr "Interested? Please contact us."
 
-#: single-vacature.php:65
+#: single-vacature.php:29
+msgid ""
+"Stuur door middel van onderstaand formulier je gegevens dan nemen wij "
+"spoedig contact met je op."
+msgstr ""
+"Send your details using the form below and we will contact you shortly."
+
+#: single-vacature.php:63
 msgid "Of neem direct contact op met:"
 msgstr "Or contact:"
 
