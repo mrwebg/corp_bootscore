@@ -111,6 +111,7 @@ function add_theme_cpts() {
     'rewrite' => array('slug' => $slug_tr),
   );
   register_post_type('deals', $args_tr);
+  
   // CPT VACATURE
   $slug_va = return_WPLANG_slug('vacature');
   $labels_va = array(
@@ -132,7 +133,7 @@ function add_theme_cpts() {
     'label' => 'Vacature',
     'description' => 'Post type vacature',
     'labels' => $labels_va,
-    'supports' => array('title', 'editor', 'page-attributes'),
+    'supports' => array('title', 'editor', 'page-attributes', 'thumbnail'),
     'hierarchical' => true,
     'public' => true,
     'show_ui' => true,

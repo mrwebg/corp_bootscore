@@ -29,8 +29,10 @@ function mrweb_register_cmb2_metaboxes() {
   $cmb_homepage = new_cmb2_box(array(
     'id' => $prefix . 'featured',
     'title' => 'FEATURED [bericht of deal]',
-    'object_types' => array('page'), // Post type
-    'show_on_cb' => 'mrweb_show_on_front_page',
+    // 'object_types' => array('page'), // Post type
+    // 'show_on_cb' => 'mrweb_show_on_front_page',
+    'object_types' => array( 'page' ), // post type
+    'show_on'      => array( 'key' => 'page-template', 'value' => 'front-page.php' ),    
     'context' => 'normal',
     'priority' => 'high',
     'show_names' => true, // Show field names on the left
@@ -76,8 +78,10 @@ function mrweb_register_cmb2_metaboxes() {
   $cmb_homepage2 = new_cmb2_box(array(
     'id' => $prefix . 'positionering',
     'title' => 'POSITIONERING [teaser]',
-    'object_types' => array('page'), // Post type
-    'show_on_cb' => 'mrweb_show_on_front_page',
+    // 'object_types' => array('page'), // Post type
+    // 'show_on_cb' => 'mrweb_show_on_front_page',
+    'object_types' => array( 'page' ), // post type
+    'show_on'      => array( 'key' => 'page-template', 'value' => 'front-page.php' ),   
     'context' => 'normal',
     'priority' => 'high',
     'show_names' => true, // Show field names on the left
@@ -98,8 +102,10 @@ function mrweb_register_cmb2_metaboxes() {
     $cmb_homepage3 = new_cmb2_box(array(
       'id' => $prefix . 'trackrecord',
       'title' => 'TRACKRECORD [teaser]',
-      'object_types' => array('page'), // Post type
-      'show_on_cb' => 'mrweb_show_on_front_page',
+    // 'object_types' => array('page'), // Post type
+    // 'show_on_cb' => 'mrweb_show_on_front_page',
+    'object_types' => array( 'page' ), // post type
+    'show_on'      => array( 'key' => 'page-template', 'value' => 'front-page.php' ),   
       'context' => 'normal',
       'priority' => 'high',
       'show_names' => true, // Show field names on the left

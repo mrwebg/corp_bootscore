@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: corp_bootscore\n"
-"POT-Creation-Date: 2022-07-14 09:48+0200\n"
-"PO-Revision-Date: 2022-07-14 09:48+0200\n"
+"POT-Creation-Date: 2022-07-14 13:04+0200\n"
+"PO-Revision-Date: 2022-07-14 13:05+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -25,87 +25,87 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:314
+#: cmb2/cmb2-fields.php:308
 msgid "Bedrijfsgegevens"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:321
+#: cmb2/cmb2-fields.php:315
 msgid "Bedrijfsnaam"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:326
+#: cmb2/cmb2-fields.php:320
 msgid "Straat"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:331
+#: cmb2/cmb2-fields.php:325
 msgid "Huisnummer"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:336
+#: cmb2/cmb2-fields.php:330
 msgid "Postcode"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:341
+#: cmb2/cmb2-fields.php:335
 msgid "Woonplaats"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:346
+#: cmb2/cmb2-fields.php:340
 msgid "Telefoon"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:351
+#: cmb2/cmb2-fields.php:345
 msgid "Fax"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:356
+#: cmb2/cmb2-fields.php:350
 msgid "Email"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:361
+#: cmb2/cmb2-fields.php:355
 msgid "Financieel"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:366
+#: cmb2/cmb2-fields.php:360
 msgid "Kvk"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:371
+#: cmb2/cmb2-fields.php:365
 msgid "Btw"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:376
+#: cmb2/cmb2-fields.php:370
 msgid "Iban"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:381
+#: cmb2/cmb2-fields.php:375
 msgid "Bic"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:386
+#: cmb2/cmb2-fields.php:380
 msgid "Social Media"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:391
+#: cmb2/cmb2-fields.php:385
 msgid "LinkedIn"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:396
+#: cmb2/cmb2-fields.php:390
 msgid "Maps"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:401
+#: cmb2/cmb2-fields.php:395
 msgid "Link"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:406
+#: cmb2/cmb2-fields.php:400
 msgid "Google"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:411
+#: cmb2/cmb2-fields.php:405
 msgid "uacode"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:416
+#: cmb2/cmb2-fields.php:410
 msgid "search console"
 msgstr ""
 
@@ -129,9 +129,9 @@ msgstr ""
 msgid "Lokatie op Google Maps"
 msgstr ""
 
-#: index.php:39 index.php:58
-msgid "Read more »"
-msgstr ""
+#: index.php:41 index.php:62
+msgid "Lees meer"
+msgstr "Read more"
 
 #: page-contact.php:53
 msgid "Direct contact"
