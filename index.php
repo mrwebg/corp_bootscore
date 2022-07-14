@@ -27,18 +27,20 @@ get_header();
             <?php if (1 === $count)  :?>
               <div class="row blog-row-1">
                 <div class="col">
-                  <div class="card-body bg-white" >
-                    <!-- Title -->
-                    <h2 class="blog-post-title">
-                      <a href="<?php the_permalink(); ?>">
-                        <?php the_title(); ?>
-                      </a>
-                    </h2>
+                  <article class="bg-white" >
+                    <header class="entry-header">
+                      <!-- Title -->
+                      <h1 class="h2 blog-post-title">
+                        <a href="<?php the_permalink(); ?>">
+                          <?php the_title(); ?>
+                        </a>
+                      </h1>
+                    </header>                    
                     <!-- Excerpt & Read more -->
                     <div class="card-text mt-auto">
                       <?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'corp'); ?></a>
                     </div>
-                  </div><!-- /.card-body -->                  
+                  </article><!-- /article -->                  
                 </div><!-- /.col -->  
               </div><!-- /.row.blog-row-1 -->                               
             <?php else: ?>
@@ -46,18 +48,20 @@ get_header();
                 <div class="row blog-row-2"><!-- .row OPEN row for 6 items-->
               <?php endif; ?>              
               <div class="col col-md-6">
-                <div class="card-body bg-white">
-                  <!-- Title -->
-                  <h2 class="blog-post-title">
-                    <a href="<?php the_permalink(); ?>">
-                      <?php the_title(); ?>
-                    </a>
-                  </h2>
+                <article class="bg-white" >
+                  <header class="entry-header">
+                    <!-- Title -->
+                    <h1 class="h2 blog-post-title">
+                      <a href="<?php the_permalink(); ?>">
+                        <?php the_title(); ?>
+                      </a>
+                    </h1>
+                  </header>                    
                   <!-- Excerpt & Read more -->
                   <div class="card-text mt-auto">
                     <?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'corp'); ?></a>
                   </div>
-                </div><!-- /.card-body --> 
+                </article><!-- /article -->  
               </div><!-- /.col -->  
             <?php endif; ?>
             <?php if (get_option( 'posts_per_page' ) === $count) : ?>
