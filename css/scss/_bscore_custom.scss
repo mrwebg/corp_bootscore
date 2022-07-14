@@ -55,6 +55,45 @@ h5, .h5{
   font-family: $font-family-sans-serif;
 }
 
+.blockquote{
+  font-family: $headings-font-family;
+  font-weight: 300;
+  margin: 1.5rem 0; 
+
+  p{
+    position: relative;
+
+    &:before{
+      position: absolute;
+      content: "“";
+      display: inline-block;
+      transform: translateX(-100%);
+    }
+    &:after{
+      content: "”";
+    }
+  }
+} 
+.blockquote-footer{
+  font-family: $headings-font-family;
+  margin-top: -.9rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  &:before{
+    display: none;
+  }
+
+  cite{
+    font-style: normal;
+  }
+  a{
+    text-decoration: none;
+  }
+}
+
+
 // buttons
 .btn{
   text-transform: uppercase;
@@ -152,18 +191,20 @@ body.home{
 .corp-footer-quote-wrapper, .corp-gray-bleed-bg{
   .container{
     position: relative;
-    padding-top: $spacer;
-    padding-bottom: $spacer * .5;
+    z-index: 1;
+    // padding-top: $spacer;
+    // padding-bottom: $spacer * .5;
 
     &:before{
       content: "";
       display: block;
       position: absolute;
+      z-index: -1;
       left: $grid-gutter-width * .5;
       top: 0;
       bottom: 0;
       width: 100vw;
-      background: $corp-transparent-background;
+      background: $corp-gray-light-bg;
       @media (min-width: $corp-desktop-gutter-width-beakpoint){
         left: $corp-grid-gutter-width-desktop * .5;
       }
@@ -181,9 +222,19 @@ body.home{
     }
   }
 }
-body.home .corp-footer-quote-wrapper .container:before{
-  background: rgba($black, 30%);
+body.home .corp-footer-quote-wrapper{
+ .container:before{
+    background: rgba($black, 30%);
+  }
+  .blockquote, .blockquote-footer{
+    color: $white;
+
+    a{
+      color: $white;
+    }
+  }
 }
+
 
 // Expertise pages
 
