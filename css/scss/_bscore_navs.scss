@@ -234,32 +234,35 @@
     }
   }
 }
-body.home #nav-main{
-  @media (min-width: $corp-expanded-navbar-breakpoint){
-    &.navbar-light{
-      background: transparent;
+body.home,
+body.hfeed{
+  #nav-main{
+    @media (min-width: $corp-expanded-navbar-breakpoint){
+      &.navbar-light{
+        background: transparent;
 
-      .navbar-nav .nav-link{
-        color: $white;
+        .navbar-nav .nav-link{
+          color: $white;
 
-        &:focus, &:hover{
-          color: $primary;
+          &:focus, &:hover{
+            color: $primary;
+          }
         }
       }
     }
-  }
-  
-  // button[data-bs-target="#offcanvas-navbar"] .bar{
-  //   background: $white;
-  // }
-  // .offcanvas.show + .header-actions .corp-offcanvas-toggle .bar{
-  //   background: $body-color;
-  // }
+    
+    // button[data-bs-target="#offcanvas-navbar"] .bar{
+    //   background: $white;
+    // }
+    // .offcanvas.show + .header-actions .corp-offcanvas-toggle .bar{
+    //   background: $body-color;
+    // }
 
-  &.nav-main-sticky{
-    background: $white;
-    @media (min-width: $corp-expanded-navbar-breakpoint){
-      background: $black;
+    &.nav-main-sticky{
+      background: $white;
+      @media (min-width: $corp-expanded-navbar-breakpoint){
+        background: $black;
+      }
     }
   }
 }

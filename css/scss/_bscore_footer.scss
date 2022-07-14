@@ -37,11 +37,14 @@
     padding-right: 0;
   }
 }
-body.home .bootscore-footer{
-  color: $white;
-  background: transparent;
-
-  .navbar-light .navbar-nav .nav-link:not(:hover):not(focus){
+body.home,
+body.hfeed{
+  .bootscore-footer{
     color: $white;
+    background: transparent;
+
+    .navbar-light .navbar-nav .nav-link:not(:hover):not(focus){
+      color: $white;
+    }
   }
 }

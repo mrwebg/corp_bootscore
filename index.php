@@ -25,12 +25,12 @@ get_header();
             <?php the_post(); ?>
             <?php $count++; ?>        
             <?php if (1 === $count)  :?>
-              <div class="row blog-row-1">
-                <div class="col">
-                  <article class="card-body bg-white">
+              <div class="row blog-row-1 mb-4">
+                <div class="col-xl-10 col-xl-8 col-xxxl-8">
+                  <article class="card-body card-clickable bg-white">
                     <header class="entry-header">
                       <!-- Title -->
-                      <h1 class="h2 blog-post-title">
+                      <h1 class="h2 blog-post-title corp-heading-border-bottom">
                         <a href="<?php the_permalink(); ?>">
                           <?php the_title(); ?>
                         </a>
@@ -38,7 +38,7 @@ get_header();
                     </header>                    
                     <!-- Excerpt & Read more -->
                     <div class="card-text mt-auto">
-                      <?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Lees meer', 'corp'); ?></a>
+                      <?php the_excerpt(); ?> <a class="read-more d-none" href="<?php the_permalink(); ?>"><?php _e('Lees meer', 'corp'); ?></a>
                     </div>
                   </article><!-- /article -->                  
                 </div><!-- /.col -->  
@@ -47,11 +47,11 @@ get_header();
               <?php if (2 === $count) : ?>               
                 <div class="row blog-row-2"><!-- .row OPEN row for 6 items-->
               <?php endif; ?>              
-              <div class="col col-md-6">
-                <article class="card-body bg-white">
+              <div class="col-lg-6">
+                <article class="card-body card-clickable bg-white">
                   <header class="entry-header">
                     <!-- Title -->
-                    <h1 class="h2 blog-post-title">
+                    <h1 class="h3 blog-post-title corp-heading-border-bottom">
                       <a href="<?php the_permalink(); ?>">
                         <?php the_title(); ?>
                       </a>
@@ -59,7 +59,7 @@ get_header();
                   </header>                    
                   <!-- Excerpt & Read more -->
                   <div class="card-text mt-auto">
-                    <?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Lees meer', 'corp'); ?></a>
+                    <?php the_excerpt(); ?> <a class="read-more d-none" href="<?php the_permalink(); ?>"><?php _e('Lees meer', 'corp'); ?></a>
                   </div>
                 </article><!-- /article -->  
               </div><!-- /.col -->  

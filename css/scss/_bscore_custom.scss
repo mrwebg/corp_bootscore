@@ -64,6 +64,20 @@ h5, .h5{
   width: 100% !important;
 }
 
+// cards
+.card-clickable{
+  position: relative;
+
+  a:after{
+    position: absolute;
+    content: "";
+    display: block;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
 
 // Pages
 
@@ -554,3 +568,80 @@ body.single-vacature{
 }
 
 
+// Nieuws
+
+.blog-row-1,
+.blog-row-2{
+
+  // padding/white-bg by inner cards
+  > *{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  // offset white bg
+  &:is(.blog-row-1) > *{
+    position: relative;
+    z-index: 1;
+
+    &:after{
+      content: "";
+      position: absolute;
+      display: block;
+      background: $white;
+      top: 0;
+      height: 100%;
+      z-index: -1;
+      right: 0;
+      width: 100vw;
+    }
+  }
+  &:is(.blog-row-2){
+    position: relative;
+    z-index: 1;
+
+    &:after{
+      content: "";
+      position: absolute;
+      display: block;
+      background: $white;
+      top: 0;
+      height: 100%;
+      z-index: -1;
+      left: 0;
+      width: 100vw;
+    }
+  }
+
+  // less spacing beween cols 
+  &:is(.blog-row-2){
+      @include media-breakpoint-up(lg){
+       > *:nth-child(odd){
+          .card-body{
+            padding-right: $card-spacer-x * .5;
+            @media (min-width: $corp-desktop-gutter-width-beakpoint){
+              padding-right: $corp-grid-gutter-width-desktop * .25;
+            }    
+          }
+       }
+       > *:nth-child(even){
+          .card-body{
+            padding-left: $card-spacer-x * .5;
+            @media (min-width: $corp-desktop-gutter-width-beakpoint){
+              padding-left: $corp-grid-gutter-width-desktop * .25;
+            } 
+          }
+       }
+      }
+  }
+}
+
+.blog-post-title{
+  a{
+    text-decoration: none;
+  }
+}
+.blog-row-2 .blog-post-title{
+  height: ($h3-font-size * $headings-line-height * 2); // 2 lines
+  box-sizing: content-box; // excl. padding dotted border-bottom
+}
