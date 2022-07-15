@@ -14,7 +14,6 @@ get_header();  ?>
             <header class="entry-header">
               <?php the_post(); ?>
               <h1><?php echo get_the_title(); ?></h1>
-              <?php bootscore_post_thumbnail(); ?>
             </header>
             <!-- thumbnail -->
             <?php bootscore_post_thumbnail(); ?>
