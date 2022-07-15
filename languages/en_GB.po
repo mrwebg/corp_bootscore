@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: corp_bootscore\n"
-"POT-Creation-Date: 2022-07-14 13:04+0200\n"
-"PO-Revision-Date: 2022-07-14 13:05+0200\n"
+"POT-Creation-Date: 2022-07-15 15:06+0200\n"
+"PO-Revision-Date: 2022-07-15 15:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -21,91 +21,91 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: 404.php:31 page.php:31
+#: 404.php:31
 msgid "Pages:"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:308
+#: cmb2/cmb2-fields.php:333
 msgid "Bedrijfsgegevens"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:315
+#: cmb2/cmb2-fields.php:340
 msgid "Bedrijfsnaam"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:320
+#: cmb2/cmb2-fields.php:345
 msgid "Straat"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:325
+#: cmb2/cmb2-fields.php:350
 msgid "Huisnummer"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:330
+#: cmb2/cmb2-fields.php:355
 msgid "Postcode"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:335
+#: cmb2/cmb2-fields.php:360
 msgid "Woonplaats"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:340
+#: cmb2/cmb2-fields.php:365
 msgid "Telefoon"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:345
+#: cmb2/cmb2-fields.php:370
 msgid "Fax"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:350
+#: cmb2/cmb2-fields.php:375
 msgid "Email"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:355
+#: cmb2/cmb2-fields.php:380
 msgid "Financieel"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:360
+#: cmb2/cmb2-fields.php:385
 msgid "Kvk"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:365
+#: cmb2/cmb2-fields.php:390
 msgid "Btw"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:370
+#: cmb2/cmb2-fields.php:395
 msgid "Iban"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:375
+#: cmb2/cmb2-fields.php:400
 msgid "Bic"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:380
+#: cmb2/cmb2-fields.php:405
 msgid "Social Media"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:385
+#: cmb2/cmb2-fields.php:410
 msgid "LinkedIn"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:390
+#: cmb2/cmb2-fields.php:415
 msgid "Maps"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:395
+#: cmb2/cmb2-fields.php:420
 msgid "Link"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:400
+#: cmb2/cmb2-fields.php:425
 msgid "Google"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:405
+#: cmb2/cmb2-fields.php:430
 msgid "uacode"
 msgstr ""
 
-#: cmb2/cmb2-fields.php:410
+#: cmb2/cmb2-fields.php:435
 msgid "search console"
 msgstr ""
 
@@ -117,35 +117,35 @@ msgstr ""
 msgid "bekijk een grotere routekaart"
 msgstr ""
 
-#: includes/widget-contact-sidebar.php:23 page-contact.php:76
+#: includes/widget-contact-sidebar.php:23 page-contact.php:79
 msgid "Volg ons op Linkedin"
-msgstr ""
+msgstr "Follow us on Linkedin"
 
-#: includes/widget-contact-sidebar.php:26 page-contact.php:39
+#: includes/widget-contact-sidebar.php:26 page-contact.php:40
 msgid "Locatie op Google Maps"
-msgstr ""
+msgstr "Directions on Google Maps"
 
 #: includes/widget-contact-sidebar.php:26
 msgid "Lokatie op Google Maps"
-msgstr ""
+msgstr "Directions on Google Maps"
 
 #: index.php:41 index.php:62
 msgid "Lees meer"
 msgstr "Read more"
 
-#: page-contact.php:53
+#: page-contact.php:56
 msgid "Direct contact"
 msgstr ""
 
-#: page-contact.php:86
-msgid "Algemene informatie"
-msgstr ""
+#: page-contact.php:92
+msgid "Belangrijke informatie"
+msgstr "Important information"
 
-#: single-mensen.php:93
+#: single-mensen.php:86
 msgid "Linkedin"
 msgstr ""
 
-#: single-mensen.php:94
+#: single-mensen.php:87
 msgid "Download vCard"
 msgstr ""
 
@@ -160,13 +160,15 @@ msgid ""
 msgstr ""
 "Send your details using the form below and we will contact you shortly."
 
-#: single-vacature.php:63
+#: single-vacature.php:62
 msgid "Of neem direct contact op met:"
 msgstr "Or contact:"
 
-#: single.php:29
-msgid " by "
-msgstr ""
+#: single.php:38
+#, fuzzy
+#| msgid "Of neem direct contact op met:"
+msgid "Neem direct contact op met:"
+msgstr "Or contact:"
 
 #. Theme Name of the plugin/theme
 msgid "corp_bootscore"
