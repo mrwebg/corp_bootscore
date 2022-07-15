@@ -78,9 +78,9 @@ jQuery(function ($) {
 
 jQuery(window).load(function () {
   var $body = jQuery('body');
-  if (!$body.hasClass('window-loaded')) {
-    $body.addClass('window-loaded');
-    //console.log('body: class window-loaded added');
+  if (!$body.hasClass('loaded')) {
+    $body.addClass('loaded');
+    console.log('body: class loaded added');
   }
 });
 
