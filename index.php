@@ -64,7 +64,7 @@ get_header();
                 </article><!-- /article -->  
               </div><!-- /.col -->  
             <?php endif; ?>
-            <?php if (get_option( 'posts_per_page' ) === $count) : ?>
+            <?php if (! mrweb_loop_has_more_posts()) : ?>
               </div><!-- /.row.blog-row-2 CLOSE row for 6 items-->    
             <?php endif; ?>
           <?php endwhile; ?>

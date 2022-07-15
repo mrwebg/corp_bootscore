@@ -258,3 +258,17 @@ function mrweb_nav_classes( $classes, $item ) {
   return $classes;
 }
 add_filter( 'nav_menu_css_class', 'mrweb_nav_classes', 10, 2 );
+
+if(! function_exists('mrweb_loop_has_more_posts')){
+  /**
+   * Check if a loop has any more posts left.
+   *
+   * @global $wp_query
+   *
+   * @return bool True if there are any more posts in this loop, false if not.
+   */
+  function mrweb_loop_has_more_posts() {
+    global $wp_query;
+    return $wp_query->current_post + 1 < $wp_query->post_count;
+  }
+}
