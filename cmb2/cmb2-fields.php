@@ -263,6 +263,25 @@ function mrweb_register_cmb2_metaboxes() {
     'id' => $prefix . 'algemene_informatie',
     'type' => 'wysiwyg',
   ));
+
+  // BERICHT
+  $cmb_post = new_cmb2_box( array(
+    'id'           => 'box_bericht_contact',
+    'title'        => 'Contact persoon [optioneel]',
+    'object_types' => array( 'post' ), // post type
+    'context'      => 'normal', //  'normal', 'advanced', or 'side'
+    'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
+    'show_names'   => false, // Show field names on the left
+    'closed'       => false,
+  ));
+  $cmb_post->add_field(array(
+    'name' => 'contact_persoon',
+    'id' => $prefix . 'bericht_contact',
+    'type' => 'select',
+    'show_option_none' => true,
+    'options' => mrweb_return_posts('mensen'),
+    'show_in_rest' => true,
+  ));   
   // PAGE VACATURES. (overzicht)
   $cmb_pv = new_cmb2_box( array(
     'id'           => 'pv_extra_content',
