@@ -728,3 +728,56 @@ body.single-vacature{
   height: ($h3-font-size * $headings-line-height * 2); // 2 lines
   box-sizing: content-box; // excl. padding dotted border-bottom
 }
+
+
+// Singe post (Nieuws item)
+body.single-post{
+  // alignment 2nd col with h1
+  .entry-content > .row > *:not(:first-child){
+    @include media-breakpoint-up(lg){
+      margin-top: 1rem;
+    }
+  }
+
+  // position image
+  .entry-content > .row > *:first-child{
+
+    .corp-single-post-image-wrapper{
+      margin: 2rem 0;
+      @include media-breakpoint-up(lg){
+        margin-top: 4rem;
+        margin-left: (#{$grid-gutter-width} * -.5); // margin-left for col padding
+        margin-right: (#{$grid-gutter-width} * -.5); // margin-right for col padding
+      }
+      @media (min-width: $corp-desktop-gutter-width-beakpoint){
+        margin-left: #{$corp-grid-gutter-width-desktop * -.5}; // neg margin-left for xl col padding
+        margin-right: #{$corp-grid-gutter-width-desktop * -.5}; // neg margin-right for xl col padding
+      }
+
+      .post-thumbnail{
+        @include media-breakpoint-up(lg){
+          margin-left: calc((100vw - #{get-container-width(lg)}) * -.5); // neg margin-left: 100vw - container-width / 2
+        }
+        @include media-breakpoint-up(xl){
+          margin-left: calc((100vw - #{get-container-width(xl)}) * -.5); // neg margin-left: 100vw - container-width / 2
+        }
+        @include media-breakpoint-up(xxl){
+          margin-left: calc((100vw - #{get-container-width(xxl)}) * -.5); // neg margin-left: 100vw - container-width / 2
+        }
+        @include media-breakpoint-up(xxxl){
+          margin-left: calc((100vw - #{get-container-width(xxxl)}) * -.5); // neg margin-left: 100vw - container-width / 2
+        }
+
+        // overwrite css classes
+        img{
+          border-radius: 0 !important;
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+  }
+}
+
+
+
+

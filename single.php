@@ -9,15 +9,19 @@ get_header(); ?>
     <main id="main" class="site-main">
       <div class="container entry-content">  
         <div class="row">
-          <div class="col-6 parallax-col" data-scroll-speed="12">
+          <div class="col-lg-6">
             <header class="entry-header">
               <?php the_post(); ?>
               <h1><?php echo get_the_title(); ?></h1>
             </header>
-            <!-- thumbnail -->
-            <?php bootscore_post_thumbnail(); ?>
+            <?php if ( has_post_thumbnail() ) { ?>
+              <!-- thumbnail -->
+              <div class="corp-single-post-image-wrapper">
+                  <?php bootscore_post_thumbnail(); ?>
+              </div>
+             <?php } ?>
           </div><!-- /.col -->  
-          <div class="col-6 parallax-col" data-scroll-speed="1">
+          <div class="col-lg-6 parallax-col" data-scroll-speed="1">
             <div class="entry-content">
               <?php the_content(); ?>
             </div>                                         
@@ -35,7 +39,7 @@ get_header(); ?>
             } 
             if(!empty($post_title) && !empty($text_email) && !empty($permalink)){?>
             <!-- RIGHT COLUMN CONTACT PERSON INTRO. -->
-            <h2 class="h5 cf7_contactpersoon_titel corp-heading-border-bottom border-offset-right"><?php echo esc_html_e('Neem direct contact op met:', 'corp' ); ?></h2><!-- /.cf7_contactpersoon_titel -->                
+            <h2 class="h5 cf7_contactpersoon_titel corp-heading-border-bottom border-offset-right mb-2 mt-4"><?php echo esc_html_e('Neem direct contact op met:', 'corp' ); ?></h2><!-- /.cf7_contactpersoon_titel -->                
               <div class="wrapper-bericht-rechter-kolom-contactpersoon">                 
                 <h3 class="h4 contactpersoon-title"><a href="<?php echo $permalink;?>"><?php echo $post_title; ?></a></h3><!-- /.h4.team-title -->
                 <ul class="corp-contact-icons corp-contact-icons-row">
