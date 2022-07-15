@@ -72,4 +72,15 @@ jQuery(function ($) {
   })
 
 
+
+
 }); // jQuery End
+
+jQuery(window).load(function () {
+  var $body = jQuery('body');
+  if (!$body.hasClass('window-loaded')) {
+    $body.addClass('window-loaded');
+    //console.log('body: class window-loaded added');
+  }
+});
+
