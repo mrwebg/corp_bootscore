@@ -21,8 +21,7 @@ get_header();  ?>
           <div class="col-6">
             <div class="entry-content">
               <?php the_content(); ?>
-            </div>
-                                         
+            </div>                                         
             <?php
             $mensenID = intval(get_post_meta(get_the_ID(), _CMB . 'bericht_contact', true));
             if(!empty($mensenID) && is_int($mensenID)){                
