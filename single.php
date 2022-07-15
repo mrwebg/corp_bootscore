@@ -3,8 +3,7 @@
 	 * Template Post Type: post
 	 */
 
-get_header();  ?>
-
+get_header(); ?>
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
@@ -53,8 +52,7 @@ get_header();  ?>
               </div><!-- /.wrapper-bericht-rechter-kolom-contactpersoon -->                                
             <?php } ?>     
           </div><!-- /.col -->            
-        </div><!-- /.row -->
-        
+        </div><!-- /.row -->        
         <div class="row">
           <div class="col">        
           <footer class="entry-footer clear-both">
@@ -74,7 +72,6 @@ get_header();  ?>
             </footer>
           </div><!-- /.col -->            
         </div><!-- /.row -->
-
       </div> <!-- /.container -->           
     </main><!-- /#main -->
   </div><!-- /#primary -->
