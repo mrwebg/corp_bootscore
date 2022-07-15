@@ -9,7 +9,7 @@ get_header(); ?>
     <main id="main" class="site-main">
       <div class="container entry-content">  
       <div class="row">
-          <div class="col-6">
+          <div class="col-6 parallax-col" data-scroll-speed="12">
             <header class="entry-header">
               <?php the_post(); ?>
               <h1><?php echo get_the_title(); ?></h1>
@@ -17,7 +17,7 @@ get_header(); ?>
             <!-- thumbnail -->
             <?php bootscore_post_thumbnail(); ?>
           </div><!-- /.col -->  
-          <div class="col-6">
+          <div class="col-6 parallax-col" data-scroll-speed="1">
             <div class="entry-content">
               <?php the_content(); ?>
             </div>                                         
