@@ -53,7 +53,7 @@ get_header();?>
                 $social_linkedin = (array_key_exists('social_linkedin', $bedrijfsgegevens))? $bedrijfsgegevens['social_linkedin'] : 'linkedin url ontbreekt'; ?>
               <?php } ?>
               <div class="wrapper-contact-icons">
-                <h4 class="corp-heading-border-bottom"><?php echo esc_html_e('Direct contact', 'corp' ); ?></h4>
+                <h2 class="h4 corp-heading-border-bottom"><?php echo esc_html_e('Direct contact', 'corp' ); ?></h2>
                 <ul class="corp-contact-icons">
                 <?php if (!empty($adres_email)) { ?>
                   <li title="<?php echo $adres_email;?>">
@@ -89,7 +89,7 @@ get_header();?>
             <div class="row">
               <div class="col-lg-6 corp-col-white-bg">
                 <div class="wrapper-contact-algemene-info">
-                  <h4 class="corp-heading-border-bottom border-offset-left"><?php echo esc_html_e('Algemene informatie', 'corp' ); ?></h4>
+                  <h2 class="h4 corp-heading-border-bottom border-offset-left"><?php echo esc_html_e('Belangrijke informatie', 'corp' ); ?></h2>
                   <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'algemene_informatie', true))) { ?>              
                   <div class="contact-algemene-info"><?php echo wpautop(get_post_meta(get_the_ID(), _CMB . 'algemene_informatie', true));?></div>
                   <?php } ?>  
