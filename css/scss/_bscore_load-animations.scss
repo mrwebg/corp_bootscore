@@ -4,13 +4,14 @@
 // hide
 .site-content,
 .corp-contact-icons > li, // contact-icons
-.corp-home-featured-wrapper .card, // feat post home
+.corp-track-record, // track records
+.corp-home-featured-wrapper .card, .wrapper-vacatures-listing .card, // feat post home // vacatures
 .featured-image-background, .corp-single-post-image-wrapper, .featured-image-mensen-wrapper{ // images
   opacity: 0;
 }
 
 // slide fron right
-.corp-home-featured-wrapper .card{ // feat post home
+.corp-home-featured-wrapper .card, .wrapper-vacatures-listing .card{ // feat post home // vacatures
   transform: translateX(100%);
 }
 
@@ -48,9 +49,24 @@ body.loaded{
     }
   }
 
-  .corp-home-featured-wrapper .card{
+  .corp-track-record{
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out .5s;
+  }
+
+  .corp-home-featured-wrapper .card, .wrapper-vacatures-listing .card{ // feat post home // vacatures
     transform: translateX(0);
     opacity: 1;
     transition: all .5s ease-in-out 2s;
+
+    &:nth-child(2){
+      transition-delay: 2.2s;
+    }
+    &:nth-child(3){
+      transition-delay: 2.4s;
+    }
+    &:nth-child(4){
+      transition-delay: 2.6s;
+    }
   }
 }
