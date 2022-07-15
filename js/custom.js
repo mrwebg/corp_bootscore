@@ -76,11 +76,15 @@ jQuery(function ($) {
 
 }); // jQuery End
 
+/* ==============================
+  window on load add class loaded
+============================== */
+
 jQuery(window).load(function () {
   var $body = jQuery('body');
   if (!$body.hasClass('loaded')) {
     $body.addClass('loaded');
-    console.log('body: class loaded added');
+    consolelog('body: class loaded added');
   }
 });
 
