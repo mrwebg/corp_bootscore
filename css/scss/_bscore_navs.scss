@@ -285,7 +285,7 @@ body.hfeed{
     top: auto;
     left: 0;
     height: auto;
-    padding-bottom: 1rem;
+    padding-bottom: .2rem;
     bottom: 0;
     width: auto;
     padding-top: 0;
@@ -318,6 +318,16 @@ body.hfeed{
         svg{
           width: $contact-sidebar-icon-size;
           height: $contact-sidebar-icon-size;
+
+          &.icon-location *{
+            fill: none;
+            stroke: #fff;
+            stroke-width: 1.5px;
+            // transform: scale(1.04) translate(-2%, -2%);
+          }
+          &.icon-linkedin *{
+            transform: translate(0, -5%);
+          }
         }
 
         span{
