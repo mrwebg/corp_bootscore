@@ -143,14 +143,14 @@
     z-index: $zindex-offcanvas + 1;
     border: none;
     background: transparent;
-    padding: $navbar-toggler-padding-y $navbar-toggler-padding-x;
+    padding: .8rem $navbar-toggler-padding-x;
     height: ($navbar-toggler-padding-y * 2) + 2rem; // padding + inner-size
     width: ($navbar-toggler-padding-x * 2) + 2rem; // padding + inner-size
     border-radius: $navbar-toggler-border-radius;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    transition: transform .3s ease-in-out;
+    transition: all .3s ease-in-out;
     @media (min-width: $corp-expanded-navbar-breakpoint){
       display: none;
     }
@@ -170,6 +170,7 @@
   // open
   .offcanvas.show + .header-actions .corp-offcanvas-toggle{
     transform: scale(1.1);
+    padding: $navbar-toggler-padding-y $navbar-toggler-padding-x;
 
     .bar:first-child{
       transform: rotate(45deg) translate(.35rem, .35rem);
