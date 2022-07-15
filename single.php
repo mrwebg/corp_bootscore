@@ -22,8 +22,7 @@ get_header();  ?>
             <div class="entry-content">
               <?php the_content(); ?>
             </div>
-            <!-- RIGHT COLUMN CONTACT PERSON INTRO. -->
-            <h2 class="h5 cf7_contactpersoon_titel corp-heading-border-bottom border-offset-right"><?php echo esc_html_e('Neem direct contact op met:', 'corp' ); ?></h2><!-- /.cf7_contactpersoon_titel -->                                             
+                                         
             <?php
             $mensenID = intval(get_post_meta(get_the_ID(), _CMB . 'bericht_contact', true));
             if(!empty($mensenID) && is_int($mensenID)){                
@@ -37,6 +36,8 @@ get_header();  ?>
               $permalink = get_the_permalink($mensenID); 
             } 
             if(!empty($post_title) && !empty($text_email) && !empty($permalink)){?>
+            <!-- RIGHT COLUMN CONTACT PERSON INTRO. -->
+            <h2 class="h5 cf7_contactpersoon_titel corp-heading-border-bottom border-offset-right"><?php echo esc_html_e('Neem direct contact op met:', 'corp' ); ?></h2><!-- /.cf7_contactpersoon_titel -->                
               <div class="wrapper-bericht-rechter-kolom-contactpersoon">                 
                 <h3 class="h4 contactpersoon-title"><a href="<?php echo $permalink;?>"><?php echo $post_title; ?></a></h3><!-- /.h4.team-title -->
                 <ul class="corp-contact-icons corp-contact-icons-row">
