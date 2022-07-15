@@ -1,0 +1,56 @@
+// Load animations
+
+
+// hide
+.site-content,
+.corp-contact-icons > li, // contact-icons
+.corp-home-featured-wrapper .card, // feat post home
+.featured-image-background, .corp-single-post-image-wrapper, .featured-image-mensen-wrapper{ // images
+  opacity: 0;
+}
+
+// slide fron right
+.corp-home-featured-wrapper .card{ // feat post home
+  transform: translateX(100%);
+}
+
+// show
+body.loaded{
+  .site-content{
+    opacity: 1;
+    transition: opacity .5s ease-out .3s;
+  }
+  .featured-image-background, .corp-single-post-image-wrapper, .featured-image-mensen-wrapper{
+    opacity: 1;
+    transition: opacity 2s ease-in-out .5s;
+  }
+  .corp-contact-icons > li{
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out .5s;
+
+    &:nth-child(2){
+      transition-delay: .6s;
+    }
+    &:nth-child(3){
+      transition-delay: .7s;
+    }
+    &:nth-child(4){
+      transition-delay: .8s;
+    }
+    &:nth-child(5){
+      transition-delay: .9s;
+    }
+    &:nth-child(6){
+      transition-delay: 1s;
+    }
+    &:nth-child(7){
+      transition-delay: 1.1s;
+    }
+  }
+
+  .corp-home-featured-wrapper .card{
+    transform: translateX(0);
+    opacity: 1;
+    transition: all .5s ease-in-out 2s;
+  }
+}
