@@ -20,13 +20,13 @@ get_header();
     <main id="main" class="site-main">
       <div class="container entry-content">  
         <div class="row">
-          <div class="col-6 parallax-col" data-scroll-speed="12">
+          <div class="col-lg-12 col-xxl-4">
             <header class="entry-header">
               <?php the_post(); ?>
-              <h1><?php echo get_the_title(); ?></h1>
+              <h1 class="h2 mb-3"><?php echo get_the_title(); ?></h1>
             </header>
           </div><!-- /.col -->  
-          <div class="col-6 parallax-col" data-scroll-speed="1">
+          <div class="col-lg-12 col-xxl-8 parallax-col mt-1" data-scroll-speed="1">
             <div class="entry-content">
               <?php the_content(); ?>
             </div>                                           
