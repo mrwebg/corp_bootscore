@@ -15,28 +15,25 @@
 
 get_header();
 ?>
-
-<div id="content" class="site-content container PAGEMRWEB">
+<div id="content" class="site-content">
   <div id="primary" class="content-area">
-    
-    <!-- Hook to add something nice -->
-    <?php bs_after_primary(); ?>
-
     <main id="main" class="site-main">
-
-      <div class="entry-content">
-        <?php the_post(); ?>
-        <?php the_content(); ?>
-        <?php wp_link_pages(array(
-          'before' => '<div class="page-links">' . esc_html__('Pages:', 'bootscore'),
-          'after'  => '</div>',
-        ));
-        ?>
-      </div>
-
-    </main><!-- #main -->
-
-  </div><!-- #primary -->
-</div><!-- #content -->
-<?php
-get_footer();
+      <div class="container entry-content">  
+        <div class="row">
+          <div class="col-6 parallax-col" data-scroll-speed="12">
+            <header class="entry-header">
+              <?php the_post(); ?>
+              <h1><?php echo get_the_title(); ?></h1>
+            </header>
+          </div><!-- /.col -->  
+          <div class="col-6 parallax-col" data-scroll-speed="1">
+            <div class="entry-content">
+              <?php the_content(); ?>
+            </div>                                           
+          </div><!-- /.col -->            
+        </div><!-- /.row -->        
+      </div> <!-- /.container -->           
+    </main><!-- /#main -->
+  </div><!-- /#primary -->
+</div><!-- /#content -->
+<?php get_footer();
