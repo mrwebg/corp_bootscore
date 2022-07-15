@@ -8,7 +8,7 @@ get_header(); ?>
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
       <div class="container entry-content">  
-      <div class="row">
+        <div class="row">
           <div class="col-6 parallax-col" data-scroll-speed="12">
             <header class="entry-header">
               <?php the_post(); ?>
