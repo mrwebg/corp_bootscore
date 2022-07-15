@@ -83,7 +83,7 @@ get_header();?>
             <?php } ?>
             <!-- /LEFT COLUMN EXTRA CONTENT. -->             
           </div><!-- /.col- -->
-          <div class="col-6 corp-col-white-bg parallax-col" data-scroll-speed="1">
+          <div class="col-lg-6 corp-col-white-bg parallax-col" data-scroll-speed="1">
             <!-- RIGHT COLUMN EXTRA CONTENT. -->
             <?php if (!empty(get_post_meta(get_the_ID(), _CMB . 'right_column', true))) { ?>
               <div class="wrapper-expertise-rechter-kolom-extra">                           
