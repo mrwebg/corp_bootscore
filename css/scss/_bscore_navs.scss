@@ -7,12 +7,15 @@
 
 #nav-main{
   position: relative;
-  background: $white;
+  background: transparent;
   height: $corp-navbar-height-xs;
   transition: $corp-nav-main-sticky-transition;
-  @media (min-width: $corp-contact-bar-breakpoint) and (max-width: $corp-expanded-navbar-breakpoint){ // when contact-sidebar is right on small screens
+  @media (min-width: $corp-contact-bar-breakpoint) and (max-width: $corp-expanded-navbar-breakpoint - 1px){ // when contact-sidebar is right on small screens
     margin-right: $corp-contact-bar-width;
     position: relative;
+  }
+  @media (min-width: $corp-expanded-navbar-breakpoint){
+    background: $white;
   }
   @include media-breakpoint-up(md){
     height: $corp-navbar-height-md; 
@@ -235,6 +238,7 @@
     }
   }
 }
+// pages with transp navbar
 body.home,
 body.hfeed{
   #nav-main{
@@ -252,12 +256,9 @@ body.hfeed{
       }
     }
     
-    // button[data-bs-target="#offcanvas-navbar"] .bar{
-    //   background: $white;
-    // }
-    // .offcanvas.show + .header-actions .corp-offcanvas-toggle .bar{
-    //   background: $body-color;
-    // }
+    .corp-offcanvas-toggle{
+
+    }
 
     &.nav-main-sticky{
       background: $white;
@@ -267,6 +268,25 @@ body.hfeed{
     }
   }
 }
+// pages with top image (mobile), toggle icon white (if not sticky)
+body.home,
+body.hfeed,
+body.page-template-page-expertise,
+body.page-template-page-trackrecord,
+body.page-template-page-vacatures,
+body.page-template-page-contact{
+  #nav-main:not(.nav-main-sticky) .offcanvas:not(.show) + .header-actions{
+    .corp-offcanvas-toggle{
+      .bar{
+        background: $white;
+        height: 1.5px;
+        box-shadow: 1px 1px 7px rgba($black, 80%);
+      }
+    }
+  }
+}
+
+
 
 // Contact buttons 
 .widget-contact-sidebar-wrapper{

@@ -46,7 +46,7 @@
       }
       ?>
       <!-- TEASERS. -->
-      <div class="container-fluid corp-home-teasers-wrapper mb-4">
+      <div class="corp-home-teasers-wrapper mb-4">
         <div class="container text-white">
           <div class="row bg-transparent">
             <div class="col-md">

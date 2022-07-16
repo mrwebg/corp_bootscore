@@ -23,7 +23,7 @@ get_header();
           <div class="col-lg-12 col-xxl-4">
             <header class="entry-header">
               <?php the_post(); ?>
-              <h1 class="h2 mb-3"><?php echo get_the_title(); ?></h1>
+              <h1 class="mb-3"><?php echo get_the_title(); ?></h1>
             </header>
           </div><!-- /.col -->  
           <div class="col-lg-12 col-xxl-8 parallax-col mt-1" data-scroll-speed="1">

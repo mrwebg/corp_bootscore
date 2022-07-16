@@ -44,7 +44,7 @@ get_header();?>
             </div><!-- /.col- -->
           </div><!-- /.row -->
           <div class="row justify-content-end mb-5">
-            <div class="col-6 corp-col-light-gray-bg offset-bg-right parallax-col" data-scroll-speed="1">
+            <div class="col-lg-6 corp-col-light-gray-bg offset-bg-right parallax-col" data-scroll-speed="1">
               <!-- RIGHT COLUMN CONTACT ICONS. -->
               <?php if (is_array($bedrijfsgegevens) && count($bedrijfsgegevens) > 0) {
                 $adres_telefoon = (array_key_exists('adres_telefoon', $bedrijfsgegevens))? $bedrijfsgegevens['adres_telefoon'] : 'telefoon nummer ontbreekt';

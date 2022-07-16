@@ -160,6 +160,20 @@ body.home{
       padding-left: $corp-contact-bar-width;
       padding-right: $corp-contact-bar-width;
     }
+    // on mobile in container
+    @include media-breakpoint-down(lg){
+      padding-left: $grid-gutter-width * .5;
+      padding-right: $grid-gutter-width * .5;
+      max-width: get-container-width(md);
+
+      .card{
+        margin-left: $grid-gutter-width * -.5;
+        margin-right: $grid-gutter-width * -.5;
+      }
+    }
+    @include media-breakpoint-down(md){
+      max-width: get-container-width(sm);
+    }
   }
 
   .card{
@@ -217,7 +231,7 @@ body.home{
       display: block;
       position: absolute;
       z-index: -1;
-      left: $grid-gutter-width * .5;
+      left: 0;
       top: 0;
       bottom: 0;
       width: 100vw;
@@ -225,6 +239,21 @@ body.home{
       @media (min-width: $corp-desktop-gutter-width-beakpoint){
         left: $corp-grid-gutter-width-desktop * .5;
       }
+    }
+
+    // mobile
+    @include media-breakpoint-down(lg){
+      &:before{
+        background: rgba($gray-900, 80%);
+      }
+      
+      .blockquote, .blockquote-footer{
+        color: $white;
+
+        a{
+          color: $white;
+        }
+      } 
     }
   }
 
@@ -241,7 +270,10 @@ body.home{
 }
 body.home .corp-footer-quote-wrapper{
  .container:before{
-    background: rgba($black, 30%);
+    background: rgba($black, 35%);
+    @include media-breakpoint-down(lg){
+      background: rgba($black, 50%);
+    }
   }
   .blockquote, .blockquote-footer{
     color: $white;
@@ -340,9 +372,29 @@ body.home .corp-footer-quote-wrapper{
 .corp-team-wrapper{
   position: relative;
   padding-top: $spacer * 3;
+  @include media-breakpoint-down(lg){
+    margin-top: 2rem;
+    padding-top: $spacer * 1;
+    padding-bottom: $spacer * 1.5;
+  }
 
   > .row{
 
+  }
+
+  // white back mobile
+  &:before{
+    @include media-breakpoint-down(lg){
+      position: absolute;
+      content: "";
+      background: $white;
+      display: block;
+      left: ($grid-gutter-width * -.5);
+      right: ($grid-gutter-width * -.5);
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+    }
   }
 
   .corp-team-item{
@@ -442,14 +494,33 @@ ul.corp-contact-icons{
     padding-bottom: $spacer * .75;
 
     &:after{
-      display: block;
-      content: "";
-      position: absolute;
-      padding: 0;
-      width: 100vw;
-      border-bottom: $corp-dotted-border;
-      bottom: -1px;
-      z-index: 1;
+      @include media-breakpoint-up(lg){
+        display: block;
+        content: "";
+        position: absolute;
+        padding: 0;
+        width: 100vw;
+        border-bottom: $corp-dotted-border;
+        bottom: -1px;
+        z-index: 1;
+      }
+    }
+  }
+  .featured-image-mensen-wrapper{
+    @include media-breakpoint-down(lg){
+      position: relative;
+      background: $white;
+
+      &:after{
+        display: block;
+        content: "";
+        position: absolute;
+        padding: 0;
+        width: 100vw;
+        border-bottom: $corp-dotted-border;
+        bottom: -1px;
+        z-index: 1;
+      }
     }
   }
 }
@@ -572,7 +643,9 @@ body.page-template-page-vacatures{
 }
 
 .wrapper-vacatures-rechter-kolom-extra{
-  background: $corp-gray-light-bg;
+  @include media-breakpoint-up(lg){
+    background: $corp-gray-light-bg;
+  }
 
   .wrapper-vacatures-rechter-kolom-contactpersoon{
     border-top: $corp-dotted-border;
@@ -600,7 +673,7 @@ body.single-vacature{
 
 .wrapper-contact-cf7-featured-image{
   position: relative;
-  background: $corp-gray-light-bg;
+  background: $white;
   padding: $grid-gutter-width ($grid-gutter-width * .5);
   margin-left: ($grid-gutter-width * -.5);
   margin-right: ($grid-gutter-width * -.5);
@@ -608,6 +681,9 @@ body.single-vacature{
     padding: ($corp-grid-gutter-width-desktop * .25) ($corp-grid-gutter-width-desktop * .5);
     margin-left: ($corp-grid-gutter-width-desktop * -.5);
     margin-right: ($corp-grid-gutter-width-desktop* -.5);
+  }
+  @include media-breakpoint-up(lg){
+    background: $corp-gray-light-bg;
   }
 
   .featured-image-background-left{

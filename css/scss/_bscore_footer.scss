@@ -8,6 +8,9 @@
   display: flex;
   column-gap: $grid-gutter-width;
   flex-direction: column;
+  @include media-breakpoint-down(lg){
+    background: $corp-gray-light-bg;
+  }
   @include media-breakpoint-up(xxl){
     flex-direction: row;
     justify-content: space-between;

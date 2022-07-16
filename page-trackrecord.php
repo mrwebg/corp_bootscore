@@ -10,7 +10,7 @@ get_header();?>
     <main id="main" class="site-main">
       <div class="container entry-content">    
         <div class="row">
-          <div class="col-12 col-lg-6">
+          <div class="col-12 col-lg-6 corp-col-white-bg">
             <header class="entry-header">
                 <?php the_post(); ?>
                 <!-- TITLE -->
